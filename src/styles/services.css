@@ -1,0 +1,266 @@
+
+html, body {
+  height: 100%;
+}
+
+.video-container .text p{
+line-height: 30px;
+font-size: 1rem;
+margin-top: 8%;
+text-transform: lowercase;
+width: 90%;
+}
+
+/* Conteneur principal des services */
+.services {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.services h1 {
+  margin-top: 1%;
+}
+
+.services .image-container img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%; /* S'assurer que l'image remplit le conteneur en hauteur */
+  object-fit: cover; /* Assure que l'image couvre le conteneur sans distorsion */
+  max-width: 100%; /* Empêche l'image de dépasser la largeur du conteneur */
+  max-height: 100%; /* Empêche l'image de dépasser la hauteur du conteneur */
+}
+
+
+/* Style général pour chaque service */
+[class^="service-"] {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 15%;
+}
+
+/* Style du texte */
+.services-header .text {
+  width: 50%;
+  color: white;
+}
+
+.services .text h2 {
+  font-size: 26px;
+  line-height: 36px;
+  letter-spacing: normal;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.services .text p {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: normal;
+}
+
+/* Style des images */
+[class^="box-image-"] {
+  width: 50%;
+}
+
+.services-header .image-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* Style du texte sur les images */
+.image-container span {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  box-sizing: border-box;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Styles spécifiques pour les services pairs et impairs */
+.service-even {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.service-even .text {
+  text-align: right;
+}
+
+.service-odd {
+  display: flex;
+  flex-direction: row;
+}
+
+.service-odd .text {
+  text-align: left;
+}
+
+/* Style des vidéos */
+.services-header video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(70%);
+}
+
+/* Conteneur de contenu */
+.service-header .content {
+  width: 40%;
+  text-align: left;
+  color: white;
+  z-index: 999;
+}
+
+/* Superposition */
+.services-header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Conteneur vidéo */
+.services-header .video-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.services-header .video-container .title {
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  font-size: 44px;
+  text-transform: uppercase;
+  letter-spacing: -0.025em;
+  font-weight: bold;
+  color: #f5f5f5;
+}
+
+.services-header .video-container .text {
+  position: absolute;
+  bottom: 20%;
+  left: 15%;
+  color: #fff;
+  font-size: 18px;
+  text-align: left;
+}
+
+/* Media Queries */
+
+/* Styles pour les écrans de 1024px et moins */
+@media (max-width: 1024px) {
+  .services {
+    width: 85%;
+  }
+
+  .services-header .text {
+    width: 100%;
+    text-align: center;
+  }
+
+  .services-header .video-container .title,
+  .services-header .video-container .text,
+  .services-header .video-container .supernova {
+    left: 10%;
+  }
+
+  .services-header .video-container .title {
+    font-size: 36px;
+  }
+
+  .services-header .video-container .text {
+    font-size: 16px;
+  }
+
+  .services-header .video-container .supernova {
+    font-size: 40px;
+  }
+}
+
+/* Styles pour les écrans de 768px et moins */
+@media (max-width: 768px) {
+  .services {
+    width: 100%;
+  }
+
+  .services-header .text {
+    width: 100%;
+    text-align: center;
+  }
+
+  .services-header .video-container .title,
+  .services-header .video-container .text,
+  .services-header .video-container .supernova {
+    left: 5%;
+  }
+
+  .services-header .video-container .title {
+    font-size: 28px;
+  }
+
+  .services-header .video-container .text {
+    font-size: 14px;
+  }
+
+  .services-header .video-container .supernova {
+    font-size: 30px;
+  }
+
+  [class^="service-"] {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .services-header .text {
+    text-align: center;
+    width: 100%;
+  }
+
+  .services-header .image-container {
+    width: 100%;
+  }
+}
+
+/* Définition des animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Application des animations aux éléments */
+.fade-in {
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+.fade-in-up {
+  animation: fadeInUp 1s ease-in-out forwards;
+}
+
+/* Ajout d'un délai pour les animations */
+.fade-in-up-delayed {
+  animation: fadeInUp 1s ease-in-out forwards;
+  animation-delay: 0.5s;
+}

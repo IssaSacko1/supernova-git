@@ -1,0 +1,103 @@
+footer {
+  background-color: #0D0D0D;
+  color: #fff;
+  width: 100%;
+}
+
+footer .reseaux {
+  display: flex;
+  gap: 3vw;
+  margin-top: 1.5vh;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  text-align: left;
+  width: 80%;
+  padding-top: 1vh;
+  margin: 0 auto; /* Centre le conteneur .footer-content */
+}
+
+.footer-copyright {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  border-top: 1px solid #444;
+  padding-bottom: 20px;
+}
+
+footer a {
+  color: inherit; /* Make the text color inherit from the parent */
+  text-decoration: none;
+}
+
+/* Media Queries */
+
+/* For tablets */
+@media (max-width: 1024px) {
+  .footer-content {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .footer-column {
+    width: 45%;
+    margin-bottom: 20px;
+  }
+
+  .supernova {
+    font-size: 18px;
+  }
+}
+
+/* For mobile phones */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    padding: 10px;
+  }
+
+  .footer-column {
+    width: 100%;
+    text-align: center;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  .reseaux a {
+    margin: 0 5px;
+  }
+
+  .footer-copyright {
+    font-size: 12px;
+    padding-top: 5px;
+  }
+
+  .supernova {
+    font-size: 16px;
+    letter-spacing: 0.3rem; /* Ajuste l'espacement pour les mobiles */
+  }
+}
+
+.supernova {
+  font-size: 20px; /* Taille de la police */
+  text-transform: uppercase; /* Transforme le texte en majuscules */
+  font-weight: bold; /* Définit le poids de la police */
+  letter-spacing: 0.5rem; /* Ajuste l'espacement entre les lettres */
+}
+
+footer p {
+  margin: 0;
+}
+
+.footer-column {
+  line-height: 3vh;
+}
+
+.footer-column a {
+  text-transform: uppercase;
+}

@@ -1,0 +1,91 @@
+/* CSS pour afficher 3 vidéos par ligne sur ordinateur et une par ligne sur mobile */
+.main {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: stretch;
+  width: 100%;
+  overflow: hidden;
+}
+
+.projet .main-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+}
+
+.projet .video-container {
+  position: relative;
+  width: 33.3%; /* Calcul de la largeur pour 3 vidéos par ligne sur ordinateur */
+  overflow: hidden; /* Pour masquer le contenu débordant */
+  margin-bottom: 0; /* Supprimer la marge en bas */
+  margin-top: 0;
+  height: 38vh; /* Ajustez la hauteur selon vos besoins */
+}
+
+.projet .video-container video,
+.projet .video-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.5s ease-in-out; /* Transition douce pour l'opacité */
+}
+
+.video-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.video-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.img-hidden {
+  opacity: 0;
+}
+
+.img-visible {
+  opacity: 1;
+}
+
+/* Styles pour une vidéo par ligne sur mobile */
+@media (max-width: 767px) {
+  .video-container {
+    width: calc(100% - 20px); /* Pleine largeur pour une vidéo par ligne sur mobile */
+  }
+}
+
+.video-container .hover-title {
+  position: absolute;
+  top: 14.5vh; /* Ajustez cette valeur selon vos besoins */
+  left: 50%;
+  transform: translateX(-50%);
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 1.5rem; /* Taille de police pour le titre */
+  cursor: pointer;
+  width: 100%;
+}
+
+.video-container .hover-text {
+  position: absolute;
+  bottom: 14.5vh; /* Ajustez cette valeur selon vos besoins */
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 1.20rem; /* Taille de police pour le texte */
+}
+
+/* Styles pour une vidéo par ligne sur mobile */
+@media (max-width: 767px) {
+  .projet .video-container {
+    width: 90%; /* Pleine largeur pour une vidéo par ligne sur mobile */
+    max-width: 100%; /* Assure que la vidéo occupe tout l'espace disponible */
+  }
+}

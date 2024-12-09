@@ -1,0 +1,113 @@
+/* CSS pour la page ProjectDetail */
+
+/* Conteneur principal */
+.project-detail-container {
+  width: 100%;
+  margin: auto;
+  color: white;
+}
+
+.project-detail {
+  margin: 0 10px 0 10px;
+}
+
+/* Titre */
+.project-title {
+  font-size: 3rem;
+  margin-bottom: 5vh;
+  text-transform: uppercase;
+}
+
+/* Vidéo */
+.project-video {
+  width: 60%;
+  margin-bottom: 5vh;
+}
+
+
+.project-client {
+  color: #FC8412
+}
+
+.project-sous-description {
+  text-align: left;
+}
+
+.recompense-image {
+  margin-top: 5%;
+  margin-bottom: 2%;
+  display: flex;
+  flex-wrap: wrap;
+  height: 10%;
+  overflow: hidden;
+}
+
+.add-recompense-image {
+  flex: 0 0 33.33%;
+  box-sizing: border-box;
+}
+
+.add-recompense-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.additional_images {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10% ; /* Negative margin to compensate for the padding on children */
+  width: 100%;
+}
+
+.add-additional-image {
+  box-sizing: border-box;
+  max-height: 50vh;
+  overflow: hidden;
+}
+
+.add-additional-image img {
+  width: 100%;
+  display: block;
+}
+
+
+.content-recompense {
+  text-align: left;
+}
+.content-recompense p {
+  line-height: 1.6; /* Optionnel pour une meilleure lisibilité */
+}
+
+.recompenses h2 {
+  font-size: 2rem; /* Ajustez cette valeur selon vos besoins */
+
+}
+
+.recompenses h3 {
+  font-size: 1.5rem; /* Ajustez cette valeur selon vos besoins */
+  color: #FC8412
+}
+
+.add-additional-image {
+  box-sizing: border-box;
+  position: relative;
+}
+
+.add-additional-image:hover {
+  cursor: zoom-in;
+}
+
+.gallery {
+  width: 100%;
+}
+
+.recompenses {
+  width: 70%;
+margin: auto;
+}
+
+
+
+
+

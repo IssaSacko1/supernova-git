@@ -1,0 +1,124 @@
+.App {
+  text-align: center;
+  font-family: 'Arial Narrow';
+}
+
+h1, h2 {
+  font-family: 'Arial Narrow';
+  font-size: bolder;
+}
+
+h3,h4 {
+  font-family: 'Arial Narrow';
+}
+p{
+  font-family: 'Arial Narrow';
+}
+
+a{
+  font-family: 'Arial Narrow';
+
+}
+
+
+html {
+  scroll-behavior: smooth;
+  
+}
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body::-webkit-scrollbar {
+  width: 12px;               /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: #ACACAE;        /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #565657;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 3px solid #ACACAE;  /* creates padding around scroll thumb */
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+
+@font-face {
+  font-family: 'LEMONMILK Bold';
+  src: url('./styles/polices/LEMONMILK-Bold.otf') format('truetype'); /* Spécifiez le chemin relatif vers le fichier de police */
+  font-weight: 200; /* Poids de la police */
+ }
+
+ @font-face {
+  font-family: 'Arial Narrow Bold';
+  src: url('./styles/polices/arialnarrow_bold.ttf') format('truetype'); /* Spécifiez le chemin relatif vers le fichier de police */
+  font-weight: 200; /* Poids de la police */
+ }
+
+ @font-face {
+  font-family: 'LEMONMILK Bold Italic';
+  src: url('./styles/polices/LEMONMILK-BoldItalic.otf') format('truetype'); /* Spécifiez le chemin relatif vers le fichier de police */
+ }
+
+ @font-face {
+  font-family: 'Arial Narrow Bold Italic';
+  src: url('./styles/polices/arialnarrow_bolditalic.ttf') format('truetype'); /* Spécifiez le chemin relatif vers le fichier de police */
+ }
+
+ @font-face {
+  font-family: 'LEMONMILK Light';
+  src: url('./styles/polices/LEMONMILK-Light.otf') format('truetype'); /* Spécifiez le chemin relatif vers le fichier de police */
+ }
+
+ @font-face {
+  font-family: 'Arial Narrow';
+  src: url('./styles/polices/arialnarrow.ttf') format('truetype'); /* Spécifiez le chemin relatif vers le fichier de police */
+ }
+
+ @font-face {
+  font-family: 'LEMONMILK Medium';
+  src: url('./styles/polices/LEMONMILK-Medium.otf') format('truetype'); /* Spécifiez le chemin relatif vers le fichier de police */
+ }
+
+ @font-face {
+  font-family: 'Arial Narrow Italic';
+  src: url('./styles/polices/arialnarrow_italic.ttf') format('truetype'); /* Spécifiez le chemin relatif vers le fichier de police */
+ }

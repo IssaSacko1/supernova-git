@@ -1,0 +1,242 @@
+/* Menu.css */
+nav {
+  position: fixed;
+  width: 100%;
+  background: rgba(0, 0,0, .0);
+  top:0;
+  z-index: 1000;
+}
+
+nav li {
+  list-style: none;
+}
+
+
+/* Écrans très larges (≥ 1200px) */
+@media (min-width: 1200px)  {
+  .footerPopUp {
+    width: 70%; /* Réduction de la largeur */
+    gap: 20rem; /* Espace entre les éléments */
+  }
+}
+
+/* Écrans larges (tablettes paysage, entre 992px et 1200px) */
+@media (max-width: 1199px) and (min-width: 992px) {
+  .footerPopUp {
+    width: 80%;
+    gap: 1.5rem;
+  }
+}
+
+/* Tablettes portrait (entre 768px et 991px) */
+@media (max-width: 991px) and (min-width: 768px) {
+  .footerPopUp {
+    width: 85%;
+    justify-content: center; /* Centrer les éléments */
+    transform: translateY(10%); /* Réduction de la translation */
+    gap: 1.5rem;
+  }
+}
+
+/* Mobiles grands (entre 576px et 767px) */
+@media (max-width: 767px) and (min-width: 576px) {
+  .footerPopUp {
+    flex-direction: column; /* Empile les éléments verticalement */
+    align-items: center; /* Centre les éléments */
+    width: 90%;
+    transform: translateY(5%); /* Translation encore réduite */
+    gap: 1rem;
+  }
+}
+
+/* Mobiles petits (< 576px) */
+@media (max-width: 575px) {
+  .footerPopUp {
+    flex-direction: column;
+    align-items: center;
+    width: 95%; /* Presque toute la largeur de l’écran */
+    transform: translateY(0); /* Pas de translation verticale */
+    gap: 0.5rem;
+  }
+}
+
+
+.footerPopUp .contact p {
+  margin: 0; /* Supprime les marges par défaut */
+  font-size: 1.3rem;
+  color: white;
+}
+
+.contact {
+  color: white;
+}
+
+
+.logophoto {
+  margin-top: 0;
+  margin-left: 5vw;
+  z-index: 999;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background: none;
+}
+
+.burger-menu {
+  z-index: 999;
+  margin-right: 5vw;
+  margin-top: 1%;
+  cursor: pointer;
+}
+
+/* .Menu-text {
+  color: red;
+  /* margin-left: 10px; Espacement entre le texte et les barres
+  margin-left: 100000px;
+
+} */
+
+.bar {
+  width: 3vw;
+  height: .1vh;
+  background-color: #888; /* Couleur grise pour le menu burger */
+  margin: 1vh 0;
+  transition: 0.4s;
+}
+
+
+nav .reseaux {
+  position: relative;
+  display: flex;
+  gap: 50px;
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Aligne verticalement si nécessaire */
+  bottom: 20px;
+}
+
+
+/* Animation d'entrée pour les images */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.popup a {
+  text-decoration: none;
+}
+.popup {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #161617; /* Couleur de fond */
+  z-index: 998;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: all .5s ease-in-out;
+}
+
+
+
+ .popup ul li a {
+  display:block;
+  font-size: 3rem;
+  margin-top: 3vh;
+}
+
+ .popup ul li a {
+  color: white; /* Lorsque non survolé, non actif, la couleur devient grise */
+} 
+
+
+ @keyframes slideIn {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.popup.slide-in {
+  animation: slideIn 0.5s ease; /* Animation d'entrée pour la popup */
+}
+
+.popup.slide-out {
+  animation: slideOut 0.5s forwards; /* Animation de sortie pour la popup */
+} 
+
+
+/* Animation de défilement vers le haut pour le texte h1 */
+ @keyframes slideInUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.header img {
+  transition: transform 0.3s ease-in-out;
+  height: 17vh;
+}
+
+.headerPopUp img {
+  transition: transform 0.3s ease-in-out;
+}
+
+/* .headerPopUp a {
+  position: relative;
+  left: 0;
+} */
+
+.header img:hover {
+  transform: scale(1.1); /* Grossissement de l'image sur hover */
+}
+
+.headerPopUp img:hover {
+  transform: scale(1.1); /* Grossissement de l'image sur hover */
+}
+
+.menu-item {
+  padding-bottom: 5vh;
+}
+.contentPopup{
+  width: 80%;
+  margin: 10vh auto 0 auto;
+  height: 70%;
+}
+
+.contact {
+  padding-bottom: 5vh;
+}
+
+.menu-item a {
+  display: inline-block; /* Nécessaire pour appliquer les transformations */
+  transition: transform 0.3s ease; /* Durée et effet de la transition */
+}
+
+.menu-item a:hover {
+  transform: scale(1.1); /* Grossissement de l'image sur hover */
+}
+
+nav .reseaux a {
+  display: inline-block; /* Nécessaire pour appliquer les transformations */
+  transition: transform 0.3s ease; /* Durée et effet de la transition */
+}
+
+nav .reseaux a:hover {
+  transform: scale(1.1); /* Grossissement de l'image sur hover */
+}

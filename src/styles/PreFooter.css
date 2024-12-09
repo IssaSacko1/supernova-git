@@ -1,0 +1,63 @@
+.pre-footer {
+  display: flex;                /* Utiliser flexbox pour aligner les éléments horizontalement */
+  overflow-x: auto;            /* Permet le défilement horizontal si le contenu dépasse la largeur */
+  padding-top: 10%;               /* Espacement interne */
+  background-color: #f8f8f8;   /* Couleur de fond pour le pré-footer */
+}
+
+.pre-footer-item {
+  flex: 0 0 auto;              /* Ne pas permettre aux éléments de s'étirer ou de se réduire */
+  margin-right: 10vw;          /* Espacement entre les éléments */
+  text-align: center;          /* Centrer le texte */
+  max-width: 200px;            /* Largeur maximale pour chaque élément */
+  position: relative;           /* Position relative pour les éléments enfants */
+  overflow: hidden;            /* Cache les éléments qui débordent */
+}
+
+.pre-footer-item img {
+  max-width: 100%;              /* Limiter l'image à la largeur de son conteneur */
+  height: auto;                /* Garder le ratio d'aspect de l'image */
+  border-radius: 5px;         /* Bords arrondis pour l'image */
+  transition: opacity 0.3s ease; /* Transition douce pour l'opacité de l'image */
+}
+
+.pre-footer-item h2 {
+  font-size: 1.2em;            /* Taille de la police pour le titre */
+  margin: 10px 0 5px 0;       /* Espacement autour du titre */
+  position: absolute;          /* Positionner le titre par rapport à l'élément parent */
+  left: 50%;                   /* Centrer horizontalement */
+  transform: translate(-50%, -250%); /* Ajuster pour un centrage parfait */
+  color: white;                /* Couleur du texte */
+  opacity: 0;                  /* Masquer le texte par défaut */
+  transition: opacity 0.3s ease; /* Transition douce pour l'opacité du texte */
+}
+
+.pre-footer-item:hover img {
+  opacity: 0.7;                /* Changer l'opacité de l'image au survol */
+}
+
+.pre-footer-item:hover h2 {
+  opacity: 1;                  /* Afficher le texte au survol */
+}
+
+.pre-footer-item p {
+  font-size: 0.9em;            /* Taille de la police pour le texte */
+  color: #666;                 /* Couleur du texte pour le lien */
+  margin: 0;                   /* Suppression des marges par défaut */
+}
+
+
+
+.pre-footer::-webkit-scrollbar {
+  width: 12px;               /* width of the entire scrollbar */
+}
+
+.pre-footer::-webkit-scrollbar-track {
+  background: #ACACAE;        /* color of the tracking area */
+}
+
+.pre-footer::-webkit-scrollbar-thumb {
+  background-color: #565657;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 3px solid #ACACAE;  /* creates padding around scroll thumb */
+}
