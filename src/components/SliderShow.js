@@ -63,7 +63,7 @@ function SliderShow() {
     slidesToShow: 3,
     slidesToScroll: 1,
     centerMode: true,
-    centerPadding: "10%", // Réduisez à 10% pour recentrer visuellement
+    variableWisth: true,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     beforeChange: (current, next) => setImageIndex(next),

@@ -4,18 +4,11 @@
 .SliderShow {
   /* height: 80%; */
   perspective: 600px; /* Définir la perspective 3D */
-  padding-top: 10%;
+  padding-top: 3%;
   overflow: visible; /* Permet à l'élément de ne pas être coupé */
-  padding-top: 200px; /* Ajoutez une marge pour éviter la coupure */
-  height: 20%;
+  padding-bottom: 1500px;
 } 
 
-
-
-.slick-slide {
-  flex: 1 0 auto;
-  width: auto; /* S'assure que les slides prennent leur taille correcte */
-}
 
 .slick-list {
   overflow: hidden;
@@ -25,14 +18,14 @@
   position: relative;
   transition: transform 1s; /* Transition fluide pour la rotation */
   opacity: 1; /* Opacité réduite pour les slides non actives */
-  perspective: 1200px;
-
+  perspective: 600px;
+  /* background-color: blue; */
 
 
 }
 
 .SliderShow .slide img {
-  width: 150%; /* Largeur de l'image */
+  width: 100%; /* Largeur de l'image */
   margin: auto; /* Centrer l'image */
   filter: brightness(50%);  /* Réduit la luminosité de l'image */
   border-width: 2px;
@@ -43,7 +36,7 @@
 .SliderShow .activeSlide {
   opacity: 1; /* Rendre la slide active entièrement opaque */
   z-index: 10; /* Placer la slide active devant les autres */
-  /* transform: scale(.8); */
+  transform: scale(1);
   height: 100%;
 }
 
@@ -54,8 +47,8 @@
   opacity: 1; /* Moins opaque que l'élément actif */
   /* border: 2px solid white; Bordure pour la slide gauche */
     /* transform: rotateY(50deg); */
-    /* transform-origin: left 0%;
-    transform: skewY(-3deg) scale(0.7) translateY(35px); Inclinaison suivie d'une réduction d'échelle */
+    transform-origin: left 50%;
+    transform: skewY(-3deg) scale(0.9) translateY(0);
 
 }
 
@@ -65,28 +58,113 @@
   opacity: 1; /* Moins opaque que l'élément actif */
   /* border: 2px solid white; Bordure pour la slide gauche */
     /* transform: rotateY(50deg); */
-    /* transform-origin: left 0%;
-    transform: skewY(-5deg) scale(0.7) translateY(50px); Inclinaison suivie d'une réduction d'échelle */
+    transform-origin: left 50%;
+    transform: skewY(-5deg) scale(0.7) translateY(50px);
 
 }
 
 /* Effet de rotation 3D pour la slide droite */
 .SliderShow .rightSlide {
+  flex-shrink: 0;
+  user-select: none;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  transform: scale(0.8);
   /* transform: rotateY(-65deg); Rotation sur l'axe Y pour la slide à droite */
   z-index: 5; /* Z-index plus bas pour les slides à droite */
   opacity: 1; /* Moins opaque que l'élément actif */
   /* border: 2px solid white; Bordure pour la slide droite */
-  /* transform-origin: 100% right;
-  transform: skewY(3deg) scale(0.7) translateY(5px); Inclinaison suivie d'une réduction d'échelle */
+  transform-origin: 100% 50% 0px;
+  transform: rotateY(-28deg) rotateX(0deg); /* Inclinaison suivie d'une réduction d'échelle */
 }
+
+.framer-1hxpz8w .framer-146cc4w {
+  align-items: center;
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 0px;
+  height: min-content;
+  justify-content: flex-start;
+  overflow: visible;
+  padding: 40px;
+  position: relative;
+  width: 100%;
+
+}
+
+.framer-khsv2 .framer-bp82ww-container {
+  flex: none;
+  height: 65vh;
+  position: relative;
+  width: 479px;
+  perspective: 1279px;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    place-items: center;
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+    opacity: 1;
+    user-select: none;
+
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    place-items: center;
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+    gap: 33px;
+    transform-style: preserve-3d;
+    cursor: auto;
+    user-select: none;
+    transform: translateX(-6656px) translateY(0px) translateZ(0px);
+}
+
+/* <div class="framer-ne25qb-container" data-framer-name="TT Project" name="TT Project" style="flex-shrink: 0; user-select: none; width: 100%; height: 100%; opacity: 1; transform: scale(0.8) rotateX(0deg) rotateY(-28deg) translateZ(0px); transform-origin: 0% 50% 0px;">
+<div class="framer-nY4t9 framer-U7nXG framer-GCbO0 framer-v4Ho6 framer-m4uf0 framer-iD2oA framer-76lCS framer-a7KBf framer-64Pbd framer-RHJCM framer-WTMSF framer-v-levn9e" style="display:contents" tabindex="0"><a name="TT Project" class="framer-levn9e framer-162ocid" data-border="true" style="--border-bottom-width: 2px; --border-color: rgb(50, 68, 64); --border-left-width: 2px; --border-right-width: 2px; --border-style: solid; --border-top-width: 2px; height: 100%; width: 100%; opacity: 1; border-radius: 16px; box-shadow: rgb(44, 59, 56) -3px 3px 0px 0px;" href="https://www.techtower.cz/" target="_blank" rel="noopener" data-framer-name="Variant 1">
+<div class="framer-1k392yb" data-framer-name="Variant 2" style="opacity: 1; border-radius: 16px;">
+<div style="position:absolute;border-radius:inherit;top:0;right:0;bottom:0;left:0" data-framer-background-image-wrapper="true"><img decoding="async" sizes="min(573px, 100vw)" srcset="https://framerusercontent.com/images/q40gXKYvWwcdEzeprerXLyAQvig.jpg?scale-down-to=512 512w,https://framerusercontent.com/images/q40gXKYvWwcdEzeprerXLyAQvig.jpg?scale-down-to=1024 1024w,https://framerusercontent.com/images/q40gXKYvWwcdEzeprerXLyAQvig.jpg 1600w" src="https://framerusercontent.com/images/q40gXKYvWwcdEzeprerXLyAQvig.jpg" alt="" style="display:block;width:100%;height:100%;border-radius:inherit;object-position:center;object-fit:cover;image-rendering:auto"></div>
+<div class="framer-ec4d8i" style="transform: none; transform-origin: 50% 50% 0px;">
+<div class="framer-1dq5yaq" style="transform: none; transform-origin: 50% 50% 0px;">
+<div class="framer-rcbmxa" data-border="true" style="--border-bottom-width: 2px; --border-color: var(--token-230d5865-b725-480b-a9d9-ed0dd5214ffc, rgb(44, 59, 56)); --border-left-width: 2px; --border-right-width: 2px; --border-style: solid; --border-top-width: 2px; background-color: rgb(255, 255, 255); border-radius: 64px; box-shadow: -3px 3px 0px 0px var(--token-230d5865-b725-480b-a9d9-ed0dd5214ffc, rgb(44, 59, 56)); transform: none; transform-origin: 50% 50% 0px;">
+<div class="framer-11qgkv8" style="transform: none; transform-origin: 50% 50% 0px;">
+<div style="position:absolute;border-radius:inherit;top:0;right:0;bottom:0;left:0" data-framer-background-image-wrapper="true"><img decoding="async" sizes="56px" src="https://framerusercontent.com/images/peB1NJbGkZ1kQB1vDAgTERQgWo.svg" alt="" style="display:block;width:100%;height:100%;border-radius:inherit;object-position:center;object-fit:contain;image-rendering:auto">
+</div>
+</div>
+</div>
+<div class="framer-1uvvfeh" style="outline: none; display: flex; flex-direction: column; justify-content: flex-start; flex-shrink: 0; --extracted-r6o4lv: var(--token-7b874939-b701-4605-9d1c-76343f93345e, rgb(255, 255, 255)); --framer-link-text-color: rgb(0, 153, 255); --framer-link-text-decoration: underline; --framer-paragraph-spacing: 0px; text-shadow: rgb(44, 59, 56) -2px 0px, rgb(44, 59, 56) 0px 2px, rgb(44, 59, 56) 2px 0px, rgb(44, 59, 56) 0px -2px, rgb(44, 59, 56) -6px 6px 0px; transform: none; transform-origin: 50% 50% 0px;" data-framer-component-type="RichTextContainer"><h3 class="framer-text framer-styles-preset-1c9ekpb"><strong class="framer-text">WEB REDESIGN OF THE BEST COWORKING IN PILSEN</strong></h3>
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div> */
 
 .SliderShow .rightSlide2 {
   /* transform: rotateY(-65deg); Rotation sur l'axe Y pour la slide à droite */
   z-index: 5; /* Z-index plus bas pour les slides à droite */
   opacity: 1; /* Moins opaque que l'élément actif */
   /* border: 2px solid white; Bordure pour la slide droite */
-  /* transform-origin: 100% right;
-  transform: skewY(5deg) scale(.7) translateY(25px) ; Inclinaison suivie d'une réduction d'échelle */
+  transform-origin: right 100%;
+  transform: skewY(5deg) scale(.7) translateY(25px) ;
 }
 
 /* Effet au survol de la flèche (pour naviguer) */
@@ -125,29 +203,27 @@
 
 .SliderShow .slide-info {
   position: absolute;
-  bottom: 3vh; /* Positionner le texte 10px au-dessus du bas */
-  left: 25px; /* Positionner le texte 10px à gauche */
-  right: 10px; /* 10px de marge à droite */
+  bottom: 0vh; /* Positionner le texte 10px au-dessus du bas */
+  left: 10px; /* Positionner le texte 10px à gauche */
   padding: 10px;
   color: white;
-  font-size: 20px;
+  font-size: 15px;
   text-align: left; /* Alignement à gauche */
   transition: transform 0.5s ease-in-out; /* Transition fluide lors du hover */
   width: 70%;
 }
 
 .SliderShow .slide:hover .slide-info {
-  transform: translateY(-40vh); /* Fait remonter le texte de 20px lorsqu'on survole la slide */
+  transform: translateY(-15vh); /* Fait remonter le texte de 20px lorsqu'on survole la slide */
 }
 
 .SliderShow .slide-info h3 {
   margin: 0;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .SliderShow .slide-info p {
-  margin: 2vh 0px 5vh 0;
-  font-size: 1.5rem;
+  font-size: 1.0rem;
 }
 
 .SliderShow .slider-show-button {
