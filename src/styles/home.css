@@ -535,11 +535,12 @@
   transition: .7s cubic-bezier(.165,.84,.44,1);
   text-transform: uppercase;
   position: relative;
+  bottom: 1500px;
 }
 
 .section-1 {
   text-align: center; /* Centre le contenu de la section */
-  height: 100vh;
+  height: 65vh;
 
 }
 

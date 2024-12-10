@@ -59,14 +59,17 @@ function SliderShow() {
     dots: true,
     infinite: true,
     lazyLoad: true,
-    speed: 500,
+    speed: 1500,
     slidesToShow: 3,
     slidesToScroll: 1,
+    centerPadding: "10%", 
     centerMode: true,
     variableWisth: true,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     beforeChange: (current, next) => setImageIndex(next),
+    autoplay:true,
+    autoplaySpeed :3500,
   };
   
 
