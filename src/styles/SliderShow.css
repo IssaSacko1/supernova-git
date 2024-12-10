@@ -115,61 +115,6 @@
   perspective: 1279px;
 }
 
-section {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 100%;
-    max-width: 100%;
-    max-height: 100%;
-    place-items: center;
-    margin: 0px;
-    padding: 0px;
-    list-style-type: none;
-    opacity: 1;
-    user-select: none;
-
-}
-
-ul {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 100%;
-    max-width: 100%;
-    max-height: 100%;
-    place-items: center;
-    margin: 0px;
-    padding: 0px;
-    list-style-type: none;
-    gap: 33px;
-    transform-style: preserve-3d;
-    cursor: auto;
-    user-select: none;
-    transform: translateX(-6656px) translateY(0px) translateZ(0px);
-}
-
-/* <div class="framer-ne25qb-container" data-framer-name="TT Project" name="TT Project" style="flex-shrink: 0; user-select: none; width: 100%; height: 100%; opacity: 1; transform: scale(0.8) rotateX(0deg) rotateY(-28deg) translateZ(0px); transform-origin: 0% 50% 0px;">
-<div class="framer-nY4t9 framer-U7nXG framer-GCbO0 framer-v4Ho6 framer-m4uf0 framer-iD2oA framer-76lCS framer-a7KBf framer-64Pbd framer-RHJCM framer-WTMSF framer-v-levn9e" style="display:contents" tabindex="0"><a name="TT Project" class="framer-levn9e framer-162ocid" data-border="true" style="--border-bottom-width: 2px; --border-color: rgb(50, 68, 64); --border-left-width: 2px; --border-right-width: 2px; --border-style: solid; --border-top-width: 2px; height: 100%; width: 100%; opacity: 1; border-radius: 16px; box-shadow: rgb(44, 59, 56) -3px 3px 0px 0px;" href="https://www.techtower.cz/" target="_blank" rel="noopener" data-framer-name="Variant 1">
-<div class="framer-1k392yb" data-framer-name="Variant 2" style="opacity: 1; border-radius: 16px;">
-<div style="position:absolute;border-radius:inherit;top:0;right:0;bottom:0;left:0" data-framer-background-image-wrapper="true"><img decoding="async" sizes="min(573px, 100vw)" srcset="https://framerusercontent.com/images/q40gXKYvWwcdEzeprerXLyAQvig.jpg?scale-down-to=512 512w,https://framerusercontent.com/images/q40gXKYvWwcdEzeprerXLyAQvig.jpg?scale-down-to=1024 1024w,https://framerusercontent.com/images/q40gXKYvWwcdEzeprerXLyAQvig.jpg 1600w" src="https://framerusercontent.com/images/q40gXKYvWwcdEzeprerXLyAQvig.jpg" alt="" style="display:block;width:100%;height:100%;border-radius:inherit;object-position:center;object-fit:cover;image-rendering:auto"></div>
-<div class="framer-ec4d8i" style="transform: none; transform-origin: 50% 50% 0px;">
-<div class="framer-1dq5yaq" style="transform: none; transform-origin: 50% 50% 0px;">
-<div class="framer-rcbmxa" data-border="true" style="--border-bottom-width: 2px; --border-color: var(--token-230d5865-b725-480b-a9d9-ed0dd5214ffc, rgb(44, 59, 56)); --border-left-width: 2px; --border-right-width: 2px; --border-style: solid; --border-top-width: 2px; background-color: rgb(255, 255, 255); border-radius: 64px; box-shadow: -3px 3px 0px 0px var(--token-230d5865-b725-480b-a9d9-ed0dd5214ffc, rgb(44, 59, 56)); transform: none; transform-origin: 50% 50% 0px;">
-<div class="framer-11qgkv8" style="transform: none; transform-origin: 50% 50% 0px;">
-<div style="position:absolute;border-radius:inherit;top:0;right:0;bottom:0;left:0" data-framer-background-image-wrapper="true"><img decoding="async" sizes="56px" src="https://framerusercontent.com/images/peB1NJbGkZ1kQB1vDAgTERQgWo.svg" alt="" style="display:block;width:100%;height:100%;border-radius:inherit;object-position:center;object-fit:contain;image-rendering:auto">
-</div>
-</div>
-</div>
-<div class="framer-1uvvfeh" style="outline: none; display: flex; flex-direction: column; justify-content: flex-start; flex-shrink: 0; --extracted-r6o4lv: var(--token-7b874939-b701-4605-9d1c-76343f93345e, rgb(255, 255, 255)); --framer-link-text-color: rgb(0, 153, 255); --framer-link-text-decoration: underline; --framer-paragraph-spacing: 0px; text-shadow: rgb(44, 59, 56) -2px 0px, rgb(44, 59, 56) 0px 2px, rgb(44, 59, 56) 2px 0px, rgb(44, 59, 56) 0px -2px, rgb(44, 59, 56) -6px 6px 0px; transform: none; transform-origin: 50% 50% 0px;" data-framer-component-type="RichTextContainer"><h3 class="framer-text framer-styles-preset-1c9ekpb"><strong class="framer-text">WEB REDESIGN OF THE BEST COWORKING IN PILSEN</strong></h3>
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div> */
-
 .SliderShow .rightSlide2 {
   /* transform: rotateY(-65deg); Rotation sur l'axe Y pour la slide à droite */
   z-index: 5; /* Z-index plus bas pour les slides à droite */

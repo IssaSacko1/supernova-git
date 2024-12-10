@@ -60,6 +60,7 @@ function Menu() {
             groupedData.position3.push(item);
           }
         });
+        console.log(groupedData)
         setpositionsData(groupedData);
       } catch (error) {
         console.error('Erreur lors de la récupération des données:', error);

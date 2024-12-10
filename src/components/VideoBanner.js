@@ -1,28 +1,31 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef, useState } from 'react';
 
-function VideoBanner({ banner, isLoading }) {
+const VideoBanner = ({ banner }) => {
   const videoRef = useRef(null);
+  const [isMuted, setIsMuted] = useState(true);
 
-  useEffect(() => {
-    if (!isLoading && banner) {
-      videoRef.current.play();
+  const toggleSound = () => {
+    if (videoRef.current) {
+      const newMutedState = !isMuted;
+      videoRef.current.muted = newMutedState;
+      setIsMuted(newMutedState);
     }
-  }, [isLoading, banner]);
-
-    // Si la bannière n'est pas encore chargée, retournez null ou un indicateur de chargement.
-    if (!banner) {
-      return null; // ou retournez un indicateur de chargement comme un spinner.
-    }
+  };
 
   return (
     <div className="video-container">
-      <video ref={videoRef} src={banner.videoSrc} loop muted preload="auto" />
+      <video ref={videoRef} src={banner.videoSrc} loop muted={isMuted} preload="auto" />
       <div className="title">{banner.title}</div>
       <div className="text">
         <p>{banner.description}</p>
       </div>
+      <div className='soundbutton'>
+        <button onClick={toggleSound}>
+          {isMuted ? 'Activer le son' : 'Couper le son'}
+        </button>
+      </div>
     </div>
   );
-}
+};
 
 export default VideoBanner;
