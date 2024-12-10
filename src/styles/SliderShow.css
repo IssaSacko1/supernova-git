@@ -2,61 +2,170 @@
 @import "~slick-carousel/slick/slick-theme.css";
 
 .SliderShow {
-  width: 100%;
-  margin: 10rem auto;
-  height: 570px;
+  /* height: 80%; */
+  perspective: 600px; /* Définir la perspective 3D */
+  padding-top: 10%;
+  overflow: visible; /* Permet à l'élément de ne pas être coupé */
+  padding-top: 200px; /* Ajoutez une marge pour éviter la coupure */
+  height: 20%;
+} 
+
+
+
+.slick-slide {
+  flex: 1 0 auto;
+  width: auto; /* S'assure que les slides prennent leur taille correcte */
+}
+
+.slick-list {
+  overflow: hidden;
+}
+
+.SliderShow .slide {
+  position: relative;
+  transition: transform 1s; /* Transition fluide pour la rotation */
+  opacity: 1; /* Opacité réduite pour les slides non actives */
   perspective: 1200px;
+
+
 
 }
 
 .SliderShow .slide img {
-  width: 20rem;
-  margin: 0 auto;
-}
-
-.SliderShow .slide {
-  transform: scale(0.2);
-  transition: transform 300ms;
-  opacity: 0.5;
+  width: 150%; /* Largeur de l'image */
+  margin: auto; /* Centrer l'image */
+  filter: brightness(50%);  /* Réduit la luminosité de l'image */
+  border-width: 2px;
+  border-radius: 2%;
+  box-shadow: 0 20px 50px rgba(82, 61, 61, 0.3);
 }
 
 .SliderShow .activeSlide {
-  transform: scale(1.1);
-  opacity: 1;
+  opacity: 1; /* Rendre la slide active entièrement opaque */
+  z-index: 10; /* Placer la slide active devant les autres */
+  /* transform: scale(.8); */
+  height: 100%;
 }
 
+/* Effet de rotation 3D pour la slide gauche */
+.SliderShow .leftSlide {
+  /* transform: rotateY(45deg); Rotation sur l'axe Y pour la slide à gauche */
+  z-index: 5; /* Z-index plus bas pour les slides à gauche */
+  opacity: 1; /* Moins opaque que l'élément actif */
+  /* border: 2px solid white; Bordure pour la slide gauche */
+    /* transform: rotateY(50deg); */
+    /* transform-origin: left 0%;
+    transform: skewY(-3deg) scale(0.7) translateY(35px); Inclinaison suivie d'une réduction d'échelle */
+
+}
+
+.SliderShow .leftSlide2 {
+  /* transform: rotateY(45deg); Rotation sur l'axe Y pour la slide à gauche */
+  z-index: 5; /* Z-index plus bas pour les slides à gauche */
+  opacity: 1; /* Moins opaque que l'élément actif */
+  /* border: 2px solid white; Bordure pour la slide gauche */
+    /* transform: rotateY(50deg); */
+    /* transform-origin: left 0%;
+    transform: skewY(-5deg) scale(0.7) translateY(50px); Inclinaison suivie d'une réduction d'échelle */
+
+}
+
+/* Effet de rotation 3D pour la slide droite */
+.SliderShow .rightSlide {
+  /* transform: rotateY(-65deg); Rotation sur l'axe Y pour la slide à droite */
+  z-index: 5; /* Z-index plus bas pour les slides à droite */
+  opacity: 1; /* Moins opaque que l'élément actif */
+  /* border: 2px solid white; Bordure pour la slide droite */
+  /* transform-origin: 100% right;
+  transform: skewY(3deg) scale(0.7) translateY(5px); Inclinaison suivie d'une réduction d'échelle */
+}
+
+.SliderShow .rightSlide2 {
+  /* transform: rotateY(-65deg); Rotation sur l'axe Y pour la slide à droite */
+  z-index: 5; /* Z-index plus bas pour les slides à droite */
+  opacity: 1; /* Moins opaque que l'élément actif */
+  /* border: 2px solid white; Bordure pour la slide droite */
+  /* transform-origin: 100% right;
+  transform: skewY(5deg) scale(.7) translateY(25px) ; Inclinaison suivie d'une réduction d'échelle */
+}
+
+/* Effet au survol de la flèche (pour naviguer) */
 .SliderShow .arrow {
-  background-color: #fff;
+  background-color: black; /* Fond noir */
   position: absolute;
   cursor: pointer;
   z-index: 10;
+  font-size: 2.5rem; /* Taille de l'icône de la flèche */
+  width: 3vw; /* Largeur du cercle */
+  height: 6vh; /* Hauteur du cercle */
+  border-radius: 50%; /* Pour rendre le fond circulaire */
+  color: whitesmoke; /* Couleur de la flèche */
+  display: flex; /* Permet de centrer l'icône */
+  align-items: center; /* Aligne verticalement */
+  justify-content: center; /* Aligne horizontalement */
+  transition: background-color 0.3s ease; /* Transition pour l'effet hover */
 }
 
 .SliderShow .arrow svg {
   transition: color 300ms;
 }
 
-.SliderShow .arrow svg:hover {
-  color: #68edff;
-}
 
 .SliderShow .next {
-  right: 0%;
+  right: 32.5%;
   top: 50%;
+  transform: translateY(-50%);
 }
 
 .SliderShow .prev {
-  left: 0%;
+  left: 32.5%;
   top: 50%;
+  transform: translateY(-50%);
 }
 
-.SliderShow .leftSlide {
-    transform: translateX(10%) rotateY(15deg);
-    z-index: 5;
+.SliderShow .slide-info {
+  position: absolute;
+  bottom: 3vh; /* Positionner le texte 10px au-dessus du bas */
+  left: 25px; /* Positionner le texte 10px à gauche */
+  right: 10px; /* 10px de marge à droite */
+  padding: 10px;
+  color: white;
+  font-size: 20px;
+  text-align: left; /* Alignement à gauche */
+  transition: transform 0.5s ease-in-out; /* Transition fluide lors du hover */
+  width: 70%;
 }
-  
-.SliderShow .rightSlide {
-    transform: translateX(10%) rotateY(-15deg);
-    z-index: 5;
-    background-color: red;
+
+.SliderShow .slide:hover .slide-info {
+  transform: translateY(-40vh); /* Fait remonter le texte de 20px lorsqu'on survole la slide */
 }
+
+.SliderShow .slide-info h3 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.SliderShow .slide-info p {
+  margin: 2vh 0px 5vh 0;
+  font-size: 1.5rem;
+}
+
+.SliderShow .slider-show-button {
+  opacity: 0;
+  border: 1px solid white; /* Bordure fine blanche */
+  border-radius: 5px; /* Coins arrondis */
+  padding: 1vh 2vw; /* Espacement interne */
+  text-decoration: none;
+  color: white; /* Texte blanc */
+}
+
+.SliderShow .slide:hover .slider-show-button {
+  opacity: 1; /* Rendre l'ancre visible */
+  margin-top: 5px;
+}
+
+/* .SliderShow .rightSlide {
+  transform: rotateY(-50deg);
+} */
+
+

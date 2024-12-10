@@ -16,7 +16,7 @@ const Services = () => {
   });
 
   useEffect(() => {
-    axios.get('http://localhost/supernova-backend/serveur///wp-json/wp/v2/pages/140')
+    axios.get('http://20.117.242.154/supernova_backend/supernova-backend/serveur/index.php//wp-json/wp/v2/pages/140')
       .then(response => {
         const htmlContent = response.data.content.rendered;
         const extractedData = extractData(htmlContent);
@@ -98,8 +98,9 @@ const Services = () => {
   return (
     <div className="services-header">
       {/* Partie 1: Bannière */}
+      <div className='about-us-header'>
       <VideoBanner banner={banner} />
-      
+      </div>
       {/* Partie 2: Équipe */}
       <div className='about_us_content'>
         <h1>Notre équipe</h1>

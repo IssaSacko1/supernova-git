@@ -62,7 +62,7 @@ const VideoComponent = ({ selectedProjectUrl }) => {
     const loadData = async () => {
       try {
         const storedData = parseInt(localStorage.getItem('pageId'), 10); // Convertir la chaîne en entier
-          const response = await axios.get('http://localhost/supernova-backend/serveur///wp-json/wp/v2/pages/'+storedData);
+          const response = await axios.get('http://20.117.242.154/supernova_backend/supernova-backend/serveur/index.php//wp-json/wp/v2/pages/'+storedData);
           const htmlContent = response.data.content.rendered; // Assurez-vous que cela correspond à la structure des données de la réponse
           const extractedData = extractData(htmlContent);
           setData(extractedData);
@@ -91,11 +91,14 @@ const VideoComponent = ({ selectedProjectUrl }) => {
 
   return (
     <div className='project-detail'>
+      <a className='back-to-project' href='/projets'>retour aux projets</a>
       <div className="project-detail-container">
         <h1 className="project-title">{data.title}</h1>
         <p className="project-description">{data.reward}</p>
+        <div className='project-detail-item'>
         <p className="project-sous-description">Client <span className='project-client'>{data.title}</span></p>
         <video className="project-video" controls src={data.video} onError={(e) => console.error('Erreur lors du chargement de la vidéo', e)}/>
+        </div>
         <div className='recompenses'>
           <div className='recompense-image'>
             {data.galleries.length > 0 && data.galleries[0][0] && (

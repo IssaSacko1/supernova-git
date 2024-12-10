@@ -56,14 +56,14 @@
 
 /* Styles pour une vidéo par ligne sur mobile */
 @media (max-width: 767px) {
-  .video-container {
+  .projet .video-container {
     width: calc(100% - 20px); /* Pleine largeur pour une vidéo par ligne sur mobile */
   }
 }
 
-.video-container .hover-title {
+.projet .video-container .hover-title {
   position: absolute;
-  top: 14.5vh; /* Ajustez cette valeur selon vos besoins */
+  top: 15vh; /* Ajustez cette valeur selon vos besoins */
   left: 50%;
   transform: translateX(-50%);
   text-transform: uppercase;
@@ -73,13 +73,11 @@
   width: 100%;
 }
 
-.video-container .hover-text {
+.projet .video-container .hover-text {
   position: absolute;
-  bottom: 14.5vh; /* Ajustez cette valeur selon vos besoins */
   left: 50%;
   transform: translateX(-50%);
   color: #fff;
-  font-size: 1.20rem; /* Taille de police pour le texte */
 }
 
 /* Styles pour une vidéo par ligne sur mobile */
@@ -87,5 +85,66 @@
   .projet .video-container {
     width: 90%; /* Pleine largeur pour une vidéo par ligne sur mobile */
     max-width: 100%; /* Assure que la vidéo occupe tout l'espace disponible */
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1441px) {
+  .projet .video-container .hover-text {
+    bottom: 20vh;
+}
+.projet .video-container .hover-title {
+    top: 13vh;
+}
+  
+}
+
+/* Pour les écrans d'ordinateur de bureau (>= 1200px) */
+@media (min-width: 1442px) {
+  .projet .video-container .hover-text {
+    font-size: 1.2rem; /* Taille de police pour le texte */
+
+      bottom: 14vh;
+  }
+  .projet .video-container .hover-title {
+      top: 14vh;
+      font-size: 1.4rem; /* Taille de police pour le texte */
+
+  }
+}
+
+/* Pour les ordinateurs portables (entre 992px et 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .projet .video-container .hover-text {
+      bottom: 14vh;
+      font-size: .8rem;
+
+  }
+  .projet .video-container .hover-title {
+    font-size: 1rem;
+      top: 14vh;
+  }
+}
+
+/* Pour les tablettes (entre 768px et 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .projet .video-container .hover-text {
+    bottom: 16vh;
+    font-size: .4rem;
+    }
+  .projet .video-container .hover-title {
+    font-size: .6rem;
+      top: 16vh;
+      }
+}
+
+/* Pour les téléphones (moins de 768px) */
+@media (max-width: 767px) {
+  .projet .video-container .hover-text {
+      bottom: 10vh;
+      font-size: 1rem;
+  }
+  .projet .video-container .hover-title {
+      top: 11vh;
+      font-size: .9rem;
   }
 }

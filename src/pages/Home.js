@@ -25,7 +25,7 @@ function Home() {
 
     async function fetchHomePageContent() {
       try {
-        const response = await axios.get('http://localhost/supernova-backend/serveur//wp-json/wp/v2/pages/73');
+        const response = await axios.get('http://20.117.242.154/supernova_backend/supernova-backend/serveur/index.php/wp-json/wp/v2/pages/73');
         const data = parseWordpressContent(response.data.content.rendered);
 
         const IntroComponentContent = filterByFigcaption(data, 'IntroComponent');
@@ -120,9 +120,9 @@ function Home() {
       <div className="scroller">
         <IntroComponent />
         <div id="section-1" className="section-1">
-        <SliderShow />
           <h3>Nos derniers projets</h3>
-          <SliderComponent images={videos} />
+          <SliderShow />
+          {/* <SliderComponent images={videos} /> */}
           <div className='homeButton'>
           <a href="/projets" className="view-all-link">{Section1Button}</a>
         </div>
