@@ -2,12 +2,9 @@
 @import "~slick-carousel/slick/slick-theme.css";
 
 .SliderShow {
-  /* height: 80%; */
-  padding-top: 1%;
   overflow: visible; /* Permet à l'élément de ne pas être coupé */
-  padding-bottom: 1510px;
   transform-style: preserve-3d;
-  gap: 33px;
+  height: 60%;
 } 
 
 
@@ -26,7 +23,6 @@
   --border-right-width: 2px;
   --border-style: solid;
   --border-top-width: 2px;
-  height: 100%;
   width: 100%;
   opacity: 1;
   border-radius: 16px;
@@ -48,7 +44,6 @@
   opacity: 1; /* Rendre la slide active entièrement opaque */
   z-index: 10; /* Placer la slide active devant les autres */
   transform: scale(.9);
-  height: 100%;
 }
 
 /* Effet de rotation 3D pour la slide gauche */
@@ -91,29 +86,6 @@
   transform: perspective(1200px) rotateY(-30deg) scale(0.7) translateX(110px); /* Inclinaison suivie d'une réduction d'échelle */
 }
 
-.framer-1hxpz8w .framer-146cc4w {
-  align-items: center;
-  display: flex;
-  flex: none;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  gap: 0px;
-  height: min-content;
-  justify-content: flex-start;
-  overflow: visible;
-  padding: 40px;
-  position: relative;
-  width: 100%;
-
-}
-
-.framer-khsv2 .framer-bp82ww-container {
-  flex: none;
-  height: 65vh;
-  position: relative;
-  width: 479px;
-  perspective: 1279px;
-}
 
 .SliderShow .rightSlide2 {
   /* transform: rotateY(-65deg); Rotation sur l'axe Y pour la slide à droite */
@@ -130,9 +102,9 @@
   position: absolute;
   cursor: pointer;
   z-index: 10;
-  font-size: 2.5rem; /* Taille de l'icône de la flèche */
-  width: 3vw; /* Largeur du cercle */
-  height: 6vh; /* Hauteur du cercle */
+  font-size: 1.5rem; /* Taille de l'icône de la flèche */
+  width: 4.5vw; /* Largeur du cercle */
+  height: 9vh; /* Hauteur du cercle */
   border-radius: 50%; /* Pour rendre le fond circulaire */
   color: whitesmoke; /* Couleur de la flèche */
   display: flex; /* Permet de centrer l'icône */
@@ -147,13 +119,13 @@
 
 
 .SliderShow .next {
-  right: 34%;
+  right: 33%;
   top: 50%;
   transform: translateY(-50%);
 }
 
 .SliderShow .prev {
-  left: 34%;
+  left: 33%;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -200,5 +172,96 @@
 /* .SliderShow .rightSlide {
   transform: rotateY(-50deg);
 } */
+
+@media (min-width: 1442px) {
+
+}
+
+
+@media (min-width: 1200px) and (max-width: 1441px) {
+  .section-1 {
+    height: 90vh;
+  }
+  .SliderShow .slide:hover .slide-info {
+    transform: translateY(-10vh);
+  }
+
+  .SliderShow .activeSlide { 
+    transform: scale(.65) translateY(-100px);
+  }
+  .SliderShow .leftSlide { 
+    transform: perspective(1200px) rotateY(30deg) translateX(100px) scale(.6) translateY(-100px);
+    }
+
+  .SliderShow .rightSlide {
+    transform: perspective(1200px) rotateY(-30deg) translateX(-100px) scale(.6) translateY(-100px);
+  }  
+
+  .SliderShow .next {
+    right: 27%;
+    top: 40%;
+    transform: translateY(-50%);
+
+  }
+
+  .SliderShow .prev {
+    left: 27%;
+    top: 40%;
+    transform: translateY(-50%);
+
+  }
+
+}
+
+
+/* Pour les ordinateurs portables (entre 992px et 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+
+  .SliderShow .slide:hover .slide-info {
+    transform: translateY(-5vh);
+  }
+
+  .SliderShow .next {
+    right: 17%;
+    top: 50%;
+    transform: translateY(-50%);
+
+  }
+
+  .SliderShow .prev {
+    left: 17%;
+    top: 50%;
+    transform: translateY(-50%);
+
+  }
+}
+
+/* Pour les tablettes (entre 768px et 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+
+  .SliderShow .next {
+    right: 0%;
+    top: 50%;
+    transform: translateY(-50%);
+
+  }
+
+  .SliderShow .prev {
+    left: 17%;
+    top: 50%;
+    transform: translateY(-50%);
+
+  }
+
+
+}
+
+/* Pour les téléphones (moins de 768px) */
+@media (max-width: 767px) {
+  .SliderShow .slide:hover .slide-info {
+    transform: translateY(-500vh);
+  }
+
+}
 
 

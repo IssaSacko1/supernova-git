@@ -532,10 +532,11 @@
   border-radius: 2.604vw;
   padding: .938vw 1.979vw 1.25vw;
   width: 20%;
+  height: 100%;
   transition: .7s cubic-bezier(.165,.84,.44,1);
   text-transform: uppercase;
   position: relative;
-  bottom: 1500px;
+  top: auto;
 }
 
 .section-1 {
@@ -700,4 +701,32 @@ h4 {
   margin-top: 6vh;
 }
 
+
+/* Pour les écrans d'ordinateur de bureau (>= 1200px) */
+@media (min-width: 1442px) {
+
+}
+
+
+@media (min-width: 1200px) and (max-width: 1441px) {
+  .section-1 {
+    height: 75vh;
+  }
+}
+
+
+/* Pour les ordinateurs portables (entre 992px et 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+/* Pour les tablettes (entre 768px et 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+
+/* Pour les téléphones (moins de 768px) */
+@media (max-width: 767px) {
+
+}
 

@@ -7,7 +7,7 @@ import education from "../image/GROUPEGRISONI_16x9.png";
 import taken from "../image/VERTIGO_VERTIGE_16x9.png";
 import edutionbis from "../image/education.png";
 import { FaArrowRight, FaArrowLeft, FaArrowUp } from "react-icons/fa";
-
+import React from 'react'; 
 const images = [
   {
     src: astronaut,
@@ -70,6 +70,33 @@ function SliderShow() {
     beforeChange: (current, next) => setImageIndex(next),
     autoplay:true,
     autoplaySpeed :3500,
+    responsive: [
+      {
+        breakpoint: 1441,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerPadding: "20%", // Montre 50% des slides aux extrémités
+          centerMode: true,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
   };
   
 

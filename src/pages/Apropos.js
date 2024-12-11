@@ -7,7 +7,7 @@ import '../styles/Employee.css';
 import '../styles/about_us.css'
 import PreFooter from '../components/PreFooter';
 
-const Services = () => {
+const Apropos = () => {
   const [teams, setTeams] = useState([]);
   const [data, setData] = useState({
     banner: null,
@@ -116,4 +116,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default Apropos;

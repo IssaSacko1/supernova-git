@@ -1,31 +1,45 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { FaVolumeMute, FaVolumeUp } from 'react-icons/fa';
+import '../styles/VideoBanner.css';
 
-const VideoBanner = ({ banner }) => {
+
+function VideoBanner({ banner, isLoading }) {
   const videoRef = useRef(null);
   const [isMuted, setIsMuted] = useState(true);
 
-  const toggleSound = () => {
-    if (videoRef.current) {
-      const newMutedState = !isMuted;
-      videoRef.current.muted = newMutedState;
-      setIsMuted(newMutedState);
+  useEffect(() => {
+    if (!isLoading && banner) {
+      videoRef.current.play();
     }
-  };
+  }, [isLoading, banner]);
+
+    // Si la bannière n'est pas encore chargée, retournez null ou un indicateur de chargement.
+    if (!banner) {
+      return null; // ou retournez un indicateur de chargement comme un spinner.
+    }
+
+    const toggleSound = () => {
+      if (videoRef.current) {
+        const newMutedState = !isMuted;
+        videoRef.current.muted = newMutedState;
+        setIsMuted(newMutedState);
+      }
+    };
 
   return (
     <div className="video-container">
-      <video ref={videoRef} src={banner.videoSrc} loop muted={isMuted} preload="auto" />
+      <video ref={videoRef} src={banner.videoSrc} loop muted preload="auto" />
       <div className="title">{banner.title}</div>
       <div className="text">
         <p>{banner.description}</p>
       </div>
       <div className='soundbutton'>
         <button onClick={toggleSound}>
-          {isMuted ? 'Activer le son' : 'Couper le son'}
+        {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
         </button>
       </div>
     </div>
   );
-};
+}
 
 export default VideoBanner;
