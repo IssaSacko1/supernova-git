@@ -68,6 +68,7 @@ nav li {
 }
 
 .contact {
+  width: 30%;
   color: white;
 }
 
@@ -109,12 +110,13 @@ nav li {
 
 
 nav .reseaux {
+  width: 30%;
   position: relative;
   display: flex;
   gap: 50px;
   justify-content: center; /* Centre horizontalement */
-  align-items: center; /* Aligne verticalement si nécessaire */
-  bottom: 20px;
+  align-items:flex-end; /* Aligne verticalement si nécessaire */
+  margin:  0 auto;
 }
 
 
@@ -212,15 +214,20 @@ nav .reseaux {
 
 .menu-item {
   padding-bottom: 5vh;
+  width: 30%;
 }
 .contentPopup{
-  width: 80%;
-  margin: 10vh auto 0 auto;
-  height: 70%;
+  display: flex;
+  width: 90%;
+  margin:  0 auto;
+  height: 80%;
 }
 
 .contact {
-  padding-bottom: 5vh;
+  display: flex;
+  justify-content: center;
+  margin:  0 auto;
+  align-items:flex-end; /* Aligne verticalement si nécessaire */
 }
 
 .menu-item a {

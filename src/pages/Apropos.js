@@ -101,6 +101,8 @@ const Apropos = () => {
       <div className='about-us-header'>
       <VideoBanner banner={banner} />
       </div>
+      <h1>La genèse de SUPERNOVA.</h1>
+      <p>{banner.description}</p>
       {/* Partie 2: Équipe */}
       <div className='about_us_content'>
         <h1>Notre équipe</h1>

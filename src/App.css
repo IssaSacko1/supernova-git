@@ -1,22 +1,22 @@
 .App {
   text-align: center;
-  font-family: 'Arial Narrow';
+  font-family: 'Dubai Medium';
 }
 
 h1, h2 {
-  font-family: 'Arial Narrow';
+  font-family: 'LEMONMILK Bold';
   font-size: bolder;
 }
 
 h3,h4 {
-  font-family: 'Arial Narrow';
+  font-family: 'Dubai Medium';
 }
 p{
-  font-family: 'Arial Narrow';
+  font-family: 'Dubai Medium';
 }
 
 a{
-  font-family: 'Arial Narrow';
+  font-family: 'Dubai Medium';
 
 }
 
@@ -96,6 +96,20 @@ body::-webkit-scrollbar-thumb {
  @font-face {
   font-family: 'LEMONMILK Bold Italic';
   src: url('./styles/polices/LEMONMILK-BoldItalic.otf') format('truetype'); /* Spécifiez le chemin relatif vers le fichier de police */
+ }
+
+ @font-face {
+  font-family: 'Dubai Medium';
+  src: url('./styles/polices/Dubai-Medium.ttf') format('truetype'); /* Spécifiez le chemin relatif vers le fichier de police */
+ }
+
+ @font-face {
+  font-family: 'Dubai Light';
+  src: url('./styles/polices/Dubai-Light.ttf') format('truetype'); /* Spécifiez le chemin relatif vers le fichier de police */
+ }
+ @font-face {
+  font-family: 'Dubai Regular';
+  src: url('./styles/polices/Dubai-Regular.ttf') format('truetype'); /* Spécifiez le chemin relatif vers le fichier de police */
  }
 
  @font-face {

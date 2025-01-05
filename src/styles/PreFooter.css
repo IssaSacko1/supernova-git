@@ -2,7 +2,6 @@
   display: flex;                /* Utiliser flexbox pour aligner les éléments horizontalement */
   overflow-x: auto;            /* Permet le défilement horizontal si le contenu dépasse la largeur */
   padding-top: 10%;               /* Espacement interne */
-  background-color: #f8f8f8;   /* Couleur de fond pour le pré-footer */
 }
 
 .pre-footer-item {

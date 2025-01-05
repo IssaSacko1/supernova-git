@@ -5,7 +5,7 @@
 }
 
 .employee img {
-  width: 95%;
+  width: 75%;
 }
 
 
@@ -23,7 +23,7 @@
 .employees-list p {
   margin-top: 0px;
   font-size: 1.25rem;
-  color: #555;
+  color: white;
 }
 
 .employees-list h3 {
@@ -33,7 +33,7 @@
 
 /* Additional Content Styles */
 .about_us_content {
-  background-color: whitesmoke;
+  color: white;
 }
 
 /* Responsiveness */

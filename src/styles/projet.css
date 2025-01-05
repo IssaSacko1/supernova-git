@@ -23,6 +23,7 @@
   margin-bottom: 0; /* Supprimer la marge en bas */
   margin-top: 0;
   height: 38vh; /* Ajustez la hauteur selon vos besoins */
+  cursor: pointer;
 }
 
 .projet .video-container video,

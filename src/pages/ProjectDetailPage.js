@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { parse } from 'node-html-parser';
 import '../styles/project-detail.css';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import Box from '@mui/material/Box';
 
 const VideoComponent = ({ selectedProjectUrl }) => {
   const [data, setData] = useState({
@@ -89,15 +92,23 @@ const VideoComponent = ({ selectedProjectUrl }) => {
     }
   };
 
+
   return (
     <div className='project-detail'>
       <a className='back-to-project' href='/projets'>retour aux projets</a>
       <div className="project-detail-container">
+      <Box sx={{ width: '100%', bgcolor: 'background.paper' }}>
+      <Tabs value={"valuevalue"}  centered>
+        <Tab label="Item One" />
+        <Tab label="Item Two" />
+        <Tab label="Item Three" />
+      </Tabs>
+    </Box>
         <h1 className="project-title">{data.title}</h1>
         <p className="project-description">{data.reward}</p>
         <div className='project-detail-item'>
         <p className="project-sous-description">Client <span className='project-client'>{data.title}</span></p>
-        <video className="project-video" controls src={data.video} onError={(e) => console.error('Erreur lors du chargement de la vidéo', e)}/>
+        <iframe className="project-video" controls src={data.video} onError={(e) => console.error('Erreur lors du chargement de la vidéo', e)}/>
         </div>
         <div className='recompenses'>
           <div className='recompense-image'>

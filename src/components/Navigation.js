@@ -88,6 +88,11 @@ function Menu() {
       {showPopup && (
       <div className={`popup ${showPopup ? 'slide-in' : 'slide-out'}`}>
        <div className='contentPopup'>
+       <div className='reseaux'>
+                <a href={positionsData.position3[0].url}><img src={vimeo}  alt="YouTube" /></a>
+                <a href={positionsData.position3[1].url}><img src={instagram}  alt="Instagram" /></a>
+                <a href={positionsData.position3[2].url}><img src={linkedin}  alt="linkedin" /></a>
+            </div>
         <div className='menu-item'>
        <ul>
             {positionsData.position1.map((item, index) => (
@@ -111,11 +116,6 @@ function Menu() {
                 </li>
               </ul>
             ))}
-            </div>
-            <div className='reseaux'>
-                <a href={positionsData.position3[0].url}><img src={vimeo}  alt="YouTube" /></a>
-                <a href={positionsData.position3[1].url}><img src={instagram}  alt="Instagram" /></a>
-                <a href={positionsData.position3[2].url}><img src={linkedin}  alt="linkedin" /></a>
             </div>
           </div>
         </div>
