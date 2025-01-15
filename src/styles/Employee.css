@@ -8,6 +8,21 @@
   width: 75%;
 }
 
+.social-network {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-network img{
+width: 50px;
+}
+
+.social-network img:hover{
+  transform: scale(1.1);
+  transition: 0.35s ease-in-out;
+  }
 
 /* Employees List Styles */
 .employees-list {

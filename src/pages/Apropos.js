@@ -93,6 +93,21 @@ const Apropos = () => {
     return { banner, team, preFooter };
   };
 
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://static.elfsight.com/platform/platform.js';
+    script.async = true;
+    script.onload = () => {
+      if (window.ElfsightApp) {
+        window.ElfsightApp.init();
+      }
+    };
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
   const { banner, preFooter } = data;
 
   return (
@@ -102,7 +117,7 @@ const Apropos = () => {
       <VideoBanner banner={banner} />
       </div>
       <h1>La genèse de SUPERNOVA.</h1>
-      <p>{banner.description}</p>
+      {/* <p>{banner.description}</p> */}
       {/* Partie 2: Équipe */}
       <div className='about_us_content'>
         <h1>Notre équipe</h1>
@@ -113,7 +128,8 @@ const Apropos = () => {
         </div>
       </div>
       {/* Partie 3: Pré-footer */}
-      <PreFooter items={preFooter} /> {/* Utilisation du composant */}
+      {/* <PreFooter items={preFooter} /> Utilisation du composant */}
+      <div className="elfsight-app-d7cb6062-6988-4e34-9934-d272767d23e1" data-elfsight-app-lazy></div>
     </div>
   );
 };

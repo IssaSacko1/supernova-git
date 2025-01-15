@@ -157,6 +157,13 @@ nav .reseaux {
   margin-top: 3vh;
 }
 
+.popup ul {
+  margin-bottom: 0px;
+}
+.popup p {
+  margin-bottom: 0px;
+}
+
  .popup ul li a {
   color: white; /* Lorsque non survolé, non actif, la couleur devient grise */
 } 

@@ -2,9 +2,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { parse } from 'node-html-parser';
 import '../styles/project-detail.css';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Box from '@mui/material/Box';
+import image from '../image/Vignette2.jpg';
+
 
 const VideoComponent = ({ selectedProjectUrl }) => {
   const [data, setData] = useState({
@@ -91,62 +90,61 @@ const VideoComponent = ({ selectedProjectUrl }) => {
       return '100%'; // Valeur par défaut si l'index ne correspond à aucun cas
     }
   };
+  const [activeTab, setActiveTab] = useState('photo'); // Default active tab
 
+  const handleTabClick = (tab) => {
+    setActiveTab(tab);
+  };
 
   return (
     <div className='project-detail'>
-      <a className='back-to-project' href='/projets'>retour aux projets</a>
-      <div className="project-detail-container">
-      <Box sx={{ width: '100%', bgcolor: 'background.paper' }}>
-      <Tabs value={"valuevalue"}  centered>
-        <Tab label="Item One" />
-        <Tab label="Item Two" />
-        <Tab label="Item Three" />
-      </Tabs>
-    </Box>
-        <h1 className="project-title">{data.title}</h1>
-        <p className="project-description">{data.reward}</p>
-        <div className='project-detail-item'>
-        <p className="project-sous-description">Client <span className='project-client'>{data.title}</span></p>
-        <iframe className="project-video" controls src={data.video} onError={(e) => console.error('Erreur lors du chargement de la vidéo', e)}/>
-        </div>
-        <div className='recompenses'>
-          <div className='recompense-image'>
-            {data.galleries.length > 0 && data.galleries[0][0] && (
-              <div className="add-recompense-image">
-                <img src={data.galleries[0][0]} alt={data.title} />
-              </div>
-            )}
-          </div>
-          {/* Affichage des sections de récompenses */}
-          {data.sections.map((section, index) => (
-            <div key={index}>
-              <h2>{section.title}</h2>
-              <div className="content-recompense">
-                <ul>
-                  {section.items.map((item, i) => (
-                    <li key={i}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          ))}
-        </div>
+      <div className='banner'>
+        <img src={image}/>
+        <div className='title'><h1>{data.title}</h1></div>
       </div>
-
-      <div className="additional_images">
-        {data.galleries.map((gallery, galleryIndex) => (
-          <div key={galleryIndex} className="gallery">
-            {gallery.map((imgSrc, imgIndex) => (
-              <img
-                key={imgIndex}
-                src={imgSrc}
-                alt={`Gallery Image ${imgIndex + 1}`}
-                style={{ width: getWidthByIndex(imgIndex), height: 'auto' }}
-              />
-            ))}
-          </div>
-        ))}
+      <div className='container'>
+      <ul className="nav nav-tabs" id="myTab">
+      <li className="nav-item">
+        <a
+          className={`nav-link ${activeTab === 'photo' ? 'active' : ''}`}
+          id="photo-tab"
+          href="#photo"
+          onClick={() => handleTabClick('photo')}
+        >
+          Photo
+        </a>
+      </li>
+      <li className="nav-item">
+        <a
+          className={`nav-link ${activeTab === 'video' ? 'active' : ''}`}
+          id="video-tab"
+          href="#video"
+          onClick={() => handleTabClick('video')}
+        >
+          Video
+        </a>
+      </li>
+      <li className="nav-item">
+        <a
+          className={`nav-link ${activeTab === 'social' ? 'active' : ''}`}
+          id="social-tab"
+          href="#social"
+          onClick={() => handleTabClick('social')}
+        >
+          Social Network
+        </a>
+      </li>
+      <li className="nav-item">
+        <a
+          className={`nav-link ${activeTab === 'credits' ? 'active' : ''}`}
+          id="credits-tab"
+          href="#credits"
+          onClick={() => handleTabClick('credits')}
+        >
+          Credits
+        </a>
+      </li>
+    </ul>
       </div>
     </div>
   );

@@ -1,4 +1,71 @@
 /* CSS pour la page ProjectDetail */
+.project-detail .banner {
+  position: relative;
+  display: inline-block;
+}
+
+.project-detail .banner img {
+  width: 100%;      /* L'image prend 100% de la largeur du conteneur */
+  object-fit: cover; /* Ajuste le contenu de l'image pour qu'elle remplisse l'espace sans déformation */
+  filter: brightness(70%);
+}
+
+.project-detail .banner h1 {
+  position: absolute;
+  bottom: 25%;
+  left: 15%;
+  color: white;
+}
+
+.project-detail .nav-tabs {
+  border-bottom: none;
+  justify-content: center;
+}
+
+.project-detail .nav{
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.project-detail a {
+  text-decoration: none;
+}
+
+.project-detail .nav-tabs .nav-link:after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background: #fff;
+  display: block;
+  margin-top: 0.5em;
+  transition: width 0.35s;
+}
+
+.nav-tabs .nav-link.active:after {
+  width: 3em;
+}
+
+.project-detail .nav-tabs .nav-link.active {
+  background: transparent;
+  border-color: transparent;
+  color: #fff;
+}
+
+.project-detail .nav-link {
+  display: block;
+  padding: 0.5rem 1rem;
+}
+
+.project-detail .nav-tabs .nav-link {
+  font-weight: 700;
+  color: #666;
+  border: 1px solid transparent;
+}
+
+
 .project-detail-item{
   display: flex;
   width: 100%;
@@ -37,9 +104,7 @@
 
 
 
-.project-detail {
-  margin: 0 10px 0 10px;
-}
+
 
 /* Titre */
 .project-title {

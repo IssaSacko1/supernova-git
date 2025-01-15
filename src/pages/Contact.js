@@ -87,6 +87,21 @@ function Contact() {
     });
     
   };
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://static.elfsight.com/platform/platform.js';
+    script.async = true;
+    script.onload = () => {
+      if (window.ElfsightApp) {
+        window.ElfsightApp.init();
+      }
+    };
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
   const togglePopup = () => {
     setshowPopupContact(!showPopupContact);
@@ -155,8 +170,8 @@ function Contact() {
           )}
         </div>
       )}
-        <PreFooter items={preFooter} />
-    </div>
+      <div className="elfsight-app-d7cb6062-6988-4e34-9934-d272767d23e1" data-elfsight-app-lazy></div>
+      </div>
   );
 }
 

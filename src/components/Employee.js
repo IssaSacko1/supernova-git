@@ -1,5 +1,8 @@
 import React from 'react';
 import '../styles/Employee.css';
+import instagram from '../styles/icon-instagram.svg';
+import linkedin from '../styles/icon-linkedin.svg';
+
 
 
 const Employee = ({ employee }) => {
@@ -13,6 +16,10 @@ const Employee = ({ employee }) => {
       <img src={employee.imageSrc} alt={employee.title} />
       <h3>{employee.title}</h3>
       <p>{employee.description}</p>
+      <div className="social-network">
+        <a href='http://google.com'><img src={instagram} alt="instagram"/></a>
+        <a href='http://google.com'><img src={linkedin} alt="linkedin"/></a>
+      </div>
     </div>
   );
 };
