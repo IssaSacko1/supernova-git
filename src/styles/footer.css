@@ -2,6 +2,9 @@ footer {
   background-color: #0D0D0D;
   color: #fff;
   width: 100%;
+  border-top: 1px solid #444;
+  padding-top: 2.5%;
+  margin-top: 4%;
 }
 
 footer .reseaux {
@@ -23,8 +26,7 @@ footer .reseaux {
 .footer-copyright {
   width: 100%;
   text-align: center;
-  margin-top: 20px;
-  border-top: 1px solid #444;
+  margin-top: 50px;
   padding-bottom: 20px;
 }
 

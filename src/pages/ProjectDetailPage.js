@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { parse } from 'node-html-parser';
 import '../styles/project-detail.css';
-import image from '../image/ARTYA_16x9.png';
+import image from '../image/Vignette2.jpg';
+import image2 from '../image/ARTYA_16x9.png';
 import { Modal, Carousel, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -19,15 +20,15 @@ const VideoComponent = ({ selectedProjectUrl }) => {
 
   // Liste d'exemple d'images
   const images = [
-    image,
-    image,
-    image,
-    image,
-    image,
-    image,
-    image,
-    image,
-    image,
+    image2,
+    image2,
+    image2,
+    image2,
+    image2,
+    image2,
+    image2,
+    image2,
+    image2,
   ];
 
   const [activeTab, setActiveTab] = useState('photo'); // Onglet par défaut
@@ -37,7 +38,7 @@ const VideoComponent = ({ selectedProjectUrl }) => {
   const tabsConfig = [
     { key: 'photo', visibility: 'true' },
     { key: 'video', visibility: 'true' },
-    { key: 'social network', visibility: 'true' },
+    { key: 'social network', visibility: 'false' },
     { key: 'credits', visibility: 'true' },
   ];
 
@@ -116,6 +117,7 @@ const VideoComponent = ({ selectedProjectUrl }) => {
       </div>
       <div className="container">
         <ul className="nav nav-tabs" id="myTab">
+          <p>fjdlfhfghghfjgfgfjglghfhglkhgthgthtjhgktjghtkjghrkjghthghlerhjk</p>
           {visibleTabs.map((tab) => (
             <li className="nav-item" key={tab.key}>
               <a
@@ -132,7 +134,6 @@ const VideoComponent = ({ selectedProjectUrl }) => {
         <div className="tab-content">
           {activeTab === 'photo' && (
             <div className="tab-pane active">
-              <p>Content for Photo</p>
               <div className="photo-gallery">
                 {images.map((image, index) => {
                   // Créer des groupes de 3 images

@@ -103,6 +103,9 @@ const Footer = () => {
         ))}
       </div> */}
       </div>
+      <div className="footer-copyright">
+        <p>&copy; {new Date().getFullYear()} SUPERNOVA. VB PRODUCTION AGENCY – Vidal BUSO. Tous droits réservés.</p>
+      </div>
     </footer>
   );
 };
