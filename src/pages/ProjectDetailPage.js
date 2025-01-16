@@ -117,7 +117,6 @@ const VideoComponent = ({ selectedProjectUrl }) => {
       </div>
       <div className="container">
         <ul className="nav nav-tabs" id="myTab">
-          <p>fjdlfhfghghfjgfgfjglghfhglkhgthgthtjhgktjghtkjghrkjghthghlerhjk</p>
           {visibleTabs.map((tab) => (
             <li className="nav-item" key={tab.key}>
               <a
@@ -131,6 +130,7 @@ const VideoComponent = ({ selectedProjectUrl }) => {
             </li>
           ))}
         </ul>
+        <p>fjdlfhfghghfjgfgfjglghfhglkhgthgthtjhgktjghtkjghrkjghthghlerhjk</p>
         <div className="tab-content">
           {activeTab === 'photo' && (
             <div className="tab-pane active">
@@ -166,6 +166,13 @@ const VideoComponent = ({ selectedProjectUrl }) => {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen></iframe>
+              <iframe width="478" height="849" src="https://www.youtube.com/embed/AtaqZLl9w8s"
+               title="Il me dépasse #shortvideo #short" 
+               frameBorder="0" 
+               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+               referrerPolicy="strict-origin-when-cross-origin" 
+               allowfullScreen></iframe>
+
             </div>
           )}
 

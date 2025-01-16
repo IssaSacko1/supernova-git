@@ -1,202 +1,78 @@
-/* Style général pour le conteneur du formulaire */
-.popupcontact {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 30%;
-  height: 85vh; /* Ajuste la hauteur automatiquement */
-  background-color: white;
-  z-index: 1000;
-  padding: 2%;
-  border-radius: 10px;
-  text-align: center; /* Centre le texte dans le conteneur */
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  overflow: auto; /* Ajoute un défilement si nécessaire */
-
-}
-
-/* Style pour le contenu du formulaire */
-.popupcontact-content {
-  color: black;
-}
-
-.popupcontact-content input {
-  background-color: #FBFBFB;
-  border-width: 0.5px;
-  box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 1px;
-  width: 100%;
-}
-
-/* Ajustement pour les champs de texte et de zone de texte */
-.popupcontact-content input[type=text] {
-  height: 3vh;
-}
-
-.popupcontact-content input[type=textarea] {
-  height: 8vh;
-}
-
-.popupcontact-header {
-  display: flex;
-  justify-content: center; /* Centre le logo dans l'en-tête */
-  z-index: 1000;
-}
-
-.popupcontact-header .logoPopUp {
-  font-size: 3vh; /* Ajustez la taille du texte si nécessaire */
-  font-weight: bold;
-}
-
-.popupcontact-content button {
-  position: relative;
+.contactPage .title p {
+  padding-top: 10vh;
   color: white;
-  background: black;
-  border-radius: 5px;
-  padding: 1vh 2vw;
+  font-size: 11em;
+}
+
+form {
+  color: white;
+  justify-content: center;
+  margin-bottom: 6vh;
+}
+
+.form-group {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 1vh;
+}
+
+
+form button {
+  margin-top: 3vh;
+  padding: .8vw .8vh .8vw .8vh;
+  background-color: rgb(255, 255, 255);
+  color: #0D0D0D;
+  text-transform: uppercase; /* Met le texte en majuscules */
+  width: 20%;
+  border-radius: 2.604vw;
+  display: inline-block;
   border: 0;
-  cursor: pointer;
-  margin: 2vh auto; /* Centre le bouton horizontalement */
-  display: block;
-  font-weight: bold;
-  font-size: large;
-  margin-top: 5vh;
 }
 
-
-.contactPage  .contente button:hover {
-  background-color: transparent; /* Couleur de fond lors du hover (bleu/turquoise) */
-  color: white; /* Texte blanc sur hover pour plus de contraste */
-  border: 2px solid white;
-  transform: translateY(-10px); /* Effet de montée lors du hover */
+.contactPage button:hover {
+  background-color: rgb(130, 130, 130);
+  transition: 0.35s ease-in-out;
 }
 
-/* Style pour le conteneur principal */
-.video-container img {
-  width: 100%;
-  filter: brightness(50%); /* Ajustez la luminosité selon vos besoins */
+ .contactPage .form-control {
+  border-radius: 0%;
 }
 
-.contactPage .contente {
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 90%;
-  height: auto; /* Ajuste la hauteur automatiquement */
+.container-contact {
+  margin-top: 3vh;
   display: flex;
-  flex-direction: column;
+}
+.contact-form-part {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.social-network-part {
+  display: flex;
+  width: 50%;
+  margin: 0 auto;
+  gap: 5vw;
   justify-content: center;
   align-items: center;
-  color: white;
-  font-weight: bolder;
+}
+.social-network-part img {
+  width: 5%;
 }
 
-
-/* Styles des boutons de la vidéo */
-.contactPage .video-container button {
-  color: black;
-  background: white;
-  border-radius: 5px;
-  padding: 2.5vh 3vw;
-  cursor: pointer;
-  margin: 3vh auto 0;
-  display: block;
-  font-weight: bold;
-  font-size: x-large;
-  background-color: #f1f1f1; /* Couleur de fond normal (gris clair ou blanc cassé) */
-  color: #333; /* Texte en gris foncé pour une bonne lisibilité */
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.contactPagePage {
+.contactPage .banner {
   position: relative;
-  width: 100%;
-  height: 150vh; /* Occuper toute la hauteur de l'écran */
+  display: inline-block;
 }
 
-
-.contactPage h1 {
-  font-size: 6rem;
-}
-/* Media Queries */
-
-/* Styles pour les écrans de 1024px et moins */
-@media (max-width: 1024px) {
-  .popupcontact {
-      width: 50%;
-      height: auto; /* Ajuste automatiquement */
-  }
-
-  .contactPage .contente {
-      font-size: 60px;
-      width: 70%;
-  }
-
-  .contactPage h1 {
-      font-size: 100px;
-  }
+.contactPage .banner img {
+  width: 100%;      /* L'image prend 100% de la largeur du conteneur */
+  object-fit: cover; /* Ajuste le contenu de l'image pour qu'elle remplisse l'espace sans déformation */
+  filter: brightness(70%);
 }
 
-/* Styles pour les écrans de 768px et moins */
-@media (max-width: 768px) {
-  .popupcontact {
-      width: 70%;
-      height: auto; /* Ajuste automatiquement */
-  }
-
-  .contactPage .contente {
-      font-size: 50px;
-      width: 80%;
-  }
-
-  .contactPage h1 {
-      font-size: 80px;
-  }
-
-  .contactPage .video-container button {
-      padding: 20px 40px;
-      font-size: large;
-  }
-}
-
-/* Styles pour les écrans de 480px et moins */
-@media (max-width: 480px) {
-  .popupcontact {
-      width: 90%;
-      height: auto; /* Ajuste automatiquement */
-      padding: 5%;
-  }
-
-  .contactPage .contente {
-      font-size: 40px;
-      width: 100%;
-  }
-
-  .contactPage h1 {
-      font-size: 35px;
-  }
-
-  .contactPage .video-container button {
-      padding: 15px 30px;
-      font-size: medium;
-  }
-}
-
-/* Bouton de fermeture pour la popup */
-.close-button {
+.contactPage .banner h1 {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  background: transparent;
-  border: none;
-  font-size: 24px;
-  color: black;
-  cursor: pointer;
-  outline: none;
-  transition: color 0.3s ease;
-}
-
-.close-button:hover {
-  color: #ff0000; /* Change la couleur en rouge lors du survol */
+  bottom: 15%;
+  left: 10%;
+  color: white;
 }

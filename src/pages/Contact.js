@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import imageSrc from '../image/DJI_0154.jpg';
 import '../styles/contact.css';
 import PreFooter from '../components/PreFooter';
 import { data } from 'jquery';
 import axios from 'axios';
 import { parse } from 'node-html-parser';
+import vimeo from '../styles/icon-vimeo.svg';
+import instagram from '../styles/icon-instagram.svg';
+import linkedin from '../styles/icon-linkedin.svg'
+import image from '../image/Vignette2.jpg';
+
 
 
 
 function Contact() {
-  const [showPopupContact, setshowPopupContact] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -101,77 +104,42 @@ function Contact() {
     return () => {
       document.body.removeChild(script);
     };
+    
   }, []);
 
-  const togglePopup = () => {
-    setshowPopupContact(!showPopupContact);
-  };
 
   return (
     <div className='contactPage'>
-      <div className="video-container">
-        <div className="overlay"></div>
-        <img src={imageSrc} alt="Your image" />
-        <div className="contente">
-        <h1>CRÉONS ENSEMBLE !</h1>
-        {!showPopupContact && (
-        <button onClick={togglePopup}>CONTACTEZ NOUS</button>
-        )}
-        </div>
+        <div className='banner'>
+        <img src={image} alt="Banner" />
+        <div className='title'><h1>CONTACT</h1></div>
       </div>
-      {showPopupContact && (
-        <div className="popupcontact">
-  <div className='popupcontact-header'>
-    <p className='logoPopUp' style={{ width: '33%' }}>Supernova</p>
-    {/* Bouton de fermeture */}
-    <button className="close-button" onClick={togglePopup}>×</button>
-  </div>
-          <form onSubmit={handleSubmit}>
-            <div className='popupcontact-content'>
-            <label>
-              <h4 className='label'>Nom</h4>
-              <input 
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-              />
-            </label>
-            <br />
-            <label>
-              <h4 className='label'>Email</h4>
-              <p className='helper'>Assurez vous de l'écrire correctement afin qu'on puisse vous joindre par la suite.
-                Merci !</p>        
-              <input 
-                type="text"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-              />
-            </label>
-            <br />
-            <label>
-              <h4 className='label'>Projet</h4>
-              <p className='helper'>Décrivez votre projet</p>
-              <input 
-                type="textarea"
-                name="project"
-                value={formData.project}
-                onChange={handleChange}
-              />
-            </label>
-            <br />
-            {/* Ajoutez d'autres champs de formulaire ici */}
-            <button type="submit">Envoi</button>
-            </div>
+      <div className='container-contact'>
+        <div className='contact-form-part'>
+          <form id="contact-form"  method="POST">
+              <div className="form-group">
+                  <label htmlFor="name"><h3>Name</h3></label>
+                  <input type="text" placeholder="Votre Prénom Nom" className="form-control" />
+              </div>
+              <div className="form-group">
+                  <label htmlFor="exampleInputEmail1"><h3>Adresse mail</h3></label>
+                  <input type="email" placeholder="Votre adresse mail " className="form-control" aria-describedby="emailHelp" />
+              </div>
+              <div className="form-group">
+                  <label htmlFor="message"><h3>Message</h3></label>
+                  <textarea className="form-control" placeholder="Votre message" rows="5"></textarea>
+              </div>
+              <button type="submit">Envoyer</button>
           </form>
-          {messageSent && (
-            <p className='confirmation-message'>Votre message a bien été envoyé !</p>
-          )}
         </div>
-      )}
-      <div className="elfsight-app-d7cb6062-6988-4e34-9934-d272767d23e1" data-elfsight-app-lazy></div>
+        <div className='social-network-part'>
+        <img src={vimeo}  alt="YouTube" />
+        <img src={instagram}  alt="YouTube" />
+        <img src={linkedin}  alt="YouTube" />
+        </div>
       </div>
+      <div className="elfsight-app-d7cb6062-6988-4e34-9934-d272767d23e1" data-elfsight-app-lazy></div>
+    </div>
   );
 }
 
