@@ -33,6 +33,10 @@
 .project-detail a {
   text-decoration: none;
 }
+.project-detail li:hover {
+  border: red;
+}
+
 
 .project-detail .nav-tabs .nav-link:after {
   content: "";
@@ -63,6 +67,38 @@
   font-weight: 700;
   color: #666;
   border: 1px solid transparent;
+}
+
+.project-detail table {
+  margin: auto;
+  border-collapse: collapse;
+}
+
+.credit-people {
+  display: block;
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement */
+}
+
+.credit-people tr td {
+  color: white;
+}
+
+
+.photo-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 3px; /* Espace entre les lignes */
+}
+
+.photo-row {
+  display: flex;
+  justify-content: center;
+  gap: 3px; /* Espace entre les images dans une ligne */
+}
+
+.photo-row-3 img {
+  width: 35%; /* Chaque image occupe 30% de la largeur pour 3 images */
 }
 
 
@@ -203,6 +239,103 @@ margin: auto;
 }
 
 
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1050;
+  width: 100%;
+  height: 100%;
+  outline: 0;
+}
+
+.modal-open .modal {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.fade {
+  transition: opacity 0.15s linear;
+}
+
+.modal.show .modal-dialog {
+  transform: none;
+}
+
+.modal.fade .modal-dialog {
+  transition: transform 0.3s ease-out;
+  transform: translate(0,-50px);
+}
+
+.modal-xl {
+  max-width: none;
+  width: calc(100vw - 3.5rem);
+  height: calc(100vh - 3.5rem);
+}
+
+.modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 0.5rem;
+  pointer-events: none;
+}
+
+.modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0,0,0,0.2);
+  outline: 0;
+}
+
+.modal-xl .modal-content .close {
+  right: -1.5rem;
+  top: -1.75rem;
+  opacity: 0.75;
+}
+
+.modal-content .close {
+  border: none;
+  background: transparent;
+  position: absolute;
+  z-index: 2;
+  right: -2rem;
+  color: #fff;
+  font-size: 2rem;
+  line-height: 1;
+  opacity: 0.5;
+}
+
+.carousel {
+  position: relative;
+}
+
+.carousel-inner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.modal-xl .carousel-control-prev {
+  width: 50%;
+  left: -1.75rem;
+  justify-content: flex-start;
+  padding-left: 0.35rem;
+}
 
 
+
+.carousel-item {
+  position: relative;
+  display: none;
+  float: left;
+  width: 100%;
+  margin-right: -100%;
+  backface-visibility: hidden;
+  transition: transform 0.6s ease-in-out;
+}
 
