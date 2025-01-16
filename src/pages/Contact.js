@@ -133,9 +133,16 @@ function Contact() {
           </form>
         </div>
         <div className='social-network-part'>
-        <img src={vimeo}  alt="YouTube" />
+          <div className='social-image'>
+          <img src={vimeo}  alt="YouTube" />
         <img src={instagram}  alt="YouTube" />
         <img src={linkedin}  alt="YouTube" />
+          </div>
+        <div className='footer-social'>
+          <h3>SUPERNOVA. Switzerland</h3>
+          <h3></h3>
+          <h3></h3>
+          </div>
         </div>
       </div>
       <div className="elfsight-app-d7cb6062-6988-4e34-9934-d272767d23e1" data-elfsight-app-lazy></div>

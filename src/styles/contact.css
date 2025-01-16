@@ -24,7 +24,7 @@ form button {
   color: #0D0D0D;
   text-transform: uppercase; /* Met le texte en majuscules */
   width: 20%;
-  border-radius: 2.604vw;
+  border-radius: 1.0vw;
   display: inline-block;
   border: 0;
 }
@@ -48,16 +48,31 @@ form button {
 }
 
 .social-network-part {
-  display: flex;
-  width: 50%;
-  margin: 0 auto;
-  gap: 5vw;
-  justify-content: center;
-  align-items: center;
+  display: flex; /* Active le modèle Flexbox */
+  flex-direction: column; /* Arrange les enfants verticalement */
+  width: 50%; /* Largeur du conteneur */
+  margin: 0 auto; /* Centrage horizontal */
+  align-items: center; /* Centre horizontalement les enfants */
 }
+
 .social-network-part img {
-  width: 5%;
+  width: 5%; /* Taille des images */
 }
+
+.social-image {
+  display: flex; /* Active Flexbox */
+  justify-content: center; /* Centre les images horizontalement */
+  align-items: center; /* Centre les images verticalement */
+  gap: 5vw; /* Espacement entre les images */
+  width: 100%; /* Les images occupent toute la largeur disponible */
+}
+
+.footer-social {
+  width: 100%; /* Occupe toute la largeur du conteneur parent */
+  text-align: center; /* Centre le texte */
+  margin-top: 10px; /* Espacement entre les images et le footer */
+}
+
 
 .contactPage .banner {
   position: relative;
