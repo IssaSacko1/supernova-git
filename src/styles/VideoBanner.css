@@ -5,8 +5,15 @@
   
   .soundbutton {
     position: absolute;
-    bottom: 20vh;
+    bottom:   10vh;
     right: 5vw;
+  }
+
+  .services-header video {
+    width: 100%;         /* L'image prend toute la largeur */
+    height: 80vh;        /* La hauteur est fixée à 80% de la hauteur de la fenêtre */
+    object-fit: cover;    /* Permet à l'image de se déformer pour remplir les dimensions */
+  
   }
   
   .soundbutton button {

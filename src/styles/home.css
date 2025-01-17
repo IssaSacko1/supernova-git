@@ -382,8 +382,6 @@
 }
 .mn_screen .intro_hold_h1 .h2g {
   position: relative;
-  bottom: 110px;
-  left: 0px;
   display: inline-block;
   color: white;
   font: normal 12.388vw 'Suisse Intl';
@@ -392,11 +390,7 @@
   width: 100%;
   text-transform: uppercase;
 }
-/* @media (max-width: 1024px) {
-  .mn_screen .intro_hold_h1 .h2g {
-    transform: translateY(17.5vw);
-  }
-} */
+
 @media (max-width: 760px) {
   .mn_screen .intro_hold_h1 .h2g {
     color: #fff;
@@ -406,14 +400,7 @@
     transform: translateY(100px);
   }
 }
-.mn_screen .intro_hold_h1 .h2g .r {
-  position: absolute;
-  top: 9.344vw;
-  right: 0.5vw;
-  background: url(./s3.svg) no-repeat 0 0/cover;
-  width: 3.229vw;
-  height: 3.229vw;
-}
+
 @media (max-width: 760px) {
   .mn_screen .intro_hold_h1 .h2g .r {
     /* background: url(../img/s3w.svg) no-repeat 0 0/cover; */

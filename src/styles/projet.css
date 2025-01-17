@@ -62,9 +62,9 @@
   }
 }
 
-.projet .video-container .hover-title {
+.projet .video-container h1 {
   position: absolute;
-  top: 15vh; /* Ajustez cette valeur selon vos besoins */
+  bottom: 10vh; /* Ajustez cette valeur selon vos besoins */
   left: 50%;
   transform: translateX(-50%);
   text-transform: uppercase;
@@ -72,14 +72,21 @@
   font-size: 1.5rem; /* Taille de police pour le titre */
   cursor: pointer;
   width: 100%;
+  z-index: 1000;
+  transition: opacity 0.5s ease-in-out;
 }
 
-.projet .video-container .hover-text {
+.projet .video-container h3 {
   position: absolute;
   left: 50%;
+  bottom: 2vh;
   transform: translateX(-50%);
   color: #fff;
+  z-index: 1000;
+  transition: opacity 0.5s ease-in-out;
+  font-size: 1.5em;
 }
+
 
 /* Styles pour une vidéo par ligne sur mobile */
 @media (max-width: 767px) {
@@ -91,10 +98,10 @@
 
 @media (min-width: 1200px) and (max-width: 1441px) {
   .projet .video-container .hover-text {
-    bottom: 20vh;
+    bottom: 2vh;
 }
 .projet .video-container .hover-title {
-    top: 13vh;
+    top: 3vh;
 }
   
 }
@@ -104,10 +111,10 @@
   .projet .video-container .hover-text {
     font-size: 1.2rem; /* Taille de police pour le texte */
 
-      bottom: 14vh;
+      bottom: 2vh;
   }
   .projet .video-container .hover-title {
-      top: 14vh;
+      bottom: 3vh;
       font-size: 1.4rem; /* Taille de police pour le texte */
 
   }
@@ -116,36 +123,36 @@
 /* Pour les ordinateurs portables (entre 992px et 1199px) */
 @media (min-width: 992px) and (max-width: 1199px) {
   .projet .video-container .hover-text {
-      bottom: 14vh;
+      bottom: 2vh;
       font-size: .8rem;
 
   }
   .projet .video-container .hover-title {
     font-size: 1rem;
-      top: 14vh;
+    bottom: 3vh;
   }
 }
 
 /* Pour les tablettes (entre 768px et 991px) */
 @media (min-width: 768px) and (max-width: 991px) {
   .projet .video-container .hover-text {
-    bottom: 16vh;
+    bottom: 2vh;
     font-size: .4rem;
     }
   .projet .video-container .hover-title {
     font-size: .6rem;
-      top: 16vh;
+    bottom: 3vh;
       }
 }
 
 /* Pour les téléphones (moins de 768px) */
 @media (max-width: 767px) {
   .projet .video-container .hover-text {
-      bottom: 10vh;
+      bottom: 2vh;
       font-size: 1rem;
   }
   .projet .video-container .hover-title {
-      top: 11vh;
+    bottom: 3vh;
       font-size: .9rem;
   }
 }

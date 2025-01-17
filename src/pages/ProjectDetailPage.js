@@ -20,7 +20,6 @@ const VideoComponent = ({ selectedProjectUrl }) => {
 
   useEffect(() => {
     const extractData = (html) => {
-      console.log(html)
       const doc = parse(html);
     
       // Extract the title
@@ -32,9 +31,11 @@ const VideoComponent = ({ selectedProjectUrl }) => {
       // Extract the keyvidbanniere
       const keyVidBanniere = doc.querySelector('video')?.getAttribute('src') || '';
     
+      // Extract the keyProjectDescribe
+      const KeyProjectDescription = doc.querySelector('#ValueProjectDescription')?.textContent.trim() || '';
+
       // Extract the keyOngletManagement
       const keyOngletManagementRaw = doc.querySelector('#ValueOngletManagement')?.textContent.trim() || '';
-      console.log(keyOngletManagementRaw)
       const keyOngletManagement = keyOngletManagementRaw
       ? JSON.parse(keyOngletManagementRaw.replace(/« /g, '"').replace(/ »/g, '"'))
       : [];
@@ -60,6 +61,7 @@ const VideoComponent = ({ selectedProjectUrl }) => {
         title,
         keyImgBanniere,
         keyVidBanniere,
+        KeyProjectDescription,
         keyOngletManagement,
         keyOngletVideo,
         keyOngletPhoto,
@@ -73,9 +75,7 @@ const VideoComponent = ({ selectedProjectUrl }) => {
         const storedData = parseInt(localStorage.getItem('pageId'), 10);
         const response = await axios.get(`http://localhost/supernova-backend/serveur//wp-json/wp/v2/pages/${storedData}`);
         const htmlContent = response.data.content.rendered;
-        // console.log(htmlContent)
         const extractedData = extractData(htmlContent);
-        console.log(extractedData)
         setData(extractedData);
       } catch (error) {
         console.error('Erreur lors du chargement des données:', error);
@@ -84,7 +84,7 @@ const VideoComponent = ({ selectedProjectUrl }) => {
     loadData();
   }, [selectedProjectUrl]);
 
-  const { keyOngletManagement = [], keyOngletPhoto = [], keyImgBanniere="",title="", keyOngletSocialNetwork="", keyOngletVideo="" } = data;
+  const { keyOngletManagement = [], keyOngletPhoto = [], keyImgBanniere="",title="", keyOngletSocialNetwork="", keyOngletVideo="", KeyProjectDescription="" } = data;
 
   return (
     <div className='project-detail'>
@@ -110,7 +110,8 @@ const VideoComponent = ({ selectedProjectUrl }) => {
           ))}
         </ul>
         <div className="tab-content">
-          {activeTab === 'photo' && (
+        <h3>{KeyProjectDescription}</h3>
+        {activeTab === 'photo' && (
             <div className="tab-pane active">
               <div className="photo-gallery">
                 {keyOngletPhoto.map((image, index) => {
@@ -155,7 +156,6 @@ const VideoComponent = ({ selectedProjectUrl }) => {
 
           {activeTab === 'social network' && (
             <div className="tab-pane active">
-              <p>Content for Social Network</p>
               {keyOngletSocialNetwork/* Ajoutez du contenu spécifique pour l'onglet Social */}
             </div>
           )}

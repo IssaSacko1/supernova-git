@@ -2,18 +2,25 @@
 .project-detail .banner {
   position: relative;
   display: inline-block;
+  width: 100%;
 }
 
 .project-detail .banner img {
-  width: 100%;      /* L'image prend 100% de la largeur du conteneur */
-  object-fit: cover; /* Ajuste le contenu de l'image pour qu'elle remplisse l'espace sans déformation */
-  filter: brightness(70%);
+  width: 100%;         /* L'image prend toute la largeur */
+  height: 80vh;        /* La hauteur est fixée à 80% de la hauteur de la fenêtre */
+  object-fit: cover;    /* Permet à l'image de se déformer pour remplir les dimensions */
+  filter: brightness(70%); /* Applique un filtre pour réduire la luminosité */
 }
+
 
 .project-detail .banner h1 {
   position: absolute;
   bottom: 15%;
   left: 5%;
+  color: white;
+}
+
+.tab-content {
   color: white;
 }
 

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import IntroComponent from '../components/IntroComponent';
-import SliderComponent from '../components/SliderComponent';
 import LogoComponent from '../components/LogoComponent';
 import "../styles/home.css";
 import SliderShow from '../components/SliderShow';
@@ -19,15 +18,15 @@ function Home() {
   const [videos, setVideos] = useState([]);
   const [contentWithParagraphs, setcontentWithParagraphs] = useState(null)
   const gsap = window.gsap;
-
+  
   useEffect(() => {
     const gsap = window.gsap;
 
     async function fetchHomePageContent() {
+
       try {
         const response = await axios.get('http://localhost/supernova-backend/serveur/wp-json/wp/v2/pages/73');
         const data = parseWordpressContent(response.data.content.rendered);
-
         const IntroComponentContent = filterByFigcaption(data, 'IntroComponent');
         const SliderComponentContent = filterByFigcaption(data, 'SliderComponent');
         const LogoComponentContent = filterByFigcaption(data, 'LogoComponent');
@@ -121,8 +120,7 @@ function Home() {
         <IntroComponent />
         <div id="section-1" className="section-1">
           <h3>Nos derniers projets</h3>
-          <SliderShow />
-          {/* <SliderComponent images={videos} /> */}
+          <SliderShow images={videos}/>
           <div className='homeButton'>
           <a href="/projets" className="view-all-link">{Section1Button}</a>
         </div>
