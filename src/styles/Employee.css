@@ -1,7 +1,6 @@
 /* Employee Styles */
 .employee {
   width: 33%;
-  text-align: center;
 }
 
 .employee img {
@@ -16,7 +15,7 @@
 }
 
 .social-network img{
-width: 50px;
+  width: 50px;
 }
 
 .social-network img:hover{
@@ -33,22 +32,3 @@ width: 50px;
   /* Optionnel : vous pouvez définir une hauteur si nécessaire */
   height: 80vh; /* Ajustez cette valeur selon vos besoins */
 }
-
-
-.employees-list p {
-  margin-top: 0px;
-  font-size: 1.25rem;
-  color: white;
-}
-
-.employees-list h3 {
-  margin-bottom: 0;
-  font-size: 1.55rem;
-}
-
-/* Additional Content Styles */
-.about_us_content {
-  color: white;
-}
-
-/* Responsiveness */

@@ -78,23 +78,3 @@ form button {
 .footer-social h3 {
   margin-top: 2vh;
 }
-
-
-.contactPage .banner {
-  position: relative;
-  display: inline-block;
-}
-
-.contactPage .banner img {
-  width: 100%;      /* L'image prend 100% de la largeur du conteneur */
-  height: 80vh;
-  object-fit: cover; /* Ajuste le contenu de l'image pour qu'elle remplisse l'espace sans déformation */
-  filter: brightness(70%);
-}
-
-.contactPage .banner h1 {
-  position: absolute;
-  bottom: 15%;
-  left: 10%;
-  color: white;
-}

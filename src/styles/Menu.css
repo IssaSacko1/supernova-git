@@ -93,12 +93,6 @@ nav li {
   cursor: pointer;
 }
 
-/* .Menu-text {
-  color: red;
-  /* margin-left: 10px; Espacement entre le texte et les barres
-  margin-left: 100000px;
-
-} */
 
 .bar {
   width: 3vw;
@@ -153,7 +147,6 @@ nav .reseaux {
 
  .popup ul li a {
   display:block;
-  font-size: 3rem;
   margin-top: 3vh;
 }
 
@@ -206,11 +199,6 @@ nav .reseaux {
   transition: transform 0.3s ease-in-out;
 }
 
-/* .headerPopUp a {
-  position: relative;
-  left: 0;
-} */
-
 .header img:hover {
   transform: scale(1.1); /* Grossissement de l'image sur hover */
 }
@@ -220,14 +208,17 @@ nav .reseaux {
 }
 
 .menu-item {
+  display: flex;
   padding-bottom: 5vh;
   width: 30%;
+  align-items: center;
+  justify-content: center;
 }
 .contentPopup{
   display: flex;
   width: 90%;
   margin:  0 auto;
-  height: 80%;
+  height: 90vh;
 }
 
 .contact {

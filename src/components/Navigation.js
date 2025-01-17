@@ -96,11 +96,11 @@ function Menu() {
        <ul>
             {positionsData.position1.map((item, index) => (
               <li key={item.id}>
-                <a
+                <h1><a
                   href={item.attributes.url}
                 >
                   {item.attributes.title}
-                </a>
+                </a></h1>
               </li>
             ))}
             

@@ -30,9 +30,6 @@ function VideoBanner({ banner, isLoading }) {
     <div className="video-container">
       <video ref={videoRef} src={banner.videoSrc} loop muted preload="auto" />
       <div className="title"><h1>{banner.title}</h1></div>
-      {/* <div className="text">
-        <p>{banner.description}</p>
-      </div> */}
       <div className='soundbutton'>
         <button onClick={toggleSound}>
         {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}

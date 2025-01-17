@@ -1,25 +1,26 @@
 .App {
   text-align: center;
-  font-family: 'Dubai Medium';
+  font-family: 'Dubai Light';
   background: black;
 }
 
 h1, h2 {
-  font-family: 'LEMONMILK Bold';
+  font-family: 'LEMONMILK Medium';
   font-size: bolder;
 }
 
-h3,h4 {
-  font-family: 'Dubai Medium';
-}
-p{
-  font-family: 'Dubai Medium';
+h3 {
+  font-family: 'LEMONMILK Medium';
 }
 
-a{
-  font-family: 'Dubai Medium';
-
+h4 {
+  font-family: 'LEMONMILK Light';
 }
+p {
+  font-family: 'Dubai Light';
+  font-size: larger;
+}
+
 
 
 html {

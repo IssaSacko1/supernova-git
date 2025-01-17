@@ -72,19 +72,16 @@
   font-size: 1.5rem; /* Taille de police pour le titre */
   cursor: pointer;
   width: 100%;
-  z-index: 1000;
   transition: opacity 0.5s ease-in-out;
 }
 
-.projet .video-container h3 {
+.projet .video-container p {
   position: absolute;
   left: 50%;
   bottom: 2vh;
   transform: translateX(-50%);
   color: #fff;
-  z-index: 1000;
   transition: opacity 0.5s ease-in-out;
-  font-size: 1.5em;
 }
 
 

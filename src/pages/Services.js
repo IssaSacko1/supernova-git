@@ -84,10 +84,9 @@ const Services = () => {
   }
 
   return (
-    <div className='services-header'>
-      {/* Assurez-vous que VideoBanner et ServiceItem sont correctement définis */}
+    <div className='services'>
       <VideoBanner banner={bannerSections} />
-      <div className='services'>
+      <div className='services-content'>
         {serviceSections.map((service, index) => (
           <ServiceItem key={index} service={service} index={index} />
         ))}

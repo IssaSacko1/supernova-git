@@ -25,6 +25,7 @@
 }
 
 .project-detail .nav-tabs {
+  margin-top: 4vh;
   border-bottom: none;
   justify-content: center;
 }

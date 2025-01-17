@@ -37,7 +37,7 @@ function VideoWithHover({ src, title, description, thumbnail, pageId }) {
       <h1 className={isHovered ? 'video-visible' : 'video-hidden'} >
         {title}
       </h1>
-      <h3 className={isHovered ? 'video-visible' : 'video-hidden'}>{description}</h3>
+      <p className={isHovered ? 'video-visible' : 'video-hidden'}>{description}</p>
       </div>
   );
 }
@@ -85,7 +85,6 @@ function Projets() {
         <div className="main-container">
           {extractedData.map((projet, index) => (
             <VideoWithHover
-              // key={index}
               src={projet.projectUrl}
               description={projet.description}
               title={projet.title}

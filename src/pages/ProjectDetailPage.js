@@ -3,6 +3,7 @@ import axios from 'axios';
 import { parse } from 'node-html-parser';
 import '../styles/project-detail.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ImageBanner from '../components/ImageBanner';
 
 
 const VideoComponent = ({ selectedProjectUrl }) => {
@@ -88,10 +89,7 @@ const VideoComponent = ({ selectedProjectUrl }) => {
 
   return (
     <div className='project-detail'>
-      <div className='banner'>
-        <img src={keyImgBanniere} alt="Banner" />
-        <div className='title'><h1>{title}</h1></div>
-      </div>
+      <ImageBanner imageSrc={keyImgBanniere} title={title} /> {/* Utilisation du composant ImageBanner */}
       <div className="container">
         <ul className="nav nav-tabs" id="myTab">
         {keyOngletManagement
@@ -103,14 +101,14 @@ const VideoComponent = ({ selectedProjectUrl }) => {
                 id={`${tab.key}-tab`}
                 href={`#${tab.key}`}
                 onClick={() => handleTabClick(tab.key)}
-              >
+              ><h3>
                 {tab.key.charAt(0).toUpperCase() + tab.key.slice(1)}
-              </a>
+                </h3></a>
             </li>
           ))}
         </ul>
         <div className="tab-content">
-        <h3>{KeyProjectDescription}</h3>
+        <p>{KeyProjectDescription}</p>
         {activeTab === 'photo' && (
             <div className="tab-pane active">
               <div className="photo-gallery">
@@ -156,7 +154,7 @@ const VideoComponent = ({ selectedProjectUrl }) => {
 
           {activeTab === 'social network' && (
             <div className="tab-pane active">
-              {keyOngletSocialNetwork/* Ajoutez du contenu spécifique pour l'onglet Social */}
+              <p>{keyOngletSocialNetwork/* Ajoutez du contenu spécifique pour l'onglet Social */}</p>
             </div>
           )}
 
@@ -170,8 +168,8 @@ const VideoComponent = ({ selectedProjectUrl }) => {
                     <tbody>
                       {data.keyOngletCredits && data.keyOngletCredits.map((credit, index) => (
                         <tr key={index}>
-                          <td>{credit.title}</td>
-                          <td>{credit.description}</td>
+                          <td><h4>{credit.title}</h4></td>
+                          <td><p>{credit.description}</p></td>
                         </tr>
                       ))}
                     </tbody>

@@ -4,15 +4,15 @@ import { parse } from 'node-html-parser';
 import VideoBanner from '../components/VideoBanner';
 import Employee from '../components/Employee';
 import '../styles/Employee.css';
-import '../styles/about_us.css'
-import PreFooter from '../components/PreFooter';
+import '../styles/about_us.css';
+import ElfsightWidget from '../components/ElfsightWidget'; // Import du nouveau composant
+
 
 const Apropos = () => {
   const [teams, setTeams] = useState([]);
   const [data, setData] = useState({
     banner: null,
     team: [],
-    preFooter: [],
   });
 
   useEffect(() => {
@@ -62,62 +62,18 @@ const Apropos = () => {
         imageSrc,
       };
     });
-    // Partie 3: Pré-footer
-    const isValidUrl = (string) => {
-      try {
-        new URL(string);
-        return true;
-      } catch (_) {
-        return false;
-      }
-    };
-
-    const preFooterSections = parsedHtml.querySelectorAll('div.wp-block-group.has-global-padding.is-layout-constrained');
-    const preFooter = Array.from(preFooterSections).map(section => {
-      const image = section.querySelector('figure.wp-block-image img');
-      const imageSrc = image?.getAttribute('src') || '';
-      const url = section.querySelector('p')?.textContent || '';
-      const name = section.querySelector('h2.wp-block-heading')?.textContent || '';
-      if (imageSrc && isValidUrl(url)) {
-        return {
-          imageSrc,
-          url,
-          name,
-        };
-      }
     
-      // Retourner null si imageSrc est vide pour pouvoir filtrer ensuite
-      return null;
-    }).filter(item => item !== null); // Filtrer les éléments nulls
-    
-    return { banner, team, preFooter };
+    return { banner, team };
   };
 
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://static.elfsight.com/platform/platform.js';
-    script.async = true;
-    script.onload = () => {
-      if (window.ElfsightApp) {
-        window.ElfsightApp.init();
-      }
-    };
-    document.body.appendChild(script);
-
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
-  const { banner, preFooter } = data;
+  const { banner } = data;
 
   return (
-    <div className="services-header">
+    <div className="aboutUsPage">
       {/* Partie 1: Bannière */}
-      <div className='about-us-header'>
       <VideoBanner banner={banner} />
-      </div>
-      <h1>La genèse de SUPERNOVA.</h1>
-      {/* <p>{banner.description}</p> */}
+      <h1 className='aboutustitre'>La genèse de SUPERNOVA.</h1>
+      {/* <p className='aboutusdescription'>{banner.description}</p> */}
       {/* Partie 2: Équipe */}
       <div className='about_us_content'>
         <h1>Notre équipe</h1>
@@ -128,8 +84,7 @@ const Apropos = () => {
         </div>
       </div>
       {/* Partie 3: Pré-footer */}
-      {/* <PreFooter items={preFooter} /> Utilisation du composant */}
-      <div className="elfsight-app-d7cb6062-6988-4e34-9934-d272767d23e1" data-elfsight-app-lazy></div>
+      <ElfsightWidget widgetId="d7cb6062-6988-4e34-9934-d272767d23e1" />
     </div>
   );
 };

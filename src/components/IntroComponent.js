@@ -324,7 +324,7 @@ const IntroComponent = ({  }) => {
         <div className='intro_hold'>
         <div className='intro_hold_h1'>
             <div className='h2g'>
-            <p>Supernova.</p>
+            <h1>Supernova.</h1>
             </div>
           </div>
           {images.map((img) => (

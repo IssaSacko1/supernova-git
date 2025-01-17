@@ -380,13 +380,12 @@
     width: 100%;
   }
 }
-.mn_screen .intro_hold_h1 .h2g {
+.mn_screen .intro_hold_h1 .h2g h1 {
   position: relative;
   display: inline-block;
   color: white;
-  font: normal 12.388vw 'Suisse Intl';
-  letter-spacing: 0;
-  font-weight: 800; /* Ajoutez cette ligne pour rendre l'écriture plus épaisse */
+  letter-spacing: 1vw;
+  font-size: 10rem;
   width: 100%;
   text-transform: uppercase;
 }
