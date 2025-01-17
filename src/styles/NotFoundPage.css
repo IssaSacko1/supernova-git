@@ -1,0 +1,21 @@
+.not-found {
+    height: 100vh;
+    display: flex;
+    flex-direction: column; /* Arrange les éléments en colonne */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.not-found button {
+    margin-top: 3vh;
+    padding: .8vw .8vh .8vw .8vh;
+    background-color: black;
+    color: white;
+    border: 1px solid white; /* Définir la bordure correctement avec couleur et style */
+    text-transform: uppercase; /* Met le texte en majuscules */
+    width: 20%;
+    border-radius: 1.0vw;
+    display: inline-block;
+    cursor: pointer; /* Ajout d'un curseur pointer pour améliorer l'interaction */
+}

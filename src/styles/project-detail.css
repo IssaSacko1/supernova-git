@@ -3,6 +3,7 @@
   position: relative;
   display: inline-block;
   width: 100%;
+  color: white;
 }
 
 .project-detail .banner img {
@@ -17,11 +18,6 @@
   position: absolute;
   bottom: 15%;
   left: 5%;
-  color: white;
-}
-
-.tab-content {
-  color: white;
 }
 
 .project-detail .nav-tabs {
@@ -40,9 +36,6 @@
 
 .project-detail a {
   text-decoration: none;
-}
-.project-detail li:hover {
-  border: red;
 }
 
 
@@ -82,20 +75,11 @@
   border-collapse: collapse;
 }
 
-.tab-pane {
-  color: white;
-}
-
 .credit-people {
   display: block;
   justify-content: center; /* Centre horizontalement */
   align-items: center; /* Centre verticalement */
 }
-
-.credit-people tr td {
-  color: white;
-}
-
 
 .photo-gallery {
   display: flex;
@@ -118,236 +102,3 @@
   display: flex;
   width: 100%;
 } 
-/* Conteneur principal */
-.project-detail-container {
-  width: 100%;
-  margin: auto;
-  color: white;
-}
-
-.back-to-project {
-  display: block;
-  background-color: transparent; /* Fond transparent */
-  border: 1px solid white; /* Bordure fine blanche */
-  position: sticky; /* Rendre le bouton fixe pendant le scroll */
-  top: 12.5vh; /* Maintenir à 20px du haut */
-  color: white; /* Texte blanc */
-  padding: 1vh 2vw; /* Espacement interne */
-  margin-left: 85%; /* Décalage à droite proportionnel */
-  border-radius: 5px; /* Coins arrondis */
-  text-align: center; /* Centrer le texte */
-  cursor: pointer; /* Apparence interactive */
-  transition: transform 0.3s ease, background-color 0.3s ease; /* Animation fluide */
-  z-index: 1000;
-  height: 5vh;
-  width: 12.5vw;
-  text-decoration: none; /* Enlève le soulignement */
-}
-
-/* Effet hover */
-.back-to-project:hover {
-  transform: translateY(-10px); /* Déplace le bouton vers le haut */
-  background-color: rgba(255, 255, 255, 0.1); /* Ajoute une légère couleur au fond */
-}
-
-
-
-
-
-/* Titre */
-.project-title {
-  font-size: 3rem;
-  margin-bottom: 5vh;
-  text-transform: uppercase;
-}
-
-/* Vidéo */
-.project-video {
-  width: 60%;
-  margin-bottom: 5vh;
-}
-
-
-.project-client {
-  color: #FC8412
-}
-
-.project-sous-description {
-  text-align: left;
-}
-
-.recompense-image {
-  margin-top: 5%;
-  margin-bottom: 2%;
-  display: flex;
-  flex-wrap: wrap;
-  height: 10%;
-  overflow: hidden;
-}
-
-.add-recompense-image {
-  flex: 0 0 33.33%;
-  box-sizing: border-box;
-}
-
-.add-recompense-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.additional_images {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 10% ; /* Negative margin to compensate for the padding on children */
-  width: 100%;
-}
-
-.add-additional-image {
-  box-sizing: border-box;
-  max-height: 50vh;
-  overflow: hidden;
-}
-
-.add-additional-image img {
-  width: 100%;
-  display: block;
-}
-
-
-.content-recompense {
-  text-align: left;
-}
-.content-recompense p {
-  line-height: 1.6; /* Optionnel pour une meilleure lisibilité */
-}
-
-.recompenses h2 {
-  font-size: 2rem; /* Ajustez cette valeur selon vos besoins */
-
-}
-
-.recompenses h3 {
-  font-size: 1.5rem; /* Ajustez cette valeur selon vos besoins */
-  color: #FC8412
-}
-
-.add-additional-image {
-  box-sizing: border-box;
-  position: relative;
-}
-
-.add-additional-image:hover {
-  cursor: zoom-in;
-}
-
-.gallery {
-  width: 100%;
-}
-
-.recompenses {
-  width: 70%;
-margin: auto;
-}
-
-
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1050;
-  width: 100%;
-  height: 100%;
-  outline: 0;
-}
-
-.modal-open .modal {
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-
-.fade {
-  transition: opacity 0.15s linear;
-}
-
-.modal.show .modal-dialog {
-  transform: none;
-}
-
-.modal.fade .modal-dialog {
-  transition: transform 0.3s ease-out;
-  transform: translate(0,-50px);
-}
-
-.modal-xl {
-  max-width: none;
-  width: calc(100vw - 3.5rem);
-  height: calc(100vh - 3.5rem);
-}
-
-.modal-dialog {
-  position: relative;
-  width: auto;
-  margin: 0.5rem;
-  pointer-events: none;
-}
-
-.modal-content {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  pointer-events: auto;
-  background-color: #fff;
-  background-clip: padding-box;
-  border: 1px solid rgba(0,0,0,0.2);
-  outline: 0;
-}
-
-.modal-xl .modal-content .close {
-  right: -1.5rem;
-  top: -1.75rem;
-  opacity: 0.75;
-}
-
-.modal-content .close {
-  border: none;
-  background: transparent;
-  position: absolute;
-  z-index: 2;
-  right: -2rem;
-  color: #fff;
-  font-size: 2rem;
-  line-height: 1;
-  opacity: 0.5;
-}
-
-.carousel {
-  position: relative;
-}
-
-.carousel-inner {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-.modal-xl .carousel-control-prev {
-  width: 50%;
-  left: -1.75rem;
-  justify-content: flex-start;
-  padding-left: 0.35rem;
-}
-
-
-
-.carousel-item {
-  position: relative;
-  display: none;
-  float: left;
-  width: 100%;
-  margin-right: -100%;
-  backface-visibility: hidden;
-  transition: transform 0.6s ease-in-out;
-}
-

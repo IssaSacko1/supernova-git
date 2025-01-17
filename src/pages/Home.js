@@ -6,7 +6,6 @@ import "../styles/home.css";
 import SliderShow from '../components/SliderShow';
 
 function Home() {
-  const [content, setContent] = useState(null);
   const [Section1Titre, setContent1Title] = useState(null);
   const [Section1Button, setContent1Button] = useState(null);
   const [Section2Titre, setContent2Title] = useState(null);
@@ -16,11 +15,8 @@ function Home() {
   const [logos, setLogos] = useState([]);
   const [images, setImages] = useState([]);
   const [videos, setVideos] = useState([]);
-  const [contentWithParagraphs, setcontentWithParagraphs] = useState(null)
-  const gsap = window.gsap;
   
   useEffect(() => {
-    const gsap = window.gsap;
 
     async function fetchHomePageContent() {
 
@@ -31,7 +27,7 @@ function Home() {
         const SliderComponentContent = filterByFigcaption(data, 'SliderComponent');
         const LogoComponentContent = filterByFigcaption(data, 'LogoComponent');
 
-        setContent1Title(data[8].content.slice(4, -5));
+        setContent1Title(data[8].content.slice(3 , -5));
         setContent1Button(data[14].content.slice(3, -4));
         setContent2Title(data[15].content.slice(3, -4));
         setContent2Contenu(data[16].content.slice(3, -4));
@@ -95,7 +91,6 @@ function Home() {
       .replace(/,\s*]/g, ']')
       .replace(/«|»/g, '"')
       .replace(/(\r\n|\n|\r)/gm, "")
-      .replace(/\\\"/g, '"')
       .trim()
       .replace(/(\s*:\s*")(\s*)/g, ': "')
       .replace(/(\s*"\s*,\s*")(\s*)/g, '", "')
@@ -119,7 +114,7 @@ function Home() {
       <div className="scroller">
         <IntroComponent />
         <div id="section-1" className="section-1">
-          <h3>Nos derniers projets</h3>
+          <h3>{Section1Titre}</h3>
           <SliderShow images={videos}/>
           <div className='homeButton'>
           <a href="/projets" className="view-all-link">{Section1Button}</a>

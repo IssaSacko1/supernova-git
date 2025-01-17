@@ -1,30 +1,20 @@
-import React, { useEffect } from "react";
+import React from 'react';
+import { useHistory } from 'react-router-dom'; // Importer useHistory pour React Router v5
+import "../styles/NotFoundPage.css";
 
 function NotFoundPage() {
-  useEffect(() => {
-    const gsap = window.gsap;
+  const history = useHistory(); // Déclarez le hook useHistory
 
-    gsap.fromTo(".not-found", {
-      opacity: 0,
-      y: 50,
-    }, {
-      opacity: 1,
-      y: 0,
-      duration: 1,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: ".not-found",
-        start: "top 80%",
-        end: "center 50%",
-        toggleActions: "play none none reverse",
-      },
-    });
-  }, []);
+  // Fonction de redirection au clic du bouton
+  const goHome = () => {
+    history.push('/'); // Redirige vers la page d'accueil avec la méthode push
+  };
 
   return (
     <div className="not-found">
       <h1>404 - Page Not Found</h1>
       <p>Sorry, the page you are looking for does not exist.</p>
+      <button onClick={goHome}>Home</button> {/* Ajout de la fonction goHome au clic */}
     </div>
   );
 }
