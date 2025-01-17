@@ -2,105 +2,80 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { parse } from 'node-html-parser';
 import '../styles/project-detail.css';
-import image from '../image/Vignette2.jpg';
-import image2 from '../image/ARTYA_16x9.png';
-import { Modal, Carousel, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const VideoComponent = ({ selectedProjectUrl }) => {
   const [data, setData] = useState({
-    video: '',
-    poster: '',
-    title: '',
-    reward: '',
-    sections: [],
-    galleries: []
+
   });
 
-  // Liste d'exemple d'images
-  const images = [
-    image2,
-    image2,
-    image2,
-    image2,
-    image2,
-    image2,
-    image2,
-    image2,
-    image2,
-  ];
-
-  const [activeTab, setActiveTab] = useState('photo'); // Onglet par défaut
-  const [showModal, setShowModal] = useState(false); // Pour afficher la modal
-  const [selectedIndex, setSelectedIndex] = useState(0); // Index de l'image sélectionnée pour le carousel
-
-  const tabsConfig = [
-    { key: 'photo', visibility: 'true' },
-    { key: 'video', visibility: 'true' },
-    { key: 'social network', visibility: 'false' },
-    { key: 'credits', visibility: 'true' },
-  ];
-
-  const visibleTabs = tabsConfig.filter(tab => tab.visibility === 'true');
+  const [activeTab, setActiveTab] = useState('credits'); // Onglet par défaut
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
   };
 
-  const handleImageClick = (index) => {
-    setSelectedIndex(index); // Sélectionne l'image cliquée pour le carousel
-    setShowModal(true); // Ouvre la modal
-  };
 
-  const handleCloseModal = () => setShowModal(false); // Ferme la modal
 
   useEffect(() => {
     const extractData = (html) => {
-      const root = parse(html);
-
-      const firstParagraph = root.querySelector('p');
-      const title = firstParagraph ? firstParagraph.textContent.trim() : '';
-
-      const video = root.querySelector('figure.wp-block-video video');
-      const videoSrc = video ? video.getAttribute('src') : '';
-      const videoPoster = video ? video.getAttribute('poster') : '';
-
-      const sections = [];
-      const headings = root.querySelectorAll('h2');
-      const lists = root.querySelectorAll('ul');
-
-      headings.forEach((heading, index) => {
-        const title = heading.textContent.trim();
-        const nextList = lists[index];
-
-        sections.push({ title, list: nextList ? nextList.querySelectorAll('li').map(li => li.textContent.trim()) : [] });
-      });
-
-      const galleries = root.querySelectorAll('figure.wp-block-gallery');
-      const galleryImages = galleries.map(gallery => {
-        return gallery.querySelectorAll('figure.wp-block-image img').map(img => img.getAttribute('src'));
-      });
-
+      console.log(html)
+      const doc = parse(html);
+    
+      // Extract the title
+      const title = doc.querySelector('p')?.textContent.trim() || '';
+    
+      // Extract the keyimgbanniere
+      const keyImgBanniere = doc.querySelector('#ValueImgBanniere img')?.getAttribute('src') || '';
+    
+      // Extract the keyvidbanniere
+      const keyVidBanniere = doc.querySelector('video')?.getAttribute('src') || '';
+    
+      // Extract the keyOngletManagement
+      const keyOngletManagementRaw = doc.querySelector('#ValueOngletManagement')?.textContent.trim() || '';
+      console.log(keyOngletManagementRaw)
+      const keyOngletManagement = keyOngletManagementRaw
+      ? JSON.parse(keyOngletManagementRaw.replace(/« /g, '"').replace(/ »/g, '"'))
+      : [];
+      // Extract the keyOngletVideo
+      const keyOngletVideo = doc.querySelector('iframe')?.getAttribute('src') || '';
+    
+      // Extract the keyOngletPhoto
+      const keyOngletPhoto = Array.from(
+        doc.querySelectorAll('#ValueOngletPhoto img')
+      ).map(img => img.getAttribute('src'));
+    
+      // Extract the keyOngletSocialNetwork
+      const keyOngletSocialNetwork = doc.querySelector('#ValueOngletSocialNetwork')?.textContent.trim() || '';
+    
+      // Extract the keyOngletCredits
+      const keyOngletCreditsRaw = doc.querySelector('#ValueOngletCredits')?.textContent.trim() || '';
+      const keyOngletCredits = keyOngletCreditsRaw
+        ? JSON.parse(keyOngletCreditsRaw.replace(/« /g, '"').replace(/ »/g, '"'))
+        : [];
+    
+      // Construct the final JSON object
       return {
-        video: videoSrc,
-        poster: videoPoster,
         title,
-        reward: "",
-        sections: sections.map(section => ({
-          title: section.title,
-          items: section.list
-        })),
-        galleries: galleryImages
-      };
+        keyImgBanniere,
+        keyVidBanniere,
+        keyOngletManagement,
+        keyOngletVideo,
+        keyOngletPhoto,
+        keyOngletSocialNetwork,
+        keyOngletCredits
+      };      
     };
 
     const loadData = async () => {
       try {
         const storedData = parseInt(localStorage.getItem('pageId'), 10);
-        const response = await axios.get(`http://20.117.242.154/supernova_backend/supernova-backend/serveur/index.php//wp-json/wp/v2/pages/${storedData}`);
+        const response = await axios.get(`http://localhost/supernova-backend/serveur//wp-json/wp/v2/pages/${storedData}`);
         const htmlContent = response.data.content.rendered;
+        // console.log(htmlContent)
         const extractedData = extractData(htmlContent);
+        console.log(extractedData)
         setData(extractedData);
       } catch (error) {
         console.error('Erreur lors du chargement des données:', error);
@@ -109,16 +84,20 @@ const VideoComponent = ({ selectedProjectUrl }) => {
     loadData();
   }, [selectedProjectUrl]);
 
+  const { keyOngletManagement = [], keyOngletPhoto = [], keyImgBanniere="",title="", keyOngletSocialNetwork="", keyOngletVideo="" } = data;
+
   return (
     <div className='project-detail'>
       <div className='banner'>
-        <img src={image} alt="Banner" />
-        <div className='title'><h1>{data.title}</h1></div>
+        <img src={keyImgBanniere} alt="Banner" />
+        <div className='title'><h1>{title}</h1></div>
       </div>
       <div className="container">
         <ul className="nav nav-tabs" id="myTab">
-          {visibleTabs.map((tab) => (
-            <li className="nav-item" key={tab.key}>
+        {keyOngletManagement
+          .filter((tab) => tab.visibility === 'true') // Filtrer les onglets visibles
+          .map((tab) => (
+              <li className="nav-item" key={tab.key}>
               <a
                 className={`nav-link ${activeTab === tab.key ? 'active' : ''}`}
                 id={`${tab.key}-tab`}
@@ -130,15 +109,14 @@ const VideoComponent = ({ selectedProjectUrl }) => {
             </li>
           ))}
         </ul>
-        <p>fjdlfhfghghfjgfgfjglghfhglkhgthgthtjhgktjghtkjghrkjghthghlerhjk</p>
         <div className="tab-content">
           {activeTab === 'photo' && (
             <div className="tab-pane active">
               <div className="photo-gallery">
-                {images.map((image, index) => {
+                {keyOngletPhoto.map((image, index) => {
                   // Créer des groupes de 3 images
                   if (index % 3 === 0) {
-                    const rowImages = images.slice(index, index + 3); // Groupe de 3 images
+                    const rowImages = keyOngletPhoto.slice(index, index + 3); // Groupe de 3 images
                     return (
                       <div key={`row-${index}`} className="photo-row photo-row-3">
                         {rowImages.map((img, i) => (
@@ -146,7 +124,6 @@ const VideoComponent = ({ selectedProjectUrl }) => {
                             key={`img-${index}-${i}`}
                             src={img}
                             alt={`Gallery Image ${index}-${i}`}
-                            onClick={() => handleImageClick(index + i)} // Ouvre le carousel au clic
                           />
                         ))}
                       </div>
@@ -160,7 +137,7 @@ const VideoComponent = ({ selectedProjectUrl }) => {
 
           {activeTab === 'video' && (
             <div className="tab-pane active">
-              <iframe width="700" height="400" src={data.video}
+              <iframe width="700" height="400" src={keyOngletVideo}
                 title="ArtyA Watches - Vidéo promotionnelle, TINY PURITY TOURBILLON CHAMELEON 1/1"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -176,73 +153,35 @@ const VideoComponent = ({ selectedProjectUrl }) => {
             </div>
           )}
 
-          {activeTab === 'social' && (
+          {activeTab === 'social network' && (
             <div className="tab-pane active">
               <p>Content for Social Network</p>
-              {/* Ajoutez du contenu spécifique pour l'onglet Social */}
+              {keyOngletSocialNetwork/* Ajoutez du contenu spécifique pour l'onglet Social */}
             </div>
           )}
 
           {activeTab === 'credits' && (
             <div className="tab-pane active">
-              <div className='credit'>
-                <div className='credit-description'></div>
-                <div className='credit-people'>
+              <div className="credit">
+                <div className="credit-description">
+                </div>
+                <div className="credit-people">
                   <table>
                     <tbody>
-                      <tr>
-                        <td><strong>Client</strong></td>
-                        <td>SWIZA</td>
-                      </tr>
-                      <tr>
-                        <td><strong>Client</strong></td>
-                        <td>SWIZA</td>
-                      </tr>
-                      <tr>
-                        <td><strong>Client</strong></td>
-                        <td>SWIZA</td>
-                      </tr>
-                      <tr>
-                        <td><strong>Client</strong></td>
-                        <td>SWIZA</td>
-                      </tr>
-                      <tr>
-                        <td><strong>Client</strong></td>
-                        <td>SWIZA</td>
-                      </tr>
+                      {data.keyOngletCredits && data.keyOngletCredits.map((credit, index) => (
+                        <tr key={index}>
+                          <td>{credit.title}</td>
+                          <td>{credit.description}</td>
+                        </tr>
+                      ))}
                     </tbody>
                   </table>
                 </div>
               </div>
-              {/* Ajoutez du contenu spécifique pour l'onglet Credits */}
             </div>
           )}
+
         </div>
-        {/* <Modal
-        show={showModal}
-        onHide={handleClose}
-        size="lg"
-        centered
-        className="custom-modal"
-      > */}
-        {/* <Modal.Header closeButton>
-          <Modal.Title>Galerie d'images</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Carousel activeIndex={currentIndex} onSelect={setCurrentIndex}>
-            {images.map((image, index) => (
-              <Carousel.Item key={image.id}>
-                <img
-                  className="d-block w-100"
-                  src={image.src}
-                  alt={image.alt}
-                  style={{ maxHeight: '500px', objectFit: 'contain' }}
-                />
-              </Carousel.Item>
-            ))}
-          </Carousel>
-        </Modal.Body>
-      </Modal> */}
       </div>
     </div>
   );

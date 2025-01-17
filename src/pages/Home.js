@@ -25,7 +25,7 @@ function Home() {
 
     async function fetchHomePageContent() {
       try {
-        const response = await axios.get('http://20.117.242.154/supernova_backend/supernova-backend/serveur/index.php/wp-json/wp/v2/pages/73');
+        const response = await axios.get('http://localhost/supernova-backend/serveur/wp-json/wp/v2/pages/73');
         const data = parseWordpressContent(response.data.content.rendered);
 
         const IntroComponentContent = filterByFigcaption(data, 'IntroComponent');

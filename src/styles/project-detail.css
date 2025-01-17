@@ -74,6 +74,10 @@
   border-collapse: collapse;
 }
 
+.tab-pane {
+  color: white;
+}
+
 .credit-people {
   display: block;
   justify-content: center; /* Centre horizontalement */

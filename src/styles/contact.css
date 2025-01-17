@@ -65,12 +65,18 @@ form button {
   align-items: center; /* Centre les images verticalement */
   gap: 5vw; /* Espacement entre les images */
   width: 100%; /* Les images occupent toute la largeur disponible */
+  margin-bottom: 3vh;
 }
 
 .footer-social {
   width: 100%; /* Occupe toute la largeur du conteneur parent */
   text-align: center; /* Centre le texte */
   margin-top: 10px; /* Espacement entre les images et le footer */
+  color: white;
+}
+
+.footer-social h3 {
+  margin-top: 2vh;
 }
 
 

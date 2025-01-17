@@ -49,7 +49,7 @@ function Projets() {
   useEffect(() => {
     // Récupération des données via l'API
     axios
-      .get("http://20.117.242.154/supernova_backend/supernova-backend/serveur/index.php//wp-json/wp/v2/pages/131")
+      .get("http://localhost/supernova-backend/serveur//wp-json/wp/v2/pages/131")
       .then((response) => {
         const data = response.data.content.rendered;
         // Parsing du HTML pour extraire les données

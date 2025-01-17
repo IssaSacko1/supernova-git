@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import '../styles/contact.css';
-import PreFooter from '../components/PreFooter';
 import { data } from 'jquery';
 import axios from 'axios';
 import { parse } from 'node-html-parser';
@@ -20,7 +19,7 @@ function Contact() {
     preFooter: [],
   });
   useEffect(() => {
-    axios.get('http://20.117.242.154/supernova_backend/supernova-backend/serveur/index.php//wp-json/wp/v2/pages/140')
+    axios.get('http://localhost/supernova-backend/serveur//wp-json/wp/v2/pages/140')
     .then(response => {
       const htmlContent = response.data.content.rendered;
       const extractedData = extractData(htmlContent);
@@ -140,8 +139,11 @@ function Contact() {
           </div>
         <div className='footer-social'>
           <h3>SUPERNOVA. Switzerland</h3>
-          <h3></h3>
-          <h3></h3>
+          <h3>Route du Simplon 28B</h3>
+          <h3>1907 SAXON</h3>
+          <h3>SUISSE</h3>
+          <h3>+41 (0)79 192 96 23</h3>
+          <h3>info@supernova-creatif.com</h3>
           </div>
         </div>
       </div>

@@ -16,7 +16,7 @@ const Footer = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://20.117.242.154/supernova_backend/supernova-backend/serveur/index.php/wp-json/wp/v2/pages/155');
+        const response = await axios.get('http://localhost/supernova-backend/serveur/wp-json/wp/v2/pages/155');
         
         // Accéder à la propriété `rendered` et la nettoyer
         let footerItemsString = response.data.content.rendered;

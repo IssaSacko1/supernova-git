@@ -132,18 +132,20 @@
 
 .SliderShow .slide-info {
   position: absolute;
-  bottom: 0vh; /* Positionner le texte 10px au-dessus du bas */
-  left: 10px; /* Positionner le texte 10px à gauche */
+  bottom: 0; /* Positionné par rapport au bas si nécessaire */
+  left: 50%; /* Centré horizontalement */
+   transform: translate(-50%, 0); /*Ajuste pour centrer horizontalement */
   padding: 10px;
   color: white;
   font-size: 15px;
-  text-align: left; /* Alignement à gauche */
+  text-align: center; /* Alignement centré horizontal */
   transition: transform 0.5s ease-in-out; /* Transition fluide lors du hover */
-  width: 70%;
+  width: 100%;
 }
 
+
 .SliderShow .slide:hover .slide-info {
-  transform: translateY(-15vh); /* Fait remonter le texte de 20px lorsqu'on survole la slide */
+  transform: translateY(-15vh) translateX(-13vw);
 }
 
 .SliderShow .slide-info h3 {
