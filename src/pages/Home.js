@@ -15,19 +15,19 @@ function Home() {
   const [logos, setLogos] = useState([]);
   const [images, setImages] = useState([]);
   const [videos, setVideos] = useState([]);
-  
+  const [isLoadingImages, setIsLoadingImages] = useState(true); // État de chargement pour les images
+
   useEffect(() => {
-
     async function fetchHomePageContent() {
-
       try {
         const response = await axios.get('http://localhost/supernova-backend/serveur/wp-json/wp/v2/pages/73');
         const data = parseWordpressContent(response.data.content.rendered);
+
         const IntroComponentContent = filterByFigcaption(data, 'IntroComponent');
         const SliderComponentContent = filterByFigcaption(data, 'SliderComponent');
         const LogoComponentContent = filterByFigcaption(data, 'LogoComponent');
 
-        setContent1Title(data[8].content.slice(3 , -5));
+        setContent1Title(data[8].content.slice(3, -5));
         setContent1Button(data[14].content.slice(3, -4));
         setContent2Title(data[15].content.slice(3, -4));
         setContent2Contenu(data[16].content.slice(3, -4));
@@ -39,6 +39,8 @@ function Home() {
         localStorage.setItem('IntroComponent', JSON.stringify(IntroComponentContent));
       } catch (error) {
         console.error('Une erreur s\'est produite lors de la récupération des données de la page d\'accueil:', error);
+      } finally {
+        setIsLoadingImages(false); // Indiquer que le chargement des images est terminé
       }
     }
 
@@ -106,19 +108,22 @@ function Home() {
       item.figcaption && item.figcaption.component === targetCaption
     );
   }
-  
-
 
   return (
     <div className="home-page">
       <div className="scroller">
-        <IntroComponent />
+        {/* Afficher un message de chargement pendant que les images sont en train d'être récupérées */}
+        {isLoadingImages ? (
+          <p>Chargement des images...</p>
+        ) : (
+          <IntroComponent images={images} />
+        )}
         <div id="section-1" className="section-1">
           <h3>{Section1Titre}</h3>
-          <SliderShow images={videos}/>
+          <SliderShow images={videos} />
           <div className='homeButton'>
-          <a href="/projets" className="view-all-link">{Section1Button}</a>
-        </div>
+            <a href="/projets" className="view-all-link">{Section1Button}</a>
+          </div>
         </div>
         <div className='section-2'>
           <h3>{Section2Titre?.replace('&rsquo;', '’')}</h3>

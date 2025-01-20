@@ -21,14 +21,16 @@
 /* Style général pour chaque service */
 [class^="service-"] {
   display: flex;
+  gap: 5vw;
   flex-wrap: wrap;
   margin-top: 15%;
 }
 
 /* Style du texte */
 .services .text {
-  width: 50%;
+  width: 40%;
   color: white;
+  margin : 0 auto;
 }
 
 /* Style des images */

@@ -90,11 +90,6 @@ body::-webkit-scrollbar-thumb {
   font-weight: 200; /* Poids de la police */
  }
 
- @font-face {
-  font-family: 'Arial Narrow Bold';
-  src: url('./styles/polices/arialnarrow_bold.ttf') format('truetype'); /* Spécifiez le chemin relatif vers le fichier de police */
-  font-weight: 200; /* Poids de la police */
- }
 
  @font-face {
   font-family: 'LEMONMILK Bold Italic';
@@ -116,18 +111,8 @@ body::-webkit-scrollbar-thumb {
  }
 
  @font-face {
-  font-family: 'Arial Narrow Bold Italic';
-  src: url('./styles/polices/arialnarrow_bolditalic.ttf') format('truetype'); /* Spécifiez le chemin relatif vers le fichier de police */
- }
-
- @font-face {
   font-family: 'LEMONMILK Light';
   src: url('./styles/polices/LEMONMILK-Light.otf') format('truetype'); /* Spécifiez le chemin relatif vers le fichier de police */
- }
-
- @font-face {
-  font-family: 'Arial Narrow';
-  src: url('./styles/polices/arialnarrow.ttf') format('truetype'); /* Spécifiez le chemin relatif vers le fichier de police */
  }
 
  @font-face {
@@ -135,7 +120,3 @@ body::-webkit-scrollbar-thumb {
   src: url('./styles/polices/LEMONMILK-Medium.otf') format('truetype'); /* Spécifiez le chemin relatif vers le fichier de police */
  }
 
- @font-face {
-  font-family: 'Arial Narrow Italic';
-  src: url('./styles/polices/arialnarrow_italic.ttf') format('truetype'); /* Spécifiez le chemin relatif vers le fichier de police */
- }

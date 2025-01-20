@@ -5,7 +5,7 @@ import { parse } from 'node-html-parser';
 import vimeo from '../styles/icon-vimeo.svg';
 import instagram from '../styles/icon-instagram.svg';
 import linkedin from '../styles/icon-linkedin.svg';
-import image from '../image/Vignette2.jpg';
+import image from '../image/IMG_9043.jpg';
 import ImageBanner from '../components/ImageBanner';
 import ElfsightWidget from '../components/ElfsightWidget'; // Import du nouveau composant
 

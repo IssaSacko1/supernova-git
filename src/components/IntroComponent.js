@@ -2,71 +2,72 @@ import React, { useEffect } from 'react';
 import ImageComponent from './ImageComponent';
 
 
-const images = [
-  {id: 2,
-  src: "http://localhost/supernova-backend/serveur/wp-content/uploads/2024/11/m1_a86061abf1.jpg",
-  figcaption: {
-          component: "IntroComponent",
-          titre: "Image1",
-          description: "intro_img01"
-      }
-  },
-  {
-      id: 3,
-      src: "http://localhost/supernova-backend/serveur/wp-content/uploads/2024/11/m2_2f2b35d41f.jpg",
-      figcaption: {
-          component: "IntroComponent",
-          titre: "Image2",
-          description: "intro_img02"
-      }
-  },
-  {
-      id: 4,
-      src: "http://localhost/supernova-backend/serveur/wp-content/uploads/2024/11/m3_17a12a714d.jpg",
-      figcaption: {
-          component: "IntroComponent",
-          titre: "Image3",
-          description: "intro_img03"
-      }
-  },
-  {
-      id: 5,
-      src: "http://localhost/supernova-backend/serveur/wp-content/uploads/2024/11/m4_b3905eb1fb.jpg",
-      figcaption: {
-          component: "IntroComponent",
-          titre: "Image4",
-          description: "intro_img04"
-      }
-  },
-  {
-      id: 6,
-      src: "http://localhost/supernova-backend/serveur/wp-content/uploads/2024/11/m5_16dda0f399.jpg",
-      figcaption: {
-          component: "IntroComponent",
-          titre: "Image5",
-          description: "intro_img05"
-      }
-  },
-  {
-      id: 7,
-      src: "http://localhost/supernova-backend/serveur/wp-content/uploads/2024/11/m6_8e4f793480.jpg",
-      figcaption: {
-          component: "IntroComponent",
-          titre: "Image6",
-          description: "intro_img06"
-      }
-  },
-  {
-      id: 8,
-      src: "http://localhost/supernova-backend/serveur/wp-content/uploads/2024/11/m7_e60b8acbd1.jpg",
-      figcaption: {
-          component: "IntroComponent",
-          titre: "Image7",
-          description: "intro_img07"
-      }
-  }
-]
-const IntroComponent = ({  }) => {
+// const images = [
+//   {id: 2,
+//   src: "http://localhost/supernova-backend/serveur/wp-content/uploads/2024/11/m1_a86061abf1.jpg",
+//   figcaption: {
+//           component: "IntroComponent",
+//           titre: "Image1",
+//           description: "intro_img01"
+//       }
+//   },
+//   {
+//       id: 3,
+//       src: "http://localhost/supernova-backend/serveur/wp-content/uploads/2024/11/m2_2f2b35d41f.jpg",
+//       figcaption: {
+//           component: "IntroComponent",
+//           titre: "Image2",
+//           description: "intro_img02"
+//       }
+//   },
+//   {
+//       id: 4,
+//       src: "http://localhost/supernova-backend/serveur/wp-content/uploads/2024/11/m3_17a12a714d.jpg",
+//       figcaption: {
+//           component: "IntroComponent",
+//           titre: "Image3",
+//           description: "intro_img03"
+//       }
+//   },
+//   {
+//       id: 5,
+//       src: "http://localhost/supernova-backend/serveur/wp-content/uploads/2024/11/m4_b3905eb1fb.jpg",
+//       figcaption: {
+//           component: "IntroComponent",
+//           titre: "Image4",
+//           description: "intro_img04"
+//       }
+//   },
+//   {
+//       id: 6,
+//       src: "http://localhost/supernova-backend/serveur/wp-content/uploads/2024/11/m5_16dda0f399.jpg",
+//       figcaption: {
+//           component: "IntroComponent",
+//           titre: "Image5",
+//           description: "intro_img05"
+//       }
+//   },
+//   {
+//       id: 7,
+//       src: "http://localhost/supernova-backend/serveur/wp-content/uploads/2024/11/m6_8e4f793480.jpg",
+//       figcaption: {
+//           component: "IntroComponent",
+//           titre: "Image6",
+//           description: "intro_img06"
+//       }
+//   },
+//   {
+//       id: 8,
+//       src: "http://localhost/supernova-backend/serveur/wp-content/uploads/2024/11/m7_e60b8acbd1.jpg",
+//       figcaption: {
+//           component: "IntroComponent",
+//           titre: "Image7",
+//           description: "intro_img07"
+//       }
+//   }
+// ]
+const IntroComponent = ({ images }) => {
+
   useEffect(() => {
     const gsap = window.gsap;
 
