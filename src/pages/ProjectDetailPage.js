@@ -121,7 +121,7 @@ const VideoComponent = ({ selectedProjectUrl }) => {
                           <img
                             key={`img-${index}-${i}`}
                             src={img}
-                            alt={`Gallery Image ${index}-${i}`}
+                            alt={`Gallery ${index}-${i}`}
                           />
                         ))}
                       </div>

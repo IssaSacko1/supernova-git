@@ -9,7 +9,6 @@ import linkedin from '../styles/icon-linkedin.svg'
 
 
 function Menu() {
-  const [menuItems, setMenuItems] = useState([]);
   const [showPopup, setShowPopup] = useState(false);
   const [positionsData, setpositionsData] = useState({
     position1: [],

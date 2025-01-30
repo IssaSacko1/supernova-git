@@ -12,6 +12,7 @@ const Apropos = () => {
   const [teams, setTeams] = useState([]);
   const [data, setData] = useState({
     banner: null,
+    description: '',
     team: [],
   });
 
@@ -32,24 +33,25 @@ const Apropos = () => {
     const parsedHtml = parse(htmlContent);
 
     // Partie 1: Bannière vidéo et section "À propos de nous"
-    const bannerVideo = parsedHtml.querySelector('div.wp-block-group.has-global-padding.is-layout-constrained');
-    const videoElement = bannerVideo?.querySelector('figure.wp-block-video video');
-    const videoSrc = videoElement?.getAttribute('src') || '';
-    const videoPoster = videoElement?.getAttribute('poster') || '';
-    const titleAboutUs = bannerVideo?.querySelector('h2.wp-block-heading')?.textContent || '';
-    const descriptionAboutUs = bannerVideo?.querySelector('p')?.textContent || '';
-    const imageAboutUs = bannerVideo?.querySelector('figure.wp-block-image img');
-    const imageSrcAboutUs = imageAboutUs?.getAttribute('src') || '';
+    const videoSrc = parsedHtml.querySelector('video')?.getAttribute('src') || '';
+    const title = parsedHtml?.querySelector('#ValueTitle')?.textContent || '';
 
     const banner = {
-      videoSrc,
-      videoPoster,
-      title: titleAboutUs,
-      description: descriptionAboutUs,
-      imageSrc: imageSrcAboutUs,
+      title,
+      videoSrc
     };
 
-    // Partie 2: Notre équipe
+    // Partie 3: Description
+    const descriptionSectionTitle =parsedHtml?.querySelector('#KeyDescription')?.textContent || '';
+    const descriptionSectionValue =parsedHtml?.querySelector('#ValueDescription')?.textContent || '';
+
+    const description = {
+      descriptionSectionTitle,
+      descriptionSectionValue
+    }
+    console.log(description)
+
+    // Partie 3: Notre équipe
     const teamSections = parsedHtml.querySelectorAll('div.wp-block-group.is-vertical.is-layout-flex');
     const team = Array.from(teamSections).map(section => {
       const title = section.querySelector('h2.wp-block-heading a')?.textContent || '';
@@ -63,17 +65,19 @@ const Apropos = () => {
       };
     });
     
-    return { banner, team };
+    return { banner,description, team };
   };
 
   const { banner } = data;
-
+  console.log(data)
+  const {description } = data; 
+  console.log(description)
   return (
     <div className="aboutUsPage">
       {/* Partie 1: Bannière */}
       <VideoBanner banner={banner} />
-      <h1 className='aboutustitre'>La genèse de SUPERNOVA.</h1>
-      {/* <p className='aboutusdescription'>{banner.description}</p> */}
+      <h1 className='aboutustitre'>{data.description.descriptionSectionTitle}</h1>
+      <p className='aboutusdescription'>{data.description.descriptionSectionValue}</p>
       {/* Partie 2: Équipe */}
       <div className='about_us_content'>
         <h1>Notre équipe</h1>

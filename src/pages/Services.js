@@ -9,12 +9,11 @@ import '../styles/services.css';
 const Services = () => {
   const [jsonData, setJsonData] = useState(null);
   const [serviceSections, setServiceSections] = useState([]);
-  const [bannerSections, setBannerSections] = useState(null);
   const [isLoading, setIsLoading] = useState(true); // État pour gérer le chargement
 
   useEffect(() => {
     // Effectuer la requête GET à l'API WordPress  
-    axios.get('http://idevtes.cluster029.hosting.ovh.net/wp-json/wp/v2/pages/134')
+    axios.get('http://localhost/supernova-backend/serveur//wp-json/wp/v2/pages/134')
       .then(response => {
         const htmlContent = response.data.content.rendered;
         const extractedData = extractData(htmlContent);
@@ -73,8 +72,6 @@ const Services = () => {
 
     // Mettre à jour les sections de service et de bannière
     setServiceSections(serviceSectionsData);
-    setBannerSections(jsonData.banner);
-
 
     return jsonData;
   };
@@ -85,7 +82,7 @@ const Services = () => {
 
   return (
     <div className='services'>
-      <VideoBanner banner={bannerSections} />
+      <VideoBanner banner={jsonData.banner} />
       <div className='services-content'>
         {serviceSections.map((service, index) => (
           <ServiceItem key={index} service={service} index={index} />
