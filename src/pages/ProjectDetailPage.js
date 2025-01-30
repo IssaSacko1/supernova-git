@@ -47,7 +47,7 @@ const VideoComponent = ({ selectedProjectUrl }) => {
       const keyOngletPhoto = Array.from(
         doc.querySelectorAll('#ValueOngletPhoto img')
       ).map(img => img.getAttribute('src'));
-    
+      console.log(keyOngletPhoto);
       // Extract the keyOngletSocialNetwork
       const keyOngletSocialNetwork = doc.querySelector('#ValueOngletSocialNetwork')?.textContent.trim() || '';
     
@@ -112,12 +112,12 @@ const VideoComponent = ({ selectedProjectUrl }) => {
         {activeTab === 'photo' && (
             <div className="tab-pane active">
               <div className="photo-gallery">
-                {keyOngletPhoto.map((image, index) => {
+                {keyOngletPhoto.map((img, index) => {
                   // Créer des groupes de 3 images
                   if (index % 3 === 0) {
                     const rowImages = keyOngletPhoto.slice(index, index + 3); // Groupe de 3 images
                     return (
-                      <div key={`row-${index}`} className="photo-row photo-row-3">
+                      <div key={`row-${index}`} className="photo-row">
                         {rowImages.map((img, i) => (
                           <img
                             key={`img-${index}-${i}`}
@@ -137,18 +137,17 @@ const VideoComponent = ({ selectedProjectUrl }) => {
           {activeTab === 'video' && (
             <div className="tab-pane active">
               <iframe width="700" height="400" src={keyOngletVideo}
-                title="ArtyA Watches - Vidéo promotionnelle, TINY PURITY TOURBILLON CHAMELEON 1/1"
+                title={title}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen></iframe>
-              <iframe width="478" height="849" src="https://www.youtube.com/embed/AtaqZLl9w8s"
+              {/* <iframe width="478" height="849" src="https://www.youtube.com/embed/AtaqZLl9w8s"
                title="Il me dépasse #shortvideo #short" 
                frameBorder="0" 
                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                referrerPolicy="strict-origin-when-cross-origin" 
-               allowfullScreen></iframe>
-
+               allowfullScreen></iframe> */}
             </div>
           )}
 

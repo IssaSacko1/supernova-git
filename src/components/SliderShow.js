@@ -42,7 +42,7 @@ function SliderShow({ images }) {
       {
         breakpoint: 1441,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 3,
           slidesToScroll: 1,
           centerPadding: "20%", // Montre 50% des slides aux extrémités
           centerMode: true,

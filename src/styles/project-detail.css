@@ -1,25 +1,3 @@
-/* CSS pour la page ProjectDetail */
-.project-detail .banner {
-  position: relative;
-  display: inline-block;
-  width: 100%;
-  color: white;
-}
-
-.project-detail .banner img {
-  width: 100%;         /* L'image prend toute la largeur */
-  height: 80vh;        /* La hauteur est fixée à 80% de la hauteur de la fenêtre */
-  object-fit: cover;    /* Permet à l'image de se déformer pour remplir les dimensions */
-  filter: brightness(70%); /* Applique un filtre pour réduire la luminosité */
-}
-
-
-.project-detail .banner h1 {
-  position: absolute;
-  bottom: 15%;
-  left: 5%;
-}
-
 .project-detail .nav-tabs {
   margin-top: 4vh;
   border-bottom: none;
@@ -84,21 +62,15 @@
 .photo-gallery {
   display: flex;
   flex-direction: column;
-  gap: 3px; /* Espace entre les lignes */
+  gap: 5px; /* Espace entre les lignes */
 }
 
 .photo-row {
   display: flex;
   justify-content: center;
-  gap: 3px; /* Espace entre les images dans une ligne */
+  gap: 5px; /* Espace entre les images dans une ligne */
 }
 
-.photo-row-3 img {
+.photo-row img {
   width: 35%; /* Chaque image occupe 30% de la largeur pour 3 images */
 }
-
-
-.project-detail-item{
-  display: flex;
-  width: 100%;
-} 
