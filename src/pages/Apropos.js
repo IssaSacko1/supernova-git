@@ -16,7 +16,7 @@ const Apropos = () => {
   });
 
   useEffect(() => {
-    axios.get('http://localhost/supernova-backend/serveur//wp-json/wp/v2/pages/140')
+    axios.get('http://idevtes.cluster029.hosting.ovh.net/wp-json/wp/v2/pages/140')
       .then(response => {
         const htmlContent = response.data.content.rendered;
         const extractedData = extractData(htmlContent);

@@ -19,11 +19,10 @@ function Contact() {
 
   useEffect(() => {
     axios
-      .get('http://localhost/supernova-backend/serveur//wp-json/wp/v2/pages/140')
+      .get('http://idevtes.cluster029.hosting.ovh.net/wp-json/wp/v2/pages/140')
       .then((response) => {
         const htmlContent = response.data.content.rendered;
         const extractedData = extractData(htmlContent);
-        console.log(extractedData);
       })
       .catch((error) => {
         console.error('Erreur lors de la récupération des données', error);

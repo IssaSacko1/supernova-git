@@ -47,7 +47,6 @@ const VideoComponent = ({ selectedProjectUrl }) => {
       const keyOngletPhoto = Array.from(
         doc.querySelectorAll('#ValueOngletPhoto img')
       ).map(img => img.getAttribute('src'));
-      console.log(keyOngletPhoto);
       // Extract the keyOngletSocialNetwork
       const keyOngletSocialNetwork = doc.querySelector('#ValueOngletSocialNetwork')?.textContent.trim() || '';
     
@@ -74,7 +73,7 @@ const VideoComponent = ({ selectedProjectUrl }) => {
     const loadData = async () => {
       try {
         const storedData = parseInt(localStorage.getItem('pageId'), 10);
-        const response = await axios.get(`http://localhost/supernova-backend/serveur//wp-json/wp/v2/pages/${storedData}`);
+        const response = await axios.get(`http://idevtes.cluster029.hosting.ovh.net/wp-json/wp/v2/pages/${storedData}`);
         const htmlContent = response.data.content.rendered;
         const extractedData = extractData(htmlContent);
         setData(extractedData);

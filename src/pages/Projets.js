@@ -48,7 +48,7 @@ function Projets() {
   useEffect(() => {
     // Récupération des données via l'API
     axios
-      .get("http://localhost/supernova-backend/serveur//wp-json/wp/v2/pages/131")
+      .get("http://idevtes.cluster029.hosting.ovh.net/wp-json/wp/v2/pages/131")
       .then((response) => {
         const data = response.data.content.rendered;
         // Parsing du HTML pour extraire les données
