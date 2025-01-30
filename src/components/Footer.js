@@ -16,7 +16,7 @@ const Footer = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://idevtes.cluster029.hosting.ovh.net/wp-json/wp/v2/pages/155');
+        const response = await axios.get('https://idev-test.xyz/wp-json/wp/v2/pages/155');
         
         // Accéder à la propriété `rendered` et la nettoyer
         let footerItemsString = response.data.content.rendered;

@@ -22,7 +22,7 @@ function Menu() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://idevtes.cluster029.hosting.ovh.net/wp-json/wp/v2/pages/129');
+        const response = await axios.get('https://idev-test.xyz/wp-json/wp/v2/pages/129');
         
         // Accéder à la propriété `rendered` et la nettoyer
         let MenuItemsString = response.data.content.rendered;

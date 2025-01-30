@@ -20,7 +20,7 @@ function Home() {
   useEffect(() => {
     async function fetchHomePageContent() {
       try {
-        const response = await axios.get('http://idevtes.cluster029.hosting.ovh.net/wp-json/wp/v2/pages/73');
+        const response = await axios.get('https://idev-test.xyz/wp-json/wp/v2/pages/73');
         const data = parseWordpressContent(response.data.content.rendered);
 
         const IntroComponentContent = filterByFigcaption(data, 'IntroComponent');

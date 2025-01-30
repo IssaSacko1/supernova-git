@@ -73,7 +73,7 @@ const VideoComponent = ({ selectedProjectUrl }) => {
     const loadData = async () => {
       try {
         const storedData = parseInt(localStorage.getItem('pageId'), 10);
-        const response = await axios.get(`http://idevtes.cluster029.hosting.ovh.net/wp-json/wp/v2/pages/${storedData}`);
+        const response = await axios.get(`https://idev-test.xyz/wp-json/wp/v2/pages/${storedData}`);
         const htmlContent = response.data.content.rendered;
         const extractedData = extractData(htmlContent);
         setData(extractedData);
