@@ -13,6 +13,10 @@ footer .reseaux {
   margin-top: 1.5vh;
 }
 
+/* footer .reseaux img{
+  max-width: 20%;
+} */
+
 .footer-content {
   display: flex;
   flex-wrap: nowrap;

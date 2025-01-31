@@ -4,6 +4,7 @@ import "../styles/footer.css"
 import vimeo from '../styles/icon-vimeo.svg';
 import instagram from '../styles/icon-instagram.svg';
 import linkedin from '../styles/icon-linkedin.svg'
+import youtube from "../styles/youtube.svg"
 
 const Footer = () => {
   const [columnsData, setColumnsData] = useState({
@@ -74,9 +75,9 @@ const Footer = () => {
           <div key={item.id}>
             <p className='supernova'>{item.title}</p>
             <div className='reseaux'>
-                <a href={item.vimeo}><img src={vimeo}  alt="YouTube" /></a>
-                <a href={item.instagram}><img src={instagram}  alt="Instagram" /></a>
-                <a href={item.linkedin}><img src={linkedin}  alt="linkedin" /></a>
+                <a href={item.youtube} target="_blank" rel="noopener noreferrer"><img src={youtube}  alt="YouTube" /></a>
+                <a href={item.instagram} target="_blank" rel="noopener noreferrer"><img src={instagram}  alt="Instagram" /></a>
+                <a href={item.linkedin} target="_blank" rel="noopener noreferrer"><img src={linkedin}  alt="linkedin" /></a>
             </div>
           </div>
         ))}
@@ -95,13 +96,6 @@ const Footer = () => {
           </div>
         ))}
       </div>
-      {/* <div className="footer-column">
-        {columnsData.column4.map(item => (
-          <div key={item.id} className='column-4'>
-            <a href={item.url}>{item.title}</a>
-          </div>
-        ))}
-      </div> */}
       </div>
       <div className="footer-copyright">
         <p>&copy; {new Date().getFullYear()} SUPERNOVA. VB PRODUCTION AGENCY – Vidal BUSO. Tous droits réservés.</p>
