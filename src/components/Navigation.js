@@ -96,7 +96,7 @@ function Menu() {
             {positionsData.position1.map((item, index) => (
               <li key={item.id}>
                 <h1><a
-                  href={item.attributes.url}
+                  href={item.attributes.url} onClick={togglePopup}
                 >
                   {item.attributes.title}
                 </a></h1>

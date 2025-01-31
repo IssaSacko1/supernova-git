@@ -7,6 +7,10 @@
   height: 60%;
 } 
 
+.SliderShow button {
+  background-color: transparent;
+}
+
 
 .slick-list {
   overflow: hidden;

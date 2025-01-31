@@ -98,7 +98,7 @@ const VideoComponent = ({ selectedProjectUrl }) => {
               <a
                 className={`nav-link ${activeTab === tab.key ? 'active' : ''}`}
                 id={`${tab.key}-tab`}
-                href={`#${tab.key}`}
+                href={`/#/project-detail/${tab.key}`}
                 onClick={() => handleTabClick(tab.key)}
               ><h3>
                 {tab.key.charAt(0).toUpperCase() + tab.key.slice(1)}

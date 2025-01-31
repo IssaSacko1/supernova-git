@@ -122,13 +122,13 @@ function Home() {
           <h3>{Section1Titre}</h3>
           <SliderShow images={videos} />
           <div className='homeButton'>
-            <a href="/projets" className="view-all-link">{Section1Button}</a>
+            <a href="/#projets" className="view-all-link">{Section1Button}</a>
           </div>
         </div>
         <div className='section-2'>
           <h3>{Section2Titre?.replace('&rsquo;', '’')}</h3>
           <p><div dangerouslySetInnerHTML={{ __html: Section2Contenu }}></div></p>
-          <a href="/contact" className="contact-link">{Section2Bouton}</a>
+          <a href="/#contact" className="contact-link">{Section2Bouton}</a>
         </div>
         <div className='client'>
           <h3>{Section3Titre}</h3>

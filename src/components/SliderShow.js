@@ -1,10 +1,12 @@
 import "../styles/SliderShow.css";
+import { useHistory } from 'react-router-dom';
 import { useState } from "react";
 import Slider from "react-slick";
 import { FaArrowRight, FaArrowLeft, FaArrowUp } from "react-icons/fa";
 import React from 'react'; 
 
 function SliderShow({ images }) {
+  const history = useHistory();
   const NextArrow = ({ onClick }) => {
     return (
       <div className="arrow next" onClick={onClick}>
@@ -19,6 +21,11 @@ function SliderShow({ images }) {
         <FaArrowLeft />
       </div>
     );
+  };
+
+  const handleClick = (pageId) => {
+    localStorage.setItem('pageId', pageId); // Stocke l'URL dans le local storage
+    history.push('/project-detail'); // Navigue vers /project-detail
   };
 
   const [imageIndex, setImageIndex] = useState(0);
@@ -92,10 +99,10 @@ function SliderShow({ images }) {
           return (
             <div className={className} key={idx}>
               <img src={img.src} alt={`Slide ${idx}`} />
-              <div className="slide-info">
+              <div className="slide-info" >
                 <h3>{img.figcaption.titre}</h3>
                 <p>{img.figcaption.description}</p>
-                <a className="slider-show-button" href='/projets'><FaArrowUp/> View project</a>
+                <button className="slider-show-button" onClick={() => handleClick( img.figcaption.page_id )}><FaArrowUp/> View project</button>
             </div>
             </div>
           );
