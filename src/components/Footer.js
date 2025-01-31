@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import "../styles/footer.css"
-import vimeo from '../styles/icon-vimeo.svg';
 import instagram from '../styles/icon-instagram.svg';
 import linkedin from '../styles/icon-linkedin.svg'
 import youtube from "../styles/youtube.svg"
