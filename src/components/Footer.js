@@ -3,7 +3,7 @@ import axios from 'axios';
 import "../styles/footer.css"
 import instagram from '../styles/icon-instagram.svg';
 import linkedin from '../styles/icon-linkedin.svg'
-import youtube from "../styles/youtube.svg"
+import youtube from "../styles/icon-youtube.svg"
 
 const Footer = () => {
   const [columnsData, setColumnsData] = useState({
