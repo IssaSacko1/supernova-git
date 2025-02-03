@@ -5,7 +5,6 @@
   overflow: visible; /* Permet à l'élément de ne pas être coupé */
   transform-style: preserve-3d;
   height: 60%;
-  margin-top: 5vh;
 } 
 
 .SliderShow button {
@@ -150,7 +149,7 @@
 
 
 .SliderShow .slide:hover .slide-info {
-  transform: translateY(-15vh) ;
+  transform: translateY(-15vh);
 }
 
 .SliderShow .slide-info h3 {
@@ -271,6 +270,9 @@
 
   .SliderShow .prev {
     visibility: hidden;
+  }
+  .SliderShow .slide:hover .slide-info {
+    transform: translateY(-0vh) translateX(-40vw);
   }
 
 }
