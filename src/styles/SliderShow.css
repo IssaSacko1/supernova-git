@@ -149,7 +149,7 @@
 
 
 .SliderShow .slide:hover .slide-info {
-  transform: translateY(-15vh) translateX(-13vw);
+  transform: translateY(-15vh) ;
 }
 
 .SliderShow .slide-info h3 {
@@ -189,14 +189,7 @@
     height: 90vh;
   }
   .SliderShow .slide:hover .slide-info {
-    transform: translateY(-50vh) translateX(-38vw);
-  }
-  .SliderShow  img{
-    height: 40%;
-  }
-
-  .SliderShow  img{
-    height: 40%;
+    transform: translateY(-50vh) translateX(-503vw);
   }
 
   .SliderShow .activeSlide { 
