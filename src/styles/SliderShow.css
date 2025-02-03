@@ -5,6 +5,7 @@
   overflow: visible; /* Permet à l'élément de ne pas être coupé */
   transform-style: preserve-3d;
   height: 60%;
+  margin-top: 5vh;
 } 
 
 .SliderShow button {
@@ -263,11 +264,15 @@
 } */
 
 /* Pour les téléphones (moins de 768px) */
-/* @media (max-width: 767px) {
-  .SliderShow .slide:hover .slide-info {
-    transform: translateY(-500vh);
+@media (max-width: 767px) {
+  .SliderShow .next {
+    visibility: hidden;
   }
 
-} */
+  .SliderShow .prev {
+    visibility: hidden;
+  }
+
+}
 
 

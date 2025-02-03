@@ -8,14 +8,13 @@ footer {
 }
 
 footer .reseaux {
+  margin-top: 2vh;
   display: flex;
+  justify-content: center; /* Centre horizontalement */
   gap: 3vw;
-  margin-top: 1.5vh;
+  text-align: center;
 }
 
-/* footer .reseaux img{
-  max-width: 20%;
-} */
 
 .footer-content {
   display: flex;
