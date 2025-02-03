@@ -272,7 +272,7 @@
     visibility: hidden;
   }
   .SliderShow .slide:hover .slide-info {
-    transform: translateY(-0vh) translateX(-40vw);
+    transform: translateY(3vh) translateX(-40vw);
   }
 
 }

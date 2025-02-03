@@ -14,9 +14,8 @@ nav li {
 
 /* Écrans très larges (≥ 1200px) */
 @media (min-width: 1200px)  {
-  .footerPopUp {
-    width: 70%; /* Réduction de la largeur */
-    gap: 20rem; /* Espace entre les éléments */
+  nav .reseaux {
+    gap: 50px
   }
 }
 
@@ -39,24 +38,9 @@ nav li {
 }
 
 /* Mobiles grands (entre 576px et 767px) */
-@media (max-width: 767px) and (min-width: 576px) {
-  .footerPopUp {
-    flex-direction: column; /* Empile les éléments verticalement */
-    align-items: center; /* Centre les éléments */
-    width: 90%;
-    transform: translateY(5%); /* Translation encore réduite */
-    gap: 1rem;
-  }
-}
-
-/* Mobiles petits (< 576px) */
-@media (max-width: 575px) {
-  .footerPopUp {
-    flex-direction: column;
-    align-items: center;
-    width: 95%; /* Presque toute la largeur de l’écran */
-    transform: translateY(0); /* Pas de translation verticale */
-    gap: 0.5rem;
+@media (max-width: 767px){
+  .contact p {
+    font-size: 1rem;
   }
 }
 
@@ -107,10 +91,8 @@ nav .reseaux {
   width: 30%;
   position: relative;
   display: flex;
-  gap: 50px;
   justify-content: center; /* Centre horizontalement */
   align-items:flex-end; /* Aligne verticalement si nécessaire */
-  margin:  0 auto;
 }
 
 
@@ -224,7 +206,6 @@ nav .reseaux {
 .contact {
   display: flex;
   justify-content: center;
-  margin:  0 auto;
   align-items:flex-end; /* Aligne verticalement si nécessaire */
 }
 
