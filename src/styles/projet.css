@@ -88,7 +88,7 @@
 /* Styles pour une vidéo par ligne sur mobile */
 @media (max-width: 767px) {
   .projet .video-container {
-    width: 90%; /* Pleine largeur pour une vidéo par ligne sur mobile */
+    width: 100%; /* Pleine largeur pour une vidéo par ligne sur mobile */
     max-width: 100%; /* Assure que la vidéo occupe tout l'espace disponible */
   }
 }
