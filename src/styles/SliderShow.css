@@ -138,7 +138,7 @@
   position: absolute;
   bottom: 0; /* Positionné par rapport au bas si nécessaire */
   left: 50%; /* Centré horizontalement */
-   transform: translate(-50%, 0); /*Ajuste pour centrer horizontalement */
+  transform: translate(-50%, 0); /*Ajuste pour centrer horizontalement */
   padding: 10px;
   color: white;
   font-size: 15px;
@@ -179,17 +179,24 @@
   transform: rotateY(-50deg);
 } */
 
-@media (min-width: 1442px) {
+/* @media (min-width: 1442px) {
 
 }
-
+*/
 
 @media (min-width: 1200px) and (max-width: 1441px) {
   .section-1 {
     height: 90vh;
   }
   .SliderShow .slide:hover .slide-info {
-    transform: translateY(-10vh);
+    transform: translateY(-50vh) translateX(-38vw);
+  }
+  .SliderShow  img{
+    height: 40%;
+  }
+
+  .SliderShow  img{
+    height: 40%;
   }
 
   .SliderShow .activeSlide { 
@@ -204,14 +211,14 @@
   }  
 
   .SliderShow .next {
-    right: 27%;
+    right: 18%;
     top: 40%;
     transform: translateY(-50%);
 
   }
 
   .SliderShow .prev {
-    left: 27%;
+    left: 18%;
     top: 40%;
     transform: translateY(-50%);
 
@@ -221,7 +228,7 @@
 
 
 /* Pour les ordinateurs portables (entre 992px et 1199px) */
-@media (min-width: 992px) and (max-width: 1199px) {
+/* @media (min-width: 992px) and (max-width: 1199px) {
 
   .SliderShow .slide:hover .slide-info {
     transform: translateY(-5vh);
@@ -240,10 +247,10 @@
     transform: translateY(-50%);
 
   }
-}
+} */
 
 /* Pour les tablettes (entre 768px et 991px) */
-@media (min-width: 768px) and (max-width: 991px) {
+/* @media (min-width: 768px) and (max-width: 991px) {
 
   .SliderShow .next {
     right: 0%;
@@ -260,14 +267,14 @@
   }
 
 
-}
+} */
 
 /* Pour les téléphones (moins de 768px) */
-@media (max-width: 767px) {
+/* @media (max-width: 767px) {
   .SliderShow .slide:hover .slide-info {
     transform: translateY(-500vh);
   }
 
-}
+} */
 
 

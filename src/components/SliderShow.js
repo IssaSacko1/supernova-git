@@ -4,6 +4,7 @@ import { useState } from "react";
 import Slider from "react-slick";
 import { FaArrowRight, FaArrowLeft, FaArrowUp } from "react-icons/fa";
 import React from 'react'; 
+import { maxHeight } from "@mui/system";
 
 function SliderShow({ images }) {
   const history = useHistory();
@@ -49,7 +50,7 @@ function SliderShow({ images }) {
       {
         breakpoint: 1441,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 1,
           slidesToScroll: 1,
           centerPadding: "20%", // Montre 50% des slides aux extrémités
           centerMode: true,

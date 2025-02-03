@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../styles/Menu.css';
 import supernova from "../image/Languette.png"; // Import de l'image
-import vimeo from '../styles/icon-vimeo.svg';
+import youtube from '../styles/icon-youtube.svg';
 import instagram from '../styles/icon-instagram.svg';
 import linkedin from '../styles/icon-linkedin.svg'
 
@@ -87,7 +87,7 @@ function Menu() {
       <div className={`popup ${showPopup ? 'slide-in' : 'slide-out'}`}>
        <div className='contentPopup'>
        <div className='reseaux'>
-                <a href={positionsData.position3[0].url}><img src={vimeo}  alt="YouTube" /></a>
+                <a href={positionsData.position3[0].url}><img src={youtube}  alt="YouTube" /></a>
                 <a href={positionsData.position3[1].url}><img src={instagram}  alt="Instagram" /></a>
                 <a href={positionsData.position3[2].url}><img src={linkedin}  alt="linkedin" /></a>
             </div>
