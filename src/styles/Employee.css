@@ -16,7 +16,7 @@
 }
 
 .social-network img{
-  width: 50px;
+  width: 2vw;
 }
 
 .social-network img:hover{
@@ -30,6 +30,19 @@
   flex-wrap: wrap; /* Garde cette propriété pour les éléments qui se chevauchent */
   justify-content: center; /* Centre horizontalement les éléments */
   align-items: center; /* Centre verticalement les éléments (si la hauteur est définie) */
-  /* Optionnel : vous pouvez définir une hauteur si nécessaire */
-  height: 80vh; /* Ajustez cette valeur selon vos besoins */
+}
+
+@media (max-width: 767px) {
+  .employee {
+    width: 66%;
+    margin-top: 5vh;
+  }
+  .social-network img{
+    width: 8vw;
+  }
+
+  .employee {
+    width: 66%;
+  }
+
 }

@@ -23,7 +23,6 @@ form button {
   background-color: rgb(255, 255, 255);
   color: #0D0D0D;
   text-transform: uppercase; /* Met le texte en majuscules */
-  width: 20%;
   border-radius: 1.0vw;
   display: inline-block;
   border: 0;
@@ -77,4 +76,14 @@ form button {
 
 .footer-social h3 {
   margin-top: 2vh;
+}
+
+@media (max-width: 767px) { 
+  .social-network-part {
+    display: none;
+  }
+  .contact-form-part {
+    width: 90%;
+    margin: 0 auto;
+  }
 }
