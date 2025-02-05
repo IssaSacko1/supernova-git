@@ -149,7 +149,7 @@
 
 
 .SliderShow .slide:hover .slide-info {
-  transform: translateY(-15vh);
+  transform: translateY(-15vh) translateX(-20vw);
 }
 
 .SliderShow .slide-info h3 {
@@ -186,10 +186,10 @@
 
 @media (min-width: 1200px) and (max-width: 1441px) {
   .section-1 {
-    height: 90vh;
+    height: 110vh;
   }
   .SliderShow .slide:hover .slide-info {
-    transform: translateY(-50vh) translateX(-503vw);
+    transform: translateY(-30vh) translateX(-30vw)
   }
 
   .SliderShow .activeSlide { 
@@ -202,20 +202,6 @@
   .SliderShow .rightSlide {
     transform: perspective(1200px) rotateY(-30deg) translateX(-100px) scale(.6) translateY(-100px);
   }  
-
-  .SliderShow .next {
-    right: 18%;
-    top: 40%;
-    transform: translateY(-50%);
-
-  }
-
-  .SliderShow .prev {
-    left: 18%;
-    top: 40%;
-    transform: translateY(-50%);
-
-  }
 
 }
 
@@ -264,13 +250,7 @@
 
 /* Pour les téléphones (moins de 768px) */
 @media (max-width: 767px) {
-  .SliderShow .next {
-    visibility: hidden;
-  }
 
-  .SliderShow .prev {
-    visibility: hidden;
-  }
   .SliderShow .slide:hover .slide-info {
     transform: translateY(-5vh) translateX(-40vw);
   }

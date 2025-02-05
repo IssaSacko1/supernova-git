@@ -4,25 +4,9 @@ import { useState } from "react";
 import Slider from "react-slick";
 import { FaArrowRight, FaArrowLeft, FaArrowUp } from "react-icons/fa";
 import React from 'react'; 
-import { maxHeight } from "@mui/system";
 
 function SliderShow({ images }) {
   const history = useHistory();
-  const NextArrow = ({ onClick }) => {
-    return (
-      <div className="arrow next" onClick={onClick}>
-        <FaArrowRight />
-      </div>
-    );
-  };
-
-  const PrevArrow = ({ onClick }) => {
-    return (
-      <div className="arrow prev" onClick={onClick}>
-        <FaArrowLeft />
-      </div>
-    );
-  };
 
   const handleClick = (pageId) => {
     localStorage.setItem('pageId', pageId); // Stocke l'URL dans le local storage
@@ -41,8 +25,8 @@ function SliderShow({ images }) {
     centerPadding: "10%", 
     centerMode: true,
     variableWisth: true,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
+    // nextArrow: <NextArrow />,
+    // prevArrow: <PrevArrow />,
     beforeChange: (current, next) => setImageIndex(next),
     autoplay:true,
     autoplaySpeed :3500,
