@@ -74,3 +74,19 @@
 .photo-row img {
   width: 35%; /* Chaque image occupe 30% de la largeur pour 3 images */
 }
+
+.project-detail iframe {
+    max-width: 100%;
+    width: 100%;
+    /* height: 400px; */
+    /* height: auto; */
+
+}
+
+/* @media (max-width: 768px) {
+  .project-detail iframe {
+    max-width: 100%;
+    width: 500px;
+    height: 200px;
+}
+} */

@@ -135,7 +135,7 @@ const VideoComponent = ({ selectedProjectUrl }) => {
 
           {activeTab === 'video' && (
             <div className="tab-pane active">
-              <iframe width="700" height="400" src={keyOngletVideo}
+              <iframe  src={keyOngletVideo}
                 title={title}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
