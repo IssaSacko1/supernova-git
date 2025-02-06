@@ -4,6 +4,8 @@ import IntroComponent from '../components/IntroComponent';
 import LogoComponent from '../components/LogoComponent';
 import "../styles/home.css";
 import SliderShow from '../components/SliderShow';
+import { useHistory } from 'react-router-dom';
+
 
 function Home() {
   const [Section1Titre, setContent1Title] = useState(null);
@@ -16,7 +18,8 @@ function Home() {
   const [images, setImages] = useState([]);
   const [videos, setVideos] = useState([]);
   const [isLoadingImages, setIsLoadingImages] = useState(true); // État de chargement pour les images
-
+  const history = useHistory();
+  
   useEffect(() => {
     async function fetchHomePageContent() {
       try {
@@ -43,6 +46,8 @@ function Home() {
         setIsLoadingImages(false); // Indiquer que le chargement des images est terminé
       }
     }
+
+
 
     fetchHomePageContent();
   }, []);
@@ -108,6 +113,9 @@ function Home() {
       item.figcaption && item.figcaption.component === targetCaption
     );
   }
+  const handleClick = (redirect) => {
+    history.push(redirect);
+  };
 
   return (
     <div className="home-page">
@@ -122,13 +130,13 @@ function Home() {
           <h3>{Section1Titre}</h3>
           <SliderShow images={videos} />
           <div className='homeButton'>
-            <a href="/#projets" className="view-all-link">{Section1Button}</a>
+            <button className="view-all-link" onClick={() => handleClick("/projets")}>{Section1Button}</button>
           </div>
         </div>
         <div className='section-2'>
           <h3>{Section2Titre?.replace('&rsquo;', '’')}</h3>
           <p><div dangerouslySetInnerHTML={{ __html: Section2Contenu }}></div></p>
-          <a href="/#contact" className="contact-link">{Section2Bouton}</a>
+          <button className="contact-link" onClick={() => handleClick("/contact")}>{Section2Bouton}</button>
         </div>
         <div className='client'>
           <h3>{Section3Titre}</h3>

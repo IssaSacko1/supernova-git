@@ -4,7 +4,8 @@
 .SliderShow {
   overflow: visible; /* Permet à l'élément de ne pas être coupé */
   transform-style: preserve-3d;
-  height: 60%;
+  padding-bottom: 4%;
+  cursor: pointer;
 } 
 
 .SliderShow button {
@@ -30,7 +31,7 @@
   width: 100%;
   opacity: 1;
   border-radius: 16px;
-  box-shadow: rgb(44, 59, 56) -8px 8px 0px 0px;
+  box-shadow: rgb(44, 59, 56) -4px 4px 8px 0px;
 
 
 }
@@ -173,9 +174,9 @@
 */
 
 @media (min-width: 1200px) and (max-width: 1441px) {
-  .section-1 {
+  /* .section-1 {
     height: 110vh;
-  }
+  } */
   .SliderShow .slide:hover .slide-info {
     transform: translateY(-30vh) translateX(-30vw)
   }

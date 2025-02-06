@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import ImageComponent from './ImageComponent';
+import supernovawhite from '../image/Supernova long texte Final B.png';
+import supernovastars from '../image/Supernova long texte Final.png';
 
 const IntroComponent = ({ images }) => {
 
@@ -251,7 +253,24 @@ const IntroComponent = ({ images }) => {
       });
       tlFixFirstScreenMove03Ops
         .to('.intro_img03', {autoAlpha: 0,  ease: 'none'});
+        
+    tlFixFirstScreen.fromTo('#supernova-white', 
+      { autoAlpha: 1 },  // Début : opacité 1
+      { 
+          autoAlpha: 0,  // Fin : opacité 0
+          ease: 'power2.out'
+      }
+  );
 
+  tlFixFirstScreen.fromTo('#supernova-stars', 
+    { autoAlpha: 0 },  // Début : opacité 1
+    { 
+        autoAlpha: 1,  // Fin : opacité 0
+        ease: 'power2.out'
+    }
+);
+        
+        
   }, []);
 
   return (
@@ -260,7 +279,9 @@ const IntroComponent = ({ images }) => {
         <div className='intro_hold'>
         <div className='intro_hold_h1'>
             <div className='h2g'>
-            <h1>Supernova.</h1>
+            {/* <h1>Supernova.</h1> */}
+            <img id="supernova-white" src={supernovawhite}></img>
+            <img id="supernova-stars" src={supernovastars}></img>
             </div>
           </div>
           {images.map((img) => (

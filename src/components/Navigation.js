@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../styles/Menu.css';
-import supernova from "../image/Languette.png"; // Import de l'image
+import supernova from "../image/Plan de travail 1.svg"; // Import de l'image
 import youtube from '../styles/icon-youtube.svg';
 import instagram from '../styles/icon-instagram.svg';
 import linkedin from '../styles/icon-linkedin.svg'
