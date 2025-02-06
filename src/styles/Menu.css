@@ -201,6 +201,7 @@ nav .reseaux {
   width: 90%;
   margin:  0 auto;
   height: 90vh;
+  justify-content: center;
 }
 
 .contact {
