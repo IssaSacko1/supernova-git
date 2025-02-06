@@ -2,7 +2,7 @@ import "../styles/SliderShow.css";
 import { useHistory } from 'react-router-dom';
 import { useState } from "react";
 import Slider from "react-slick";
-import { FaArrowRight, FaArrowLeft, FaArrowUp } from "react-icons/fa";
+import { FaArrowUp } from "react-icons/fa";
 import React from 'react'; 
 
 function SliderShow({ images }) {
@@ -19,7 +19,7 @@ function SliderShow({ images }) {
     dots: true,
     infinite: true,
     lazyLoad: true,
-    speed: 1500,
+    speed: 3000,
     slidesToShow: 3,
     slidesToScroll: 1,
     centerPadding: "10%", 
@@ -29,7 +29,7 @@ function SliderShow({ images }) {
     // prevArrow: <PrevArrow />,
     beforeChange: (current, next) => setImageIndex(next),
     autoplay:true,
-    autoplaySpeed :3500,
+    autoplaySpeed :600,
     responsive: [
       {
         breakpoint: 1441,

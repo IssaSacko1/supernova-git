@@ -122,18 +122,6 @@
 }
 
 
-.SliderShow .next {
-  right: 33%;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.SliderShow .prev {
-  left: 33%;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
 .SliderShow .slide-info {
   position: absolute;
   bottom: 0; /* Positionné par rapport au bas si nécessaire */
@@ -253,6 +241,15 @@
 
   .SliderShow .slide:hover .slide-info {
     transform: translateY(-5vh) translateX(-40vw);
+  }
+
+}
+
+/* Pour les ecrans (moins de 1441px) */
+@media (min-width: 1441px) {
+
+  .SliderShow .slide:hover .slide-info {
+    transform: translateY(-10vh) translateX(-13vw);
   }
 
 }
