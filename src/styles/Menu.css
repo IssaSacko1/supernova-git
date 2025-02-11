@@ -7,6 +7,10 @@ nav {
   z-index: 1000;
 }
 
+svg {
+  font-family: 'LEMON MILK', sans-serif;
+}
+
 nav li {
   list-style: none;
 }

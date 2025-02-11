@@ -198,25 +198,6 @@
   object-fit: cover;
   width: 100%;
 }
-.mn_screen .intro_hold_h1 {
-  position: absolute;
-  text-align: center;
-  display: inline-block;
-  overflow: hidden;
-  z-index: 90;
-  opacity: 1;
-  pointer-events: none;
-}
-
-.mn_screen .intro_hold_h1 .h2g h1 {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  color: white;
-  letter-spacing: 1vw;
-  width: 100%;
-  text-transform: uppercase;
-}
 
 .mn_screen .ms_txt {
   text-align: center;
@@ -405,103 +386,29 @@
   padding-bottom: 5%;
 }
 
-/* Styles pour la section */
-.slider-section {
-  display: flex; /* flex */
-  flex-wrap: nowrap; /* flex-nowrap */
-  align-items: center; /* items-center */
-  gap: 10vw; /* Correspond à space-x-10 de Tailwind */
-}
 
-/* Styles pour les éléments enfants */
-.slider-item {
-  width: 45vw; /* Ajuste la largeur selon tes besoins */
-  height: 50vh; /* Ajuste la hauteur comme tu le souhaites */
-  flex-shrink: 0; /* shrink-0 */
-  overflow: hidden; /* overflow-hidden */
-  display: flex; /* Pour centrer les images */
-  justify-content: center; /* Centre horizontalement */
-  align-items: center; /* Centre verticalement */
-  position: relative; /* Ajouté pour permettre le positionnement relatif de .text */
-}
-
-/* Styles pour l'image */
-.slider-image {
-  width: 100%; /* Ajuste l'image pour remplir la largeur du conteneur */
-  height: 100%; /* Remplit la hauteur du conteneur parent */
-  object-fit: cover; /* Pour éviter les déformations */
-  z-index: 1;
-  transition: opacity 0.5s ease; /* Ajoute une transition à l'opacité */
-  z-index: 1;
-}
-
-.slider-item .text {
-  position: absolute; /* Position absolue pour centrer le texte */
-  top: 50%; /* Positionne le texte au milieu verticalement */
-  left: 50%; /* Positionne le texte au milieu horizontalement */
-  transform: translate(-50%, -50%); /* Ajuste le texte pour qu'il soit centré */
-  color: white; /* Optionnel : couleur du texte */
-  z-index: 3; /* Assurez-vous que le texte est au-dessus de l'image */
-  text-align: center; /* Centre le texte à l'intérieur de .text */
-}
-
-
-
-.background {
-  position: absolute; /* Position absolue pour remplir le conteneur */
-  top: 0;
-  opacity: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transition: opacity 0.5s ease; /* Transition de l'opacité */
-  background-color: rgba(0, 0, 0, 0.7); /* Fond noir semi-transparent */
-  z-index: 2; /* Au-dessus de l'image, mais en dessous du texte */
-}
-
-/* Montre le fond noir au survol */
-.slider-item:hover .background {
-  opacity: 1; /* Le fond noir devient visible au survol */
-}
-
-/* Styles pour le trait de séparation */
-.divider {
-  height: 2px; /* Épaisseur du trait */
-  background-color: white; /* Couleur du trait */
-  width: 100%; /* Prend toute la largeur du texte */
-  margin: 10px 0; /* Espacement au-dessus et en dessous du trait */
-}
 
 h4 {
   text-transform: uppercase;
 }
-.h2g {
-  position: relative;    /* Le conteneur est en position relative pour que les images absolues soient placées par rapport à lui */
-  width: 100%;
-}
+
 #supernova-white,
 #supernova-stars {
-  position: relative;
+  z-index: 100;
+  width: 70%;
   }
-#supernova-white{
-  top :100px;
-}
-#supernova-stars {
-  top:-100px;
+
+  .h2g img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.supernova-stars img {
-  opacity: 0;
-}
-.supernova-white img {
-  opacity: 1;
-}
 
 /* Pour les écrans d'ordinateur de bureau (>= 1200px) */
-@media (min-width: 1442px) {
-  .h2g h1 {
-    font-size: 10rem;
-  }
+@media (min-width: 1442px) and (max-width: 1600px) {
 
   /* .section-1 {
     height: 100vh;
@@ -514,41 +421,25 @@ h4 {
   /* .section-1 {
     height: 75vh;
   } */
-  .h2g h1 {
-    font-size: 8rem;
-  }
+
 }
 
 
 /* Pour les ordinateurs portables (entre 992px et 1199px) */
 @media (min-width: 992px) and (max-width: 1199px) {
-  .h2g h1 {
-    font-size: 6rem;
-  }
 
 }
 
 /* Pour les tablettes (entre 768px et 991px) */
 @media (min-width: 768px) and (max-width: 991px) {
-  .h2g h1 {
-    font-size: 4rem;
-  }
+
 
 }
 
 /* Pour les téléphones (moins de 768px) */
 
 @media (max-width: 767px) {
-  .h2g {
-    display: flex;
-    justify-content: center; /* Centre horizontalement */
-    align-items: center; /* Centre verticalement */
-    height: 80vh; /* Assurez-vous que le parent prend toute la hauteur */
-  }
-  
-  .h2g h1 {
-    font-size: 2rem;
-  }
+
 
   #mns_id_set1 {
     top: 0;
@@ -607,17 +498,7 @@ h4 {
     z-index: 80;
     width: 100%;
   }
-  .mn_screen .intro_hold_h1 .h2g {
-    color: #fff;
-    font: normal 86px/56px ;
-  }
 
-  .mn_screen .intro_hold_h1 .h2g .r {
-    top: 8px;
-    right: -19px;
-    width: 12px;
-    height: 12px;
-  }
   .mn_screen .ms_txt {
     bottom: 120px;
     transform: translateY(25px);
@@ -707,5 +588,6 @@ h4 {
   .mn_screen .intro_hold .intro_img.intro_img04 img {
     object-position: 100%;
   }
+
 }
 

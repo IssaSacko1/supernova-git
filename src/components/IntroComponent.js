@@ -21,7 +21,7 @@ const IntroComponent = ({ images }) => {
       .to('.mn_screen .intro_hold .intro_img03', 1.8, { scale: 1, clipPath: 'inset(0%)', ease: "expo.out" }, `-=${0.85 * 1.8}`)
       .to('.mn_screen .intro_hold .intro_img01', 1.8, { scale: 1, clipPath: 'inset(0%)', ease: "expo.out" }, `-=${0.85 * 1.8}`)
       .to('.mn_screen .intro_hold .intro_img06', 1.8, { scale: 1, clipPath: 'inset(0%)', ease: "expo.out" }, `-=${0.85 * 1.8}`)
-      .to('.intro_hold_h1 .h2g', 1.8, {y: 0, ease: 'expo.out' }, `-=1.9`)
+      // .to('.intro_hold_h1 .h2g', 1.8, {y: 0, ease: 'expo.out' }, `-=1.9`)
       .to('.ms_txt', 1.8, { autoAlpha: 1, y: 0, ease: 'expo.out' }, 'a+=.7')
 
       let tlFixFirstScreen = gsap.timeline({
@@ -279,7 +279,6 @@ const IntroComponent = ({ images }) => {
         <div className='intro_hold'>
         <div className='intro_hold_h1'>
             <div className='h2g'>
-            {/* <h1>Supernova.</h1> */}
             <img id="supernova-white" src={supernovawhite}></img>
             <img id="supernova-stars" src={supernovastars}></img>
             </div>
