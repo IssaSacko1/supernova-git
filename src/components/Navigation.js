@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../styles/Menu.css';
-import supernova from "../image/Plan de travail 1.svg"; // Import de l'image
 import youtube from '../styles/icon-youtube.svg';
 import instagram from '../styles/icon-instagram.svg';
 import linkedin from '../styles/icon-linkedin.svg'
-
+import SupernovaLogo from './SupernovaLogo';
 
 
 function Menu() {
@@ -74,8 +73,8 @@ function Menu() {
       <div className="header" >
         <div className='logophoto'>
           <a href="/">
-            <img src={supernova} alt="Supernova" />
-          </a>
+          <SupernovaLogo width="150px" height="auto" />
+                    </a>
         </div>
         <div className="burger-menu" onClick={togglePopup}>
             <div className="bar"></div>

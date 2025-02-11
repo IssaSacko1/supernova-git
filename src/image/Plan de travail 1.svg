@@ -4,7 +4,7 @@
     <style>
       .cls-1 {
         fill: #1d1d1b;
-        font-family: LEMONMILK-Bold, 'LEMON MILK';
+        font-family: LEMONMILK Medium, 'LEMONMILK Medium';
         font-size: 49.38px;
         font-weight: 700;
       }

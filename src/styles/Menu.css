@@ -176,20 +176,20 @@ nav .reseaux {
   }
 }
 
-.header img {
+.header svg {
   transition: transform 0.3s ease-in-out;
   height: 17vh;
 }
 
-.headerPopUp img {
+.headerPopUp svg {
   transition: transform 0.3s ease-in-out;
 }
 
-.header img:hover {
+.header svg:hover {
   transform: scale(1.1); /* Grossissement de l'image sur hover */
 }
 
-.headerPopUp img:hover {
+.headerPopUp svg:hover {
   transform: scale(1.1); /* Grossissement de l'image sur hover */
 }
 
