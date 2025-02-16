@@ -59,11 +59,12 @@ function Menu() {
           }
         });
         setpositionsData(groupedData);
+        console.log(groupedData)
+
       } catch (error) {
         console.error('Erreur lors de la récupération des données:', error);
       }
     };
-
     fetchData();
   }, []);
 

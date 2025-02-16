@@ -82,15 +82,15 @@ const Footer = () => {
         ))}
       </div>
       <div className="footer-column">
-        {columnsData.column2.map(item => (
-          <div key={item.id}>
-            <p>{item.title}</p>
-          </div>
-        ))}
+      {columnsData.column2.map((item, index) => (
+        <div key={item.id} className={index === 0 ? "first-line" : ""}>
+          <p>{item.title}</p>
+        </div>
+      ))}
       </div>
       <div className="footer-column">
-        {columnsData.column3.map(item => (
-          <div key={item.id}>
+        {columnsData.column3.map((item,index) => (
+        <div key={item.id} className={index === 0 ? "first-line" : ""}>
             <p>{item.title}</p>
           </div>
         ))}
