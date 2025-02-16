@@ -244,6 +244,14 @@
     transform: translateY(-5vh) translateX(-40vw);
   }
 
+  .SliderShow .slider-show-button {
+    opacity: 1;
+  }
+
+  .SliderShow .slide:hover .slide-info {
+    transform: translateY(0) translateX(0)
+  }
+
 }
 
 /* Pour les ecrans (moins de 1441px) */

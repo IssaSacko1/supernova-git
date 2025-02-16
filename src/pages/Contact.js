@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import '../styles/contact.css';
 import axios from 'axios';
 import { parse } from 'node-html-parser';
-import vimeo from '../styles/icon-vimeo.svg';
 import instagram from '../styles/icon-instagram.svg';
 import linkedin from '../styles/icon-linkedin.svg';
 import image from '../image/IMG_9043.jpg';
 import ImageBanner from '../components/ImageBanner';
 import ElfsightWidget from '../components/ElfsightWidget'; // Import du nouveau composant
+import youtube from "../styles/icon-youtube.svg"
+
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -90,7 +91,7 @@ function Contact() {
           <form id="contact-form" method="POST" onSubmit={handleSubmit}>
             <div className="form-group">
               <label htmlFor="name">
-                <h4>Name</h4>
+                <h3>Name</h3>
               </label>
               <input
                 type="text"
@@ -103,7 +104,7 @@ function Contact() {
             </div>
             <div className="form-group">
               <label htmlFor="email">
-                <h4>Adresse mail</h4>
+                <h3>Adresse mail</h3>
               </label>
               <input
                 type="email"
@@ -116,7 +117,7 @@ function Contact() {
             </div>
             <div className="form-group">
               <label htmlFor="message">
-                <h4>Message</h4>
+                <h3>Message</h3>
               </label>
               <textarea
                 name="project"
@@ -132,9 +133,9 @@ function Contact() {
         </div>
         <div className="social-network-part">
           <div className="social-image">
-            <img src={vimeo} alt="Vimeo" />
-            <img src={instagram} alt="Instagram" />
-            <img src={linkedin} alt="LinkedIn" />
+            <a href='https://www.youtube.com/@supernova.creatif' target="_blank" rel="noopener noreferrer"><img src={youtube} alt="Youtube" /></a>
+            <a href='https://www.instagram.com/supernova.creatif/reels/?locale=fr_CA&hl=en' target="_blank" rel="noopener noreferrer"><img src={instagram} alt="Instagram" /></a>
+            <a href='https://www.linkedin.com/company/supernova-creatif/?viewAsMember=true' target="_blank" rel="noopener noreferrer"><img src={linkedin} alt="LinkedIn" /></a>
           </div>
           <div className="footer-social">
             <p>SUPERNOVA. Switzerland</p>

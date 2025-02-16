@@ -60,7 +60,7 @@ function Menu() {
         });
         setpositionsData(groupedData);
         console.log(groupedData)
-
+        console.log(positionsData.position3[0].attributes.url)
       } catch (error) {
         console.error('Erreur lors de la récupération des données:', error);
       }
@@ -87,9 +87,9 @@ function Menu() {
       <div className={`popup ${showPopup ? 'slide-in' : 'slide-out'}`}>
        <div className='contentPopup'>
        <div className='reseaux'>
-                <a href={positionsData.position3[0].url}><img src={youtube}  alt="YouTube" /></a>
-                <a href={positionsData.position3[1].url}><img src={instagram}  alt="Instagram" /></a>
-                <a href={positionsData.position3[2].url}><img src={linkedin}  alt="linkedin" /></a>
+                <a href={positionsData.position3[0].attributes.url}target="_blank" rel="noopener noreferrer"><img src={youtube}  alt="YouTube" /></a>
+                <a href={positionsData.position3[1].attributes.url} target="_blank" rel="noopener noreferrer"><img src={instagram}  alt="Instagram" /></a>
+                <a href={positionsData.position3[2].attributes.url} target="_blank" rel="noopener noreferrer"><img src={linkedin}  alt="linkedin" /></a>
             </div>
         <div className='menu-item'>
        <ul>

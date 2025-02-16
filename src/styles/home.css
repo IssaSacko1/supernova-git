@@ -435,6 +435,9 @@ h4 {
 
 @media (max-width: 767px) {
 
+  .section-2 h3 {
+    padding-top: 2vh;
+  }
 
   #mns_id_set1 {
     top: 0;

@@ -54,17 +54,18 @@ form button {
   align-items: center; /* Centre horizontalement les enfants */
 }
 
-.social-network-part img {
-  width: 5%; /* Taille des images */
-}
-
 .social-image {
   display: flex; /* Active Flexbox */
   justify-content: center; /* Centre les images horizontalement */
   align-items: center; /* Centre les images verticalement */
-  gap: 5vw; /* Espacement entre les images */
+  gap: 4vw; /* Espacement entre les images */
   width: 100%; /* Les images occupent toute la largeur disponible */
   margin-bottom: 3vh;
+}
+
+.social-image img:hover {
+  transform: scale(1.1);
+  transition: transform 0.5s ease-in-out;
 }
 
 .footer-social {

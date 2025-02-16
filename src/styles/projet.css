@@ -69,7 +69,7 @@
   transform: translateX(-50%);
   text-transform: uppercase;
   color: #fff;
-  font-size: 1.5rem; /* Taille de police pour le titre */
+  font-size: 1rem; /* Taille de police pour le titre */
   cursor: pointer;
   width: 100%;
   transition: opacity 0.5s ease-in-out;
@@ -143,13 +143,15 @@
 }
 
 /* Pour les téléphones (moins de 768px) */
-@media (max-width: 767px) {
-  .projet .video-container .hover-text {
-      bottom: 2vh;
-      font-size: 1rem;
+@media (max-width: 768px) { /* Ajuste la largeur selon ton besoin */
+  .video-visible,
+  .video-hidden {
+    all: unset; /* Réinitialise toutes les propriétés */
   }
-  .projet .video-container .hover-title {
-    bottom: 3vh;
-      font-size: .9rem;
+
+  .video-container h1 {
+    font-weight: bold !important;
+    font-family: 'LEMONMILK Medium';
   }
+
 }
