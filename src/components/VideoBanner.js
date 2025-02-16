@@ -28,7 +28,7 @@ function VideoBanner({ banner, isLoading }) {
 
   return (
     <div className="video-container">
-      <video ref={videoRef} src={banner.videoSrc} loop muted preload="auto" />
+      <video ref={videoRef} src={banner.videoSrc} loop muted autoPlay playsInline preload="auto" />
       <div className="title"><h1>{banner.title}</h1></div>
       <div className='soundbutton'>
         <button onClick={toggleSound}>

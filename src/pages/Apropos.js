@@ -69,9 +69,7 @@ const Apropos = () => {
   };
 
   const { banner } = data;
-  console.log(data)
-  const {description } = data; 
-  console.log(description)
+
   return (
     <div className="aboutUsPage">
       {/* Partie 1: Bannière */}
