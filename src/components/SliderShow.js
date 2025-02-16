@@ -16,7 +16,6 @@ function SliderShow({ images }) {
   const [imageIndex, setImageIndex] = useState(0);
 
   const settings = {
-    dots: true,
     infinite: true,
     lazyLoad: true,
     speed: 2000,

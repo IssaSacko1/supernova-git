@@ -370,15 +370,15 @@
 .client {
   background-color: #ccc; /* Fond gris clair */
   padding-top: 10px;
-  margin-top: 100px;
+  margin-top: 5vh;
   color: black;
   padding-bottom: 4vh;
 }
 
 
 .home-page h3 {
-  padding-top: 5%;
-  padding-bottom: 5%;
+  padding-top: 2%;
+  padding-bottom: 2%;
 }
 
 
