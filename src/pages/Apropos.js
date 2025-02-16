@@ -49,7 +49,6 @@ const Apropos = () => {
       descriptionSectionTitle,
       descriptionSectionValue
     }
-    console.log(description)
 
     // Partie 3: Notre équipe
     const teamSections = parsedHtml.querySelectorAll('div.wp-block-group.is-vertical.is-layout-flex');

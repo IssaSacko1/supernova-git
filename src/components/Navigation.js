@@ -59,8 +59,6 @@ function Menu() {
           }
         });
         setpositionsData(groupedData);
-        console.log(groupedData)
-        console.log(positionsData.position3[0].attributes.url)
       } catch (error) {
         console.error('Erreur lors de la récupération des données:', error);
       }
