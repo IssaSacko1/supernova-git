@@ -32,7 +32,7 @@ function VideoWithHover({ src, title, description, thumbnail, pageId }) {
 
   return (
     <div className="video-container" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={() => handleClick( pageId )}>
-      <video ref={videoRef} src={src} muted className={isHovered ? 'video-visible' : 'video-hidden'} />
+      <video ref={videoRef} src={src} muted playsInline className={isHovered ? 'video-visible' : 'video-hidden'} />
       <img src={thumbnail} alt="Thumbnail" className={isHovered ? 'img-hidden' : 'img-visible'} />
       <h1 className={isHovered ? 'video-visible' : 'video-hidden'} >
         {title}

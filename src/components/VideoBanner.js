@@ -8,8 +8,17 @@ function VideoBanner({ banner, isLoading }) {
   const [isMuted, setIsMuted] = useState(true);
 
   useEffect(() => {
-    if (!isLoading && banner) {
-      videoRef.current.play();
+    if (!isLoading && banner && videoRef.current) {
+      // Essaye de lire la vidéo automatiquement
+      const playVideo = async () => {
+        try {
+          await videoRef.current.play();
+        } catch (error) {
+          console.log("Lecture automatique bloquée", error);
+        }
+      };
+
+      playVideo();
     }
   }, [isLoading, banner]);
 
