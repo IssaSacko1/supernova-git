@@ -12,11 +12,11 @@
   display: flex;
   width: 100%;
   justify-content: center;
-  gap: 20px;
+  gap: 45px;
 }
 
 .social-network img{
-  width: 2vw;
+  width: 1.5vw;
 }
 
 .social-network img:hover{

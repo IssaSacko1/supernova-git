@@ -19,7 +19,7 @@ form {
 
 form button {
   margin-top: 3vh;
-  padding: .8vw .8vh .8vw .8vh;
+  padding: .5vw .5vh .5vw .5vh;
   background-color: rgb(255, 255, 255);
   color: #0D0D0D;
   text-transform: uppercase; /* Met le texte en majuscules */

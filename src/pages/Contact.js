@@ -6,7 +6,6 @@ import instagram from '../styles/icon-instagram.svg';
 import linkedin from '../styles/icon-linkedin.svg';
 import image from '../image/IMG_9043.jpg';
 import ImageBanner from '../components/ImageBanner';
-import ElfsightWidget from '../components/ElfsightWidget'; // Import du nouveau composant
 import youtube from "../styles/icon-youtube.svg"
 
 
@@ -148,7 +147,6 @@ function Contact() {
         </div>
       </div>
       {/* Utilisation du composant ElfsightWidget */}
-      <ElfsightWidget widgetId="d7cb6062-6988-4e34-9934-d272767d23e1" />
     </div>
   );
 }
