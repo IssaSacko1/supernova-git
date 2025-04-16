@@ -1,6 +1,7 @@
 /* Employee Styles */
 .employee {
   width: 33%;
+  margin-top: 3vh;
 }
 
 .employee img {
@@ -16,7 +17,7 @@
 }
 
 .social-network img{
-  width: 1.5vw;
+  width: 1vw;
 }
 
 .social-network img:hover{
