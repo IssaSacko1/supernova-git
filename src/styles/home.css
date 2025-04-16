@@ -128,7 +128,7 @@
 }
 .mn_screen .intro_hold .intro_img.intro_img01 {
   top: 15.76vw;
-  left: 16.615vw;
+  left: 18.615vw;
   width: 22.969vw;
   height: 16.563vw;
   z-index: 60;
@@ -136,7 +136,7 @@
 
 .mn_screen .intro_hold .intro_img.intro_img02 {
   top: 5.781vw;
-  left: 29.479vw;
+  left: 31.479vw;
   width: 13.958vw;
   height: 8.75vw;
   z-index: 20;
@@ -144,15 +144,15 @@
 
 .mn_screen .intro_hold .intro_img.intro_img03 {
   top: 12.167vw;
-  left: 34.844vw;
+  left: 36.844vw;
   width: 16.51vw;
   height: 23.542vw;
   z-index: 10;
 }
 
 .mn_screen .intro_hold .intro_img.intro_img04 {
-  top: 29.198vw;
-  left: 36.458vw;
+  top: 31.198vw;
+  left: 38.458vw;
   width: 24.948vw;
   height: 13.073vw;
   z-index: 50;
@@ -160,14 +160,14 @@
 
 .mn_screen .intro_hold .intro_img.intro_img05 {
   top: 4.104vw;
-  left: 48.99vw;
+  left: 50.99vw;
   width: 22.552vw;
   height: 14.271vw;
   z-index: 30;
 }
 .mn_screen .intro_hold .intro_img.intro_img06 {
   top: 26.073vw;
-  left: 54.74vw;
+  left: 56.74vw;
   width: 21.979vw;
   height: 13.958vw;
   z-index: 70;
@@ -175,7 +175,7 @@
 
 .mn_screen .intro_hold .intro_img.intro_img07 {
   top: 12.323vw;
-  left: 50.156vw;
+  left: 52.156vw;
   width: 17.031vw;
   height: 18.229vw;
   z-index: 10;
@@ -317,11 +317,12 @@
 .section-2 {
   color: #fff;
   margin: 0 auto;
+  padding-bottom: 4vh;
 
 }
 
 h3 {
-  padding-top: 2vh;
+  padding-top: 5vh;
 }
 .logo {
   display: inline-block;

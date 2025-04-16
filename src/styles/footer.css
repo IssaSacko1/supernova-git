@@ -7,7 +7,7 @@ footer {
 }
 
 footer .reseaux {
-  margin-top: 2vh;
+  /* margin-top: 1vh; */
   display: flex;
   justify-content: center; /* Centre horizontalement */
   gap: 3vw;
@@ -29,7 +29,7 @@ footer .reseaux {
   width: 100%;
   text-align: center;
   margin-top: 30px;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 }
 
 .footer-copyright p {
