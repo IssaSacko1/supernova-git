@@ -73,6 +73,7 @@ form button {
   text-align: center; /* Centre le texte */
   margin-top: 10px; /* Espacement entre les images et le footer */
   color: white;
+  line-height: 2vh;
 }
 
 .footer-social h3 {

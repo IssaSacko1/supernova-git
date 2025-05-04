@@ -64,7 +64,7 @@
 
 .projet .video-container h1 {
   position: absolute;
-  bottom: 10vh; /* Ajustez cette valeur selon vos besoins */
+  top: 12vh; /* Ajustez cette valeur selon vos besoins */
   left: 50%;
   transform: translateX(-50%);
   text-transform: uppercase;
@@ -73,15 +73,17 @@
   cursor: pointer;
   width: 100%;
   transition: opacity 0.5s ease-in-out;
+  font-size: 1.5em;
 }
 
 .projet .video-container p {
   position: absolute;
   left: 50%;
-  bottom: 2vh;
+  bottom: 12vh;
   transform: translateX(-50%);
   color: #fff;
   transition: opacity 0.5s ease-in-out;
+  font-size: 1em;
 }
 
 

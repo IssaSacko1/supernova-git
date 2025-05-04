@@ -24,7 +24,7 @@ const VideoComponent = ({ selectedProjectUrl }) => {
       const doc = parse(html);
     
       // Extract the title
-      const title = doc.querySelector('p')?.textContent.trim() || '';
+      const title = doc.querySelector('#ValueProjectTitle')?.textContent.trim() || '';
     
       // Extract the keyimgbanniere
       const keyImgBanniere = doc.querySelector('#ValueImgBanniere img')?.getAttribute('src') || '';
@@ -34,6 +34,8 @@ const VideoComponent = ({ selectedProjectUrl }) => {
     
       // Extract the keyProjectDescribe
       const KeyProjectDescription = doc.querySelector('#ValueProjectDescription')?.textContent.trim() || '';
+      
+      const KeyProjectObject = doc.querySelector('#ValueProjectObject')?.textContent.trim() || '';
 
       // Extract the keyOngletManagement
       const keyOngletManagementRaw = doc.querySelector('#ValueOngletManagement')?.textContent.trim() || '';
@@ -64,6 +66,7 @@ const VideoComponent = ({ selectedProjectUrl }) => {
         KeyProjectDescription,
         keyOngletManagement,
         keyOngletVideo,
+        KeyProjectObject,
         keyOngletPhoto,
         keyOngletSocialNetwork,
         keyOngletCredits
@@ -84,12 +87,14 @@ const VideoComponent = ({ selectedProjectUrl }) => {
     loadData();
   }, [selectedProjectUrl]);
 
-  const { keyOngletManagement = [], keyOngletPhoto = [], keyImgBanniere="",title="", keyOngletSocialNetwork="", keyOngletVideo="", KeyProjectDescription="" } = data;
+  const { keyOngletManagement = [], keyOngletPhoto = [], keyImgBanniere="",title="", keyOngletSocialNetwork="", keyOngletVideo="", KeyProjectDescription="", KeyProjectObject="" } = data;
 
   return (
     <div className='project-detail'>
-      <ImageBanner imageSrc={keyImgBanniere} title={title} /> {/* Utilisation du composant ImageBanner */}
+      <ImageBanner imageSrc={keyImgBanniere} title={title} object={KeyProjectObject}/> {/* Utilisation du composant ImageBanner */}
+      
       <div className="container">
+      <p>{KeyProjectDescription}</p>
         <ul className="nav nav-tabs" id="myTab">
         {keyOngletManagement
           .filter((tab) => tab.visibility === 'true') // Filtrer les onglets visibles
@@ -107,7 +112,6 @@ const VideoComponent = ({ selectedProjectUrl }) => {
           ))}
         </ul>
         <div className="tab-content">
-        <p>{KeyProjectDescription}</p>
         {activeTab === 'photo' && (
             <div className="tab-pane active">
               <div className="photo-gallery">

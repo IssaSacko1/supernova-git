@@ -1,7 +1,11 @@
 .project-detail .nav-tabs {
-  margin-top: 4vh;
+  margin-top: 2vh;
   border-bottom: none;
   justify-content: center;
+}
+
+.project-detail .container p{
+  margin-top: 4vh;
 }
 
 .project-detail .nav{
