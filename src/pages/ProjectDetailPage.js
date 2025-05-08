@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { parse } from 'node-html-parser';
-import '../styles/project-detail.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../styles/project-detail.css';
 import ImageBanner from '../components/ImageBanner';
+import ElfsightWidget from '../components/ElfsightWidget'; // Import du nouveau composant
+
 
 
 const VideoComponent = ({ selectedProjectUrl }) => {
@@ -49,6 +51,9 @@ const VideoComponent = ({ selectedProjectUrl }) => {
       const keyOngletPhoto = Array.from(
         doc.querySelectorAll('#ValueOngletPhoto img')
       ).map(img => img.getAttribute('src'));
+      const keyOngletBts = Array.from(
+        doc.querySelectorAll('#ValueOngletBts img')
+      ).map(img => img.getAttribute('src'));
       // Extract the keyOngletSocialNetwork
       const keyOngletSocialNetwork = doc.querySelector('#ValueOngletSocialNetwork')?.textContent.trim() || '';
     
@@ -68,6 +73,7 @@ const VideoComponent = ({ selectedProjectUrl }) => {
         keyOngletVideo,
         KeyProjectObject,
         keyOngletPhoto,
+        keyOngletBts,
         keyOngletSocialNetwork,
         keyOngletCredits
       };      
@@ -87,7 +93,7 @@ const VideoComponent = ({ selectedProjectUrl }) => {
     loadData();
   }, [selectedProjectUrl]);
 
-  const { keyOngletManagement = [], keyOngletPhoto = [], keyImgBanniere="",title="", keyOngletSocialNetwork="", keyOngletVideo="", KeyProjectDescription="", KeyProjectObject="" } = data;
+  const { keyOngletManagement = [], keyOngletPhoto = [], keyOngletBts = [], keyImgBanniere="",title="", keyOngletSocialNetwork="", keyOngletVideo="", KeyProjectDescription="", KeyProjectObject="" } = data;
 
   return (
     <div className='project-detail'>
@@ -112,6 +118,25 @@ const VideoComponent = ({ selectedProjectUrl }) => {
           ))}
         </ul>
         <div className="tab-content">
+
+        {activeTab === 'video' && (
+            <div className="tab-pane active">
+              <iframe  src={keyOngletVideo}
+                title={title}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen></iframe>
+              {/* <iframe width="478" height="849" src="https://www.youtube.com/embed/AtaqZLl9w8s"
+               title="Il me dépasse #shortvideo #short" 
+               frameBorder="0" 
+               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+               referrerPolicy="strict-origin-when-cross-origin" 
+               allowfullScreen></iframe> */}
+            </div>
+          )}
+
+
         {activeTab === 'photo' && (
             <div className="tab-pane active">
               <div className="photo-gallery">
@@ -137,26 +162,11 @@ const VideoComponent = ({ selectedProjectUrl }) => {
             </div>
           )}
 
-          {activeTab === 'video' && (
-            <div className="tab-pane active">
-              <iframe  src={keyOngletVideo}
-                title={title}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen></iframe>
-              {/* <iframe width="478" height="849" src="https://www.youtube.com/embed/AtaqZLl9w8s"
-               title="Il me dépasse #shortvideo #short" 
-               frameBorder="0" 
-               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-               referrerPolicy="strict-origin-when-cross-origin" 
-               allowfullScreen></iframe> */}
-            </div>
-          )}
 
-          {activeTab === 'social network' && (
+          {activeTab === 'gestion reseaux' && (
             <div className="tab-pane active">
               <p>{keyOngletSocialNetwork/* Ajoutez du contenu spécifique pour l'onglet Social */}</p>
+              <ElfsightWidget widgetId="d7cb6062-6988-4e34-9934-d272767d23e1" />
             </div>
           )}
 
@@ -170,13 +180,38 @@ const VideoComponent = ({ selectedProjectUrl }) => {
                     <tbody>
                       {data.keyOngletCredits && data.keyOngletCredits.map((credit, index) => (
                         <tr key={index}>
-                          <td><h4>{credit.title}</h4></td>
+                          <td><p>{credit.title}</p></td>
                           <td><p>{credit.description}</p></td>
                         </tr>
                       ))}
                     </tbody>
                   </table>
                 </div>
+              </div>
+            </div>
+          )}
+
+    {activeTab === 'bts' && (
+            <div className="tab-pane active">
+              <div className="photo-gallery">
+                {keyOngletBts.map((img, index) => {
+                  // Créer des groupes de 3 images
+                  if (index % 3 === 0) {
+                    const rowImages = keyOngletBts.slice(index, index + 3); // Groupe de 3 images
+                    return (
+                      <div key={`row-${index}`} className="photo-row">
+                        {rowImages.map((img, i) => (
+                          <img
+                            key={`img-${index}-${i}`}
+                            src={img}
+                            alt={`Gallery ${index}-${i}`}
+                          />
+                        ))}
+                      </div>
+                    );
+                  }
+                  return null; // Ne rien afficher si ce n'est pas une position de ligne de 3
+                })}
               </div>
             </div>
           )}

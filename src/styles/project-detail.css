@@ -35,10 +35,17 @@
   width: 3em;
 }
 
+.project-detail .nav-tabs .nav-item.show .nav-link,
 .project-detail .nav-tabs .nav-link.active {
-  background: transparent;
-  border-color: transparent;
-  color: #fff;
+  background-color: transparent !important;
+  border: none !important;
+  color: #fff !important;
+  box-shadow: none !important;
+}
+
+.project-detail .nav-tabs .nav-link.active::before,
+.project-detail .nav-tabs .nav-link.active::after {
+  display: none !important;
 }
 
 .project-detail .nav-link {
@@ -49,7 +56,17 @@
 .project-detail .nav-tabs .nav-link {
   font-weight: 700;
   color: #666;
-  border: 1px solid transparent;
+}
+
+.project-detail .nav-tabs .nav-link:hover {
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: #fff;
+}
+
+.project-detail .nav-tabs .nav-link {
+  transition: none !important;
 }
 
 .project-detail table {

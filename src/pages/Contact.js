@@ -129,6 +129,7 @@ function Contact() {
             </div>
             <button type="submit">Envoyer</button>
           </form>
+          </div>
           <div className="social-network-part">
           <div className="social-image">
             <a href='https://www.youtube.com/@supernova.creatif' target="_blank" rel="noopener noreferrer"><img src={youtube} alt="Youtube" /></a>
@@ -144,8 +145,6 @@ function Contact() {
             <p>info@supernova-creatif.com</p>
           </div>
         </div>
-        </div>
-
       </div>
       {/* Utilisation du composant ElfsightWidget */}
     </div>

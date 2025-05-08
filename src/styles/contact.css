@@ -40,17 +40,16 @@ form button {
 .container-contact {
   margin-top: 3vh;
   display: flex;
+  align-items: center;
 }
 .contact-form-part {
   width: 50%;
-  margin: 0 auto;
 }
 
 .social-network-part {
   display: flex; /* Active le modèle Flexbox */
   flex-direction: column; /* Arrange les enfants verticalement */
   width: 50%; /* Largeur du conteneur */
-  margin: 0 auto; /* Centrage horizontal */
   align-items: center; /* Centre horizontalement les enfants */
 }
 

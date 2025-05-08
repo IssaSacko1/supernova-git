@@ -4,6 +4,8 @@ import "../styles/footer.css"
 import instagram from '../styles/icon-instagram.svg';
 import linkedin from '../styles/icon-linkedin.svg'
 import youtube from "../styles/icon-youtube.svg"
+import supernovawhite from '../image/Supernova long texte Final B.png';
+
 
 const Footer = () => {
   const [columnsData, setColumnsData] = useState({
@@ -72,7 +74,8 @@ const Footer = () => {
       <div className="footer-column">
         {columnsData.column1.map(item => (
           <div key={item.id}>
-            <p className='supernova'>{item.title}</p>
+            <img id="footer-supernova-white" src={supernovawhite}></img>
+
             <div className='reseaux'>
                 <a href={item.youtube} target="_blank" rel="noopener noreferrer"><img src={youtube}  alt="YouTube" /></a>
                 <a href={item.instagram} target="_blank" rel="noopener noreferrer"><img src={instagram}  alt="Instagram" /></a>

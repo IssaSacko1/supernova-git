@@ -7,11 +7,12 @@ footer {
 }
 
 footer .reseaux {
-  /* margin-top: 1vh; */
+  margin-top: 2vh;
   display: flex;
-  justify-content: center; /* Centre horizontalement */
   gap: 3vw;
   text-align: center;
+  justify-content: center; /* centre horizontalement */
+
 }
 
 
@@ -19,12 +20,22 @@ footer .reseaux {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
-  text-align: left;
-  width: 80%;
+  width: 90%;
   padding-top: 1vh;
   margin: 0 auto; /* Centre le conteneur .footer-content */
 }
 
+.footer-column {
+  width: 33.3%;
+}
+
+.footer-column p{
+  line-height: 3.5vh;
+}
+
+.footer-column #footer-supernova-white {
+  width: 45%;
+}
 .footer-copyright {
   width: 100%;
   text-align: center;
@@ -44,6 +55,7 @@ footer a {
   color: inherit; /* Make the text color inherit from the parent */
   text-decoration: none;
 }
+
 
 /* Media Queries */
 

@@ -42,7 +42,7 @@
   filter: brightness(50%);  /* Réduit la luminosité de l'image */
   border-width: 2px;
   border-radius: 2%;
-  box-shadow: 0 10px 25px rgba(82, 61, 61, 0.3);
+  box-shadow: 0 2px 25px rgba(82, 61, 61, 0.3);
 }
 
 .SliderShow .activeSlide {
@@ -254,13 +254,35 @@
 
 }
 
-/* Pour les ecrans (moins de 1441px) */
+/* Pour les ecrans (plus de 1441px) */
 @media (min-width: 1441px) {
 
   .SliderShow .slide:hover .slide-info {
-    transform: translateY(-10vh) translateX(-13vw);
+    transform: translateY(-20vh) translateX(-19.5vw);
   }
 
 }
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.arrow.prev {
+  left: 20%;
+}
+
+.arrow.next {
+  right: 20%;
+}
+
 
 

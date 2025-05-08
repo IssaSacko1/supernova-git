@@ -272,7 +272,7 @@
   border-radius: 35px;
   padding: 12px 24px; /* Padding adaptable de base */
   display: inline-block;
-  margin-bottom: 2vh;
+  margin-bottom: 4vh;
   border: 0;
   cursor: pointer;
   transition: background-color 0.3s ease; /* Transition ajoutée */
@@ -290,7 +290,7 @@
   text-transform: uppercase;
   padding: 12px 24px; /* Padding adaptable de base */
   border-radius: 35px;
-  margin-bottom: 2vh;
+  margin-bottom: 4vh;
   border: 0;
   transition: background-color 0.3s ease; /* Transition ajoutée */
 }
@@ -317,8 +317,6 @@
 .section-2 {
   color: #fff;
   margin: 0 auto;
-  padding-bottom: 4vh;
-
 }
 
 h3 {
@@ -352,8 +350,8 @@ button {
   margin-bottom: 20vh;
 }
 
-#supernova-white,
-#supernova-stars {
+.h2g #supernova-white,
+.h2g #supernova-stars {
   z-index: 100;
   width: 70%;
   }

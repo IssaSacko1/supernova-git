@@ -5,7 +5,6 @@ import LogoComponent from '../components/LogoComponent';
 import "../styles/home.css";
 import SliderShow from '../components/SliderShow';
 import { useHistory } from 'react-router-dom';
-import ElfsightWidget from '../components/ElfsightWidget'; // Import du nouveau composant
 
 
 function Home() {
@@ -143,7 +142,6 @@ function Home() {
           <h3>{Section3Titre}</h3>
           <LogoComponent logos={logos} />
         </div>
-        <ElfsightWidget widgetId="d7cb6062-6988-4e34-9934-d272767d23e1" />
       </div>
     </div>
   );
