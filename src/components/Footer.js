@@ -74,8 +74,7 @@ const Footer = () => {
       <div className="footer-column">
         {columnsData.column1.map(item => (
           <div key={item.id}>
-            <img id="footer-supernova-white" src={supernovawhite}></img>
-
+            <a href="/"><img id="footer-supernova-white" src={supernovawhite}></img></a>
             <div className='reseaux'>
                 <a href={item.youtube} target="_blank" rel="noopener noreferrer"><img src={youtube}  alt="YouTube" /></a>
                 <a href={item.instagram} target="_blank" rel="noopener noreferrer"><img src={instagram}  alt="Instagram" /></a>
@@ -86,14 +85,14 @@ const Footer = () => {
       </div>
       <div className="footer-column">
       {columnsData.column2.map((item, index) => (
-        <div key={item.id} className={index === 0 ? "first-line" : ""}>
+        <div key={item.id} className={index === 0 ? "first-line" : "other-line"}>
           <p>{item.title}</p>
         </div>
       ))}
       </div>
       <div className="footer-column">
         {columnsData.column3.map((item,index) => (
-        <div key={item.id} className={index === 0 ? "first-line" : ""}>
+        <div key={item.id} className={index === 0 ? "first-line" : "other-line"}>
             <p>{item.title}</p>
           </div>
         ))}

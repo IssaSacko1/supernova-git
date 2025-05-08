@@ -29,6 +29,10 @@ footer .reseaux {
   width: 33.3%;
 }
 
+.footer-column-text {
+  text-align: left;
+}
+
 .footer-column p{
   line-height: 3.5vh;
 }
@@ -49,6 +53,10 @@ font-size: 1em;
 
 .first-line p {
   font-weight: bold;
+}
+
+.other-line p {
+  text-align: left;
 }
 
 footer a {

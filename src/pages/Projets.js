@@ -27,7 +27,7 @@ function VideoWithHover({ src, title, description, thumbnail, pageId }) {
 
   const handleClick = (pageId) => {
     localStorage.setItem('pageId', pageId); // Stocke l'URL dans le local storage
-    history.push('/project-detail'); // Navigue vers /project-detail
+    history.push('/project-detail/video'); // Navigue vers /project-detail
   };
 
   return (

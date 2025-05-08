@@ -137,7 +137,7 @@ function Contact() {
             <a href='https://www.linkedin.com/company/supernova-creatif/?viewAsMember=true' target="_blank" rel="noopener noreferrer"><img src={linkedin} alt="LinkedIn" /></a>
           </div>
           <div className="footer-social">
-            <p>SUPERNOVA. Switzerland</p>
+            <strong><p>SUPERNOVA. Switzerland</p></strong>
             <p>Route du Simplon 28B</p>
             <p>1907 SAXON</p>
             <p>SUISSE</p>

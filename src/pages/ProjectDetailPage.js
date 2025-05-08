@@ -163,7 +163,7 @@ const VideoComponent = ({ selectedProjectUrl }) => {
           )}
 
 
-          {activeTab === 'gestion reseaux' && (
+          {activeTab === 'social network' && (
             <div className="tab-pane active">
               <p>{keyOngletSocialNetwork/* Ajoutez du contenu spécifique pour l'onglet Social */}</p>
               <ElfsightWidget widgetId="d7cb6062-6988-4e34-9934-d272767d23e1" />
@@ -180,8 +180,8 @@ const VideoComponent = ({ selectedProjectUrl }) => {
                     <tbody>
                       {data.keyOngletCredits && data.keyOngletCredits.map((credit, index) => (
                         <tr key={index}>
-                          <td><p>{credit.title}</p></td>
-                          <td><p>{credit.description}</p></td>
+                          <div className='title'><td><strong><p>{credit.title}</p></strong></td></div>
+                          <td className='description'><p>{credit.description}</p></td>
                         </tr>
                       ))}
                     </tbody>
