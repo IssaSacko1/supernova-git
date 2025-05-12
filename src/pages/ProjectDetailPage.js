@@ -45,8 +45,8 @@ const VideoComponent = ({ selectedProjectUrl }) => {
       ? JSON.parse(keyOngletManagementRaw.replace(/« /g, '"').replace(/ »/g, '"'))
       : [];
       // Extract the keyOngletVideo
-      const keyOngletVideo = doc.querySelector('iframe')?.getAttribute('src') || '';
-    
+      const keyOngletVideo = Array.from(doc.querySelectorAll('iframe')
+      ).map(iframe => iframe.getAttribute('src'));    
       // Extract the keyOngletPhoto
       const keyOngletPhoto = Array.from(
         doc.querySelectorAll('#ValueOngletPhoto img')
@@ -120,23 +120,21 @@ const VideoComponent = ({ selectedProjectUrl }) => {
         <div className="tab-content">
 
         {activeTab === 'video' && (
-            <div className="tab-pane active">
-              <iframe  src={keyOngletVideo}
-                title={title}
+        <div className="tab-pane active video-gallery">
+          {keyOngletVideo.map((videoSrc, index) => (
+            <div key={index} className="video-wrapper">
+              <iframe
+                src={videoSrc}
+                title={`video-${index}`}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen></iframe>
-              {/* <iframe width="478" height="849" src="https://www.youtube.com/embed/AtaqZLl9w8s"
-               title="Il me dépasse #shortvideo #short" 
-               frameBorder="0" 
-               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-               referrerPolicy="strict-origin-when-cross-origin" 
-               allowfullScreen></iframe> */}
+                allowFullScreen
+              ></iframe>
             </div>
-          )}
-
-
+          ))}
+        </div>
+      )}
         {activeTab === 'photo' && (
             <div className="tab-pane active">
               <div className="photo-gallery">
