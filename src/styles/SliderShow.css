@@ -241,15 +241,27 @@
 @media (max-width: 767px) {
 
   .SliderShow .slide:hover .slide-info {
-    transform: translateY(-5vh) translateX(-40vw);
+    transform: translateY(0vh) translateX(-30vw);
   }
 
   .SliderShow .slider-show-button {
     opacity: 1;
   }
 
-  .SliderShow .slide:hover .slide-info {
-    transform: translateY(0) translateX(0)
+  .SliderShow .slide-info h3 {
+    font-size: 1.2rem;
+  }
+  .SliderShow .slide-info p {
+    font-size: 1rem;
+  }
+  .arrow.next{
+    display: none;
+  }
+  .arrow.prev{
+    display: none;
+  }
+  .homeButton {
+    margin-top: 2vh;
   }
 
 }

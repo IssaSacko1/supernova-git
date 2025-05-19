@@ -90,7 +90,7 @@ function Contact() {
           <form id="contact-form" method="POST" onSubmit={handleSubmit}>
             <div className="form-group">
               <label htmlFor="name">
-                <h3>Name</h3>
+                <h3>Nom</h3>
               </label>
               <input
                 type="text"

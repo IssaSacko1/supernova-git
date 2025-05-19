@@ -113,6 +113,9 @@ footer a {
     font-size: 16px;
     letter-spacing: 0.3rem; /* Ajuste l'espacement pour les mobiles */
   }
+  .other-line p {
+    text-align: center;
+  }
 }
 
 .supernova {
