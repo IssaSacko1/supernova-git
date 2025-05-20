@@ -6,15 +6,14 @@ import instagram from '../styles/icon-instagram.svg';
 import linkedin from '../styles/icon-linkedin.svg';
 import image from '../image/IMG_9043.jpg';
 import ImageBanner from '../components/ImageBanner';
-import youtube from "../styles/icon-youtube.svg"
-
+import youtube from "../styles/icon-youtube.svg";
+import emailjs from 'emailjs-com';
 
 function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     project: '',
-    preFooter: [],
   });
 
   useEffect(() => {
@@ -22,7 +21,7 @@ function Contact() {
       .get('https://idev-test.xyz/wp-json/wp/v2/pages/140')
       .then((response) => {
         const htmlContent = response.data.content.rendered;
-        const extractedData = extractData(htmlContent);
+        extractData(htmlContent); // si tu veux utiliser `preFooter`, tu peux stocker ça dans un state
       })
       .catch((error) => {
         console.error('Erreur lors de la récupération des données', error);
@@ -56,8 +55,6 @@ function Contact() {
             name,
           };
         }
-
-        // Retourner null si imageSrc est vide pour pouvoir filtrer ensuite
         return null;
       })
       .filter((item) => item !== null);
@@ -75,11 +72,29 @@ function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setFormData({
-      name: '',
-      email: '',
-      project: '',
-    });
+
+    emailjs
+      .send(
+        'service_yopl765',          // ✅ Ton service ID
+        'template_9dogdrm',         // ⛔️ Remplace ici avec le vrai ID de template EmailJS
+        formData,
+        'yd5QFq-F7vs6dRZnx'              // ⛔️ Remplace ici avec ta PUBLIC KEY EmailJS
+      )
+      .then(
+        (result) => {
+          console.log('Message envoyé !', result.text);
+          alert('Message envoyé avec succès !');
+          setFormData({
+            name: '',
+            email: '',
+            project: '',
+          });
+        },
+        (error) => {
+          console.error('Erreur :', error.text);
+          alert('Erreur lors de l’envoi du message.');
+        }
+      );
   };
 
   return (
@@ -99,6 +114,7 @@ function Contact() {
                 onChange={handleChange}
                 placeholder="Votre Prénom Nom"
                 className="form-control"
+                required
               />
             </div>
             <div className="form-group">
@@ -112,6 +128,7 @@ function Contact() {
                 onChange={handleChange}
                 placeholder="Votre adresse mail"
                 className="form-control"
+                required
               />
             </div>
             <div className="form-group">
@@ -125,12 +142,13 @@ function Contact() {
                 placeholder="Votre message"
                 rows="5"
                 className="form-control"
+                required
               ></textarea>
             </div>
             <button type="submit">Envoyer</button>
           </form>
-          </div>
-          <div className="social-network-part">
+        </div>
+        <div className="social-network-part">
           <div className="social-image">
             <a href='https://www.youtube.com/@supernova.creatif' target="_blank" rel="noopener noreferrer"><img src={youtube} alt="Youtube" /></a>
             <a href='https://www.instagram.com/supernova.creatif/reels/?locale=fr_CA&hl=en' target="_blank" rel="noopener noreferrer"><img src={instagram} alt="Instagram" /></a>
@@ -146,7 +164,6 @@ function Contact() {
           </div>
         </div>
       </div>
-      {/* Utilisation du composant ElfsightWidget */}
     </div>
   );
 }
