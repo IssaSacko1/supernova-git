@@ -115,6 +115,9 @@ footer a {
   }
   .other-line p {
     text-align: center;
+    text-decoration: none;
+    background: transparent !important;
+    -webkit-tap-highlight-color: transparent; /* Pour iOS/Android */
   }
 }
 
