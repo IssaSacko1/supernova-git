@@ -24,3 +24,12 @@
     left: 10%;
     color: white;
 }
+
+@media (max-width: 767px) {
+    .banner h1 {
+      bottom: 25%; /* Pleine largeur pour une vidéo par ligne sur mobile */
+    }
+    .banner h3 {
+        bottom: 5%; /* Pleine largeur pour une vidéo par ligne sur mobile */
+      }
+  }

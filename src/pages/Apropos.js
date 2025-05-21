@@ -84,8 +84,10 @@ const Apropos = () => {
           ))}
         </div>
       </div>
+      <div className='instagram-component'>
       {/* Partie 3: Pré-footer */}
       <ElfsightWidget widgetId="d7cb6062-6988-4e34-9934-d272767d23e1" />
+      </div>
     </div>
   );
 };

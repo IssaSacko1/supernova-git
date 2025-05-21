@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import '../styles/elfsight.css';
 
 function ElfsightWidget({ widgetId }) {
   useEffect(() => {

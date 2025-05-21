@@ -2,26 +2,26 @@
 
 .aboutUsPage {
   color: #fff;
+  width: 100%;
 }
 
 h1 {
   margin-bottom: 1%;
 }
 
+.instagram-component{
+  margin: 0 auto;
+  max-width: 95%;
+}
+
 /* Responsiveness */
-/* @media (max-width: 768px) {
-  .about_us_page h1 {
-    font-size: 60px;
-  }
+  @media (max-width: 768px) {
+    .instagram-component{
+      margin: 0 auto;
+      max-width: 60%;
+    }
 
-  .about_us_header .video-container .title {
-    font-size: 32px;
-  }
-
-  .about_us_header .video-container .text {
-    font-size: 14px;
-  }
-} */
+}
 
 
 .aboutusdescription {
