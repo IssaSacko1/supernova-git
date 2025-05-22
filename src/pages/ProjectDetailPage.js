@@ -164,7 +164,7 @@ const VideoComponent = ({ selectedProjectUrl }) => {
           {activeTab === 'social network' && (
             <div className="tab-pane active">
               <p>{keyOngletSocialNetwork/* Ajoutez du contenu spécifique pour l'onglet Social */}</p>
-              <ElfsightWidget widgetId="d7cb6062-6988-4e34-9934-d272767d23e1" />
+              <ElfsightWidget widgetId={keyOngletSocialNetwork} />
             </div>
           )}
 

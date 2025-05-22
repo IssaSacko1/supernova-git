@@ -2,8 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import axios from 'axios';
 import '../styles/projet.css';
 import { useHistory } from 'react-router-dom';
-import { parse } from 'node-html-parser'; // Assurez-vous d'installer cette dépendance pour parser le HTML
-
+import { parse } from 'node-html-parser'; // Assurez-vous que cette dépendance est bien installée
 
 function VideoWithHover({ src, title, description, thumbnail, pageId }) {
   const videoRef = useRef(null);
@@ -13,32 +12,33 @@ function VideoWithHover({ src, title, description, thumbnail, pageId }) {
   const handleMouseEnter = () => {
     setIsHovered(true);
     if (videoRef.current) {
-      videoRef.current.play();
-      videoRef.current.playbackRate = 1.5; // Définir le taux de lecture à 1.5x
+      videoRef.current.play().then(() => {
+        videoRef.current.playbackRate = 1.5;
+      }).catch((error) => {
+        console.warn("La vidéo n’a pas pu être lue :", error);
+      });
     }
   };
 
   const handleMouseLeave = () => {
     setIsHovered(false);
-    if (videoRef.current) {
+    if (videoRef.current && !videoRef.current.paused) {
       videoRef.current.pause();
     }
   };
 
   const handleClick = (pageId) => {
-    localStorage.setItem('pageId', pageId); // Stocke l'URL dans le local storage
-    history.push('/project-detail/video'); // Navigue vers /project-detail
+    localStorage.setItem('pageId', pageId);
+    history.push('/project-detail/video');
   };
 
   return (
-    <div className="video-container" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={() => handleClick( pageId )}>
+    <div className="video-container" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={() => handleClick(pageId)}>
       <video ref={videoRef} src={src} muted playsInline className={isHovered ? 'video-visible' : 'video-hidden'} loop />
       <img src={thumbnail} alt="Thumbnail" className={isHovered ? 'img-hidden' : 'img-visible'} />
-      <h1 className={isHovered ? 'video-visible' : 'video-hidden'} >
-        {title}
-      </h1>
+      <h1 className={isHovered ? 'video-visible' : 'video-hidden'}>{title}</h1>
       <p className={isHovered ? 'video-visible' : 'video-hidden'}>{description}</p>
-      </div>
+    </div>
   );
 }
 
@@ -46,37 +46,46 @@ function Projets() {
   const [extractedData, setExtractedData] = useState([]);
 
   useEffect(() => {
-    // Récupération des données via l'API
-    axios
-      .get("https://idev-test.xyz/wp-json/wp/v2/pages/131")
-      .then((response) => {
-        const data = response.data.content.rendered;
-        // Parsing du HTML pour extraire les données
-        const root = parse(data);
-        
-        const projectBlocks = root.querySelectorAll('.wp-block-group'); // Sélectionne tous les blocs de projets
-        const projects = projectBlocks.map(block => {
-          const title = block.querySelector('h2')?.text || "";
-          const description = block.querySelectorAll('p')[0]?.text || ""; // Assurez-vous que c'est le bon <p> pour la description
-          const projectUrl = block.querySelector('figure.wp-block-video > video')?.getAttribute('src') || "";
-          const projectDetailUrl = block.querySelectorAll('p')[1]?.text || ""; // Assurez-vous que c'est le bon <p> pour l'URL
-          const pageId = parseInt(projectDetailUrl.match(/(\d{3})$/)?.[0] || "", 10);
-          const thumbnail = block.querySelector('figure.wp-block-image > img')?.getAttribute('src') || "";
+    const processHTML = (html) => {
+      const root = parse(html);
+      const projectBlocks = root.querySelectorAll('.wp-block-group');
 
-          return {
-            title,
-            description,
-            projectUrl,
-            thumbnail,
-            pageId,
-            projectDetailUrl
-          };
-        });
-        setExtractedData(projects);
-      })
-      .catch((error) => {
-        console.error("Erreur lors de la récupération des données", error);
+      const projects = projectBlocks.map(block => {
+        const title = block.querySelector('h2')?.text || "";
+        const description = block.querySelectorAll('p')[0]?.text || "";
+        const projectUrl = block.querySelector('figure.wp-block-video > video')?.getAttribute('src') || "";
+        const projectDetailUrl = block.querySelectorAll('p')[1]?.text || "";
+        const pageId = parseInt(projectDetailUrl.match(/(\d{3})$/)?.[0] || "", 10);
+        const thumbnail = block.querySelector('figure.wp-block-image > img')?.getAttribute('src') || "";
+
+        return {
+          title,
+          description,
+          projectUrl,
+          thumbnail,
+          pageId,
+          projectDetailUrl
+        };
       });
+
+      setExtractedData(projects);
+    };
+
+    const cachedHTML = sessionStorage.getItem('projets-data');
+
+    if (cachedHTML) {
+      processHTML(cachedHTML);
+    } else {
+      axios.get('https://idev-test.xyz/wp-json/wp/v2/pages/131')
+        .then((res) => {
+          const html = res.data.content.rendered;
+          sessionStorage.setItem('projets-data', html);
+          processHTML(html);
+        })
+        .catch((error) => {
+          console.error("Erreur lors de la récupération des données", error);
+        });
+    }
   }, []);
 
   return (
@@ -85,11 +94,11 @@ function Projets() {
         <div className="main-container">
           {extractedData.map((projet, index) => (
             <VideoWithHover
+              key={projet.pageId || index}
               src={projet.projectUrl}
               description={projet.description}
               title={projet.title}
-              thumbnail={projet.thumbnail} // Ajoutez l'image miniature ici
-              url={projet.projectDetailUrl}
+              thumbnail={projet.thumbnail}
               pageId={projet.pageId}
             />
           ))}

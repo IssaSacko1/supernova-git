@@ -21,6 +21,22 @@ function Home() {
   const history = useHistory();
   
   useEffect(() => {
+      const preloadProjects = async () => {
+        // Si les données sont déjà en cache, ne rien faire
+        if (sessionStorage.getItem('projets-data')) return;
+    
+        try {
+          const res = await axios.get('https://idev-test.xyz/wp-json/wp/v2/pages/131');
+          const html = res.data.content.rendered;
+          sessionStorage.setItem('projets-data', html);
+          console.log(html)
+        } catch (err) {
+          console.error('Erreur lors du préchargement des projets :', err);
+        }
+      };
+    
+      preloadProjects();
+
     async function fetchHomePageContent() {
       try {
         const response = await axios.get('https://idev-test.xyz/wp-json/wp/v2/pages/73');

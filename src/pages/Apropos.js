@@ -20,9 +20,11 @@ const Apropos = () => {
     axios.get('https://idev-test.xyz/wp-json/wp/v2/pages/140')
       .then(response => {
         const htmlContent = response.data.content.rendered;
+        console.log(htmlContent)
         const extractedData = extractData(htmlContent);
         setData(extractedData);
         setTeams(extractedData.team); // Mettez à jour les équipes ici
+        console.log(extractedData.team)
       })
       .catch(error => {
         console.error('Erreur lors de la récupération des données', error);
@@ -53,14 +55,19 @@ const Apropos = () => {
     // Partie 3: Notre équipe
     const teamSections = parsedHtml.querySelectorAll('div.wp-block-group.is-vertical.is-layout-flex');
     const team = Array.from(teamSections).map(section => {
-      const title = section.querySelector('h2.wp-block-heading a')?.textContent || '';
-      const description = section.querySelector('p')?.textContent || '';
-      const image = section.querySelector('figure.wp-block-image img');
-      const imageSrc = image?.getAttribute('src') || '';
+    const title = section.querySelector('h2.wp-block-heading')?.textContent || '';
+    const description = section.querySelector('p')?.textContent || '';
+    const image = section.querySelector('figure.wp-block-image img');
+    const imageSrc = image?.getAttribute('src') || '';
+    const instagram = section.querySelector('p:nth-of-type(2)')?.textContent.trim() || '';
+    const linkedin = section.querySelector('p:nth-of-type(3)')?.textContent.trim() || '';
+
       return {
         title,
         description,
         imageSrc,
+        instagram,
+        linkedin
       };
     });
     

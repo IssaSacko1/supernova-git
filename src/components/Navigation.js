@@ -73,7 +73,7 @@ function Menu() {
         <div className='logophoto'>
           <a href="/">
           <SupernovaLogo width="150px" height="auto" />
-                    </a>
+          </a>
         </div>
         <div className="burger-menu" onClick={togglePopup}>
             <div className="bar"></div>
@@ -91,7 +91,7 @@ function Menu() {
             </div>
         <div className='menu-item'>
        <ul>
-            {positionsData.position1.map((item, index) => (
+            {positionsData.position1.map((item) => (
               <li key={item.id}>
                 <h1><a
                   href={item.attributes.url} onClick={togglePopup}
@@ -100,7 +100,6 @@ function Menu() {
                 </a></h1>
               </li>
             ))}
-            
             </ul>
         </div>
             <div className='contact'>
