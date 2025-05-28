@@ -100,7 +100,8 @@ const VideoComponent = ({ selectedProjectUrl }) => {
       <ImageBanner imageSrc={keyImgBanniere} title={title} object={KeyProjectObject}/> {/* Utilisation du composant ImageBanner */}
       
       <div className="container">
-      <p>{KeyProjectDescription}</p>
+      <h1 className='title-description'>Description du projet</h1>
+      <p className='description'>{KeyProjectDescription}</p>
         <ul className="nav nav-tabs" id="myTab">
         {keyOngletManagement
           .filter((tab) => tab.visibility === 'true') // Filtrer les onglets visibles

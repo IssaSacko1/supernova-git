@@ -16,6 +16,15 @@
   text-decoration: none;
 }
 
+.project-detail .description {
+  margin-top: 3vh;
+}
+
+.project-detail .title-description {
+  margin-top: 6vh;
+
+}
+
 
 .project-detail .nav-tabs .nav-link:after {
   content: "";
