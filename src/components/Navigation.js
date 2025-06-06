@@ -83,12 +83,7 @@ function Menu() {
       </div>
       {showPopup && (
       <div className={`popup ${showPopup ? 'slide-in' : 'slide-out'}`}>
-       <div className='contentPopup'>
-       <div className='reseaux'>
-                <a href={positionsData.position3[0].attributes.url}target="_blank" rel="noopener noreferrer"><img src={youtube}  alt="YouTube" /></a>
-                <a href={positionsData.position3[1].attributes.url} target="_blank" rel="noopener noreferrer"><img src={instagram}  alt="Instagram" /></a>
-                <a href={positionsData.position3[2].attributes.url} target="_blank" rel="noopener noreferrer"><img src={linkedin}  alt="linkedin" /></a>
-            </div>
+       <div className='topcontentPopup'>
         <div className='menu-item'>
        <ul>
             {positionsData.position1.map((item) => (
@@ -102,16 +97,23 @@ function Menu() {
             ))}
             </ul>
         </div>
-            <div className='contact'>
-            {positionsData.position2.map((item, index) => (
-              <ul>
-                <li key={item.id}>
-                    <p>{item.attributes.mail}</p>
-                    <p>{item.attributes.telephone}</p>
-                </li>
-              </ul>
-            ))}
-            </div>
+          </div>
+          <div className='bottomcontentPopup'>
+            <div className='reseaux'>
+                  <a href={positionsData.position3[0].attributes.url}target="_blank" rel="noopener noreferrer"><img src={youtube}  alt="YouTube" /></a>
+                  <a href={positionsData.position3[1].attributes.url} target="_blank" rel="noopener noreferrer"><img src={instagram}  alt="Instagram" /></a>
+                  <a href={positionsData.position3[2].attributes.url} target="_blank" rel="noopener noreferrer"><img src={linkedin}  alt="linkedin" /></a>
+          </div>
+              <div className='contact'>
+              {positionsData.position2.map((item, index) => (
+                <ul>
+                  <li key={item.id}>
+                      <p>{item.attributes.mail}</p>
+                      <p>{item.attributes.telephone}</p>
+                  </li>
+                </ul>
+              ))}
+              </div>
           </div>
         </div>
       )}

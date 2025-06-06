@@ -76,6 +76,9 @@ nav li {
     margin-left: 0vw;
     z-index: 999;
   }
+  .menu-item a {
+    font-size: .8rem;
+  }
 }
 
 .header {
@@ -203,26 +206,35 @@ nav .reseaux {
 .headerPopUp svg:hover {
   transform: scale(1.1); /* Grossissement de l'image sur hover */
 }
+.topcontentPopup {
+  margin-top: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1; /* prend l’espace dispo au centre */
+  width: 100%;
+}
 
+/* Élément individuel centré */
 .menu-item {
   display: flex;
-  padding-bottom: 5vh;
-  width: 30%;
   align-items: center;
   justify-content: center;
-}
-.contentPopup{
-  display: flex;
-  width: 90%;
-  margin:  0 auto;
-  height: 90vh;
-  justify-content: center;
+  width: 30%;
 }
 
-.contact {
+.bottomcontentPopup {
+  position: absolute;
   display: flex;
-  justify-content: center;
-  align-items:flex-end; /* Aligne verticalement si nécessaire */
+  justify-content: space-between;
+  width: 100%;
+  bottom: 10vh;
+}
+
+.reseaux, .contact {
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 
 .menu-item a {
