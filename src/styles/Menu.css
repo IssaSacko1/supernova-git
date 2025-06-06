@@ -55,8 +55,9 @@ nav li {
 }
 
 .contact {
-  width: 30%;
+  width: 50%;
   color: white;
+  margin: 0 auto;
 }
 
 
@@ -106,7 +107,8 @@ nav li {
 
 
 nav .reseaux {
-  width: 30%;
+  margin: 0 auto;
+  width: 50%;
   position: relative;
   display: flex;
   justify-content: center; /* Centre horizontalement */
@@ -231,7 +233,7 @@ nav .reseaux {
   bottom: 10vh;
 }
 
-.reseaux, .contact {
+.reseaux {
   display: flex;
   gap: 10px;
   align-items: center;
