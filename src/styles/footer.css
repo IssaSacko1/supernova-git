@@ -53,6 +53,7 @@ font-size: 1em;
 
 .first-line p {
   font-weight: bold;
+  text-align: left;
 }
 
 .other-line p {
@@ -68,7 +69,7 @@ footer a {
 /* Media Queries */
 
 /* For tablets */
-@media (max-width: 1024px) {
+@media (min-width: 769px) and (max-width: 1024px) {
   .footer-content {
     flex-wrap: wrap;
     justify-content: center;
@@ -81,6 +82,13 @@ footer a {
 
   .supernova {
     font-size: 18px;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+
+  .footer-column {
+    font-size: 0.9rem;
   }
 }
 

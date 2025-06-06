@@ -50,6 +50,11 @@ nav li {
   .contact p {
     font-size: 1rem;
   }  
+  .logophoto {
+    margin-top: 0;
+    margin-left: 2vw;
+    z-index: 999;
+  }
 }
 
 

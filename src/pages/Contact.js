@@ -87,6 +87,7 @@ function Contact() {
           setFormData({
             name: '',
             email: '',
+            phone: '',
             project: '',
           });
         },
@@ -96,7 +97,6 @@ function Contact() {
         }
       );
   };
-
   return (
     <div className="contactPage">
       <ImageBanner imageSrc={image} title="CONTACT" />
@@ -131,6 +131,20 @@ function Contact() {
                 required
               />
             </div>
+            <div className='form-group'>
+              <label>
+                <h3>Téléphone</h3>
+              </label>
+              <input type="tel"
+               name="phone"
+               placeholder="Entrez votre numéro"
+               pattern="[0-9+()\s\-]{10,20}"
+               className="form-control"
+               value={formData.phone}
+               onChange={handleChange}
+               required
+               />
+              </div>
             <div className="form-group">
               <label htmlFor="message">
                 <h3>Message</h3>

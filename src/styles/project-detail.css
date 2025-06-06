@@ -80,11 +80,12 @@
 }
 
 .credit-people {
-  width: 100%;
+  width: 80%;
   display: block;
   justify-content: center; /* Centre horizontalement */
   align-items: center; /* Centre verticalement */
   line-height: 2vh;
+  margin: 0 auto;
 }
 
 .photo-gallery {
