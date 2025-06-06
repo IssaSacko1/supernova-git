@@ -45,17 +45,7 @@ nav li {
   }
 }
 
-/* Mobiles grands (entre 576px et 767px) */
-@media (max-width: 767px){
-  .contact p {
-    font-size: 1rem;
-  }  
-  .logophoto {
-    margin-top: 0;
-    margin-left: 1vw;
-    z-index: 999;
-  }
-}
+
 
 
 .footerPopUp .contact p {
@@ -74,6 +64,18 @@ nav li {
   margin-top: 0;
   margin-left: 3.5vw;
   z-index: 999;
+}
+
+/* Mobiles grands (entre 576px et 767px) */
+@media (max-width: 767px){
+  .contact p {
+    font-size: 1rem;
+  }  
+  .logophoto {
+    margin-top: 0;
+    margin-left: 0vw;
+    z-index: 999;
+  }
 }
 
 .header {
