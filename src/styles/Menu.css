@@ -77,8 +77,8 @@ nav li {
     margin-left: 0vw;
     z-index: 999;
   }
-  .menu-item a {
-    font-size: .8rem;
+  .bottomcontentPopup p {
+    font-size: .7rem;
   }
 }
 
@@ -222,13 +222,11 @@ nav .reseaux {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 30%;
 }
 
 .bottomcontentPopup {
   position: absolute;
   display: flex;
-  justify-content: space-between;
   width: 100%;
   bottom: 10vh;
 }
