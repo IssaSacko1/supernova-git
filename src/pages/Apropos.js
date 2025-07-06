@@ -80,10 +80,11 @@ const Apropos = () => {
     <div className="aboutUsPage">
       {/* Partie 1: Bannière */}
       <VideoBanner banner={banner} />
+      <div className='about_us_content'>
       <h1 className='aboutustitre'>{data.description.descriptionSectionTitle}</h1>
       <p className='aboutusdescription'>{data.description.descriptionSectionValue}</p>
       {/* Partie 2: Équipe */}
-      <div className='about_us_content'>
+
         <h1>Notre équipe</h1>
         <div className="employees-list">
           {teams.map((allteam) => (
