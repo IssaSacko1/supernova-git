@@ -29,7 +29,7 @@ function VideoWithHover({ src, title, description, thumbnail, pageId }) {
 
   const handleClick = (pageId) => {
     localStorage.setItem('pageId', pageId);
-    history.push('/project-detail/video');
+    history.push('/project-detail/');
   };
 
   return (

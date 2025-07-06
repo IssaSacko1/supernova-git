@@ -13,7 +13,20 @@ const VideoComponent = ({ selectedProjectUrl }) => {
 
   });
 
-  const [activeTab, setActiveTab] = useState('credits'); // Onglet par défaut
+  const [activeTab, setActiveTab] = useState(null);
+  useEffect(() => {
+    if (data.keyOngletManagement && activeTab === null) {
+      const visibleTabs = data.keyOngletManagement.filter(tab => tab.visibility === 'true').map(tab => tab.key);
+  
+      if (visibleTabs.includes('video')) {
+        setActiveTab('video');
+      } else if (visibleTabs.includes('photo')) {
+        setActiveTab('photo');
+      } else {
+        setActiveTab(visibleTabs[0]); // Premier onglet disponible
+      }
+    }
+  }, [data, activeTab]);
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);

@@ -14,7 +14,7 @@
   
   .soundbutton {
     position: absolute;
-    bottom:   10vh;
+    bottom: 10vh;
     right: 5vw;
   }
 
@@ -47,5 +47,10 @@
       height: auto; /* ou auto si tu veux la taille naturelle */
       object-fit: cover;
       object-position: center center;
+    }
+
+    .soundbutton {
+      bottom: 2vh;
+
     }
   }
