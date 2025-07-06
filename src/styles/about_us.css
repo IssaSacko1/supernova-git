@@ -5,9 +5,15 @@
   width: 100%;
 }
 
-h1 {
-  margin-bottom: 1%;
+.about_us_content{
+  margin-bottom: 5vh;
 }
+
+.about_us_content h1 {
+  margin-bottom: 1%;
+  margin-top: 5%;
+}
+
 
 .instagram-component{
   margin: 0 auto;
@@ -29,12 +35,11 @@ h1 {
   margin: 0 auto;
   margin-bottom: 3vh;
   font-size: x-large;
+  text-align: justify;
 }
 
 .aboutustitre {
   margin-top: 3vh;
+  margin-bottom: 2vh;
 }
 
-.about_us_content{
-  margin-bottom: 5vh;
-}

@@ -406,6 +406,14 @@ h3 {
     padding-top: 2vh;
   }
 
+  .section-2 {
+    margin: 0 10vw 0 10vw;
+  }
+
+  .section-2  p {
+    text-align: justify;
+  }
+
   #mns_id_set1 {
     top: 0;
   }

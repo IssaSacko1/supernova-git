@@ -42,3 +42,10 @@
     background-color: rgba(0, 0, 0, 0.8);
   }
   
+  @media (max-width: 768px) {
+    .video-container video {
+      height: auto; /* ou auto si tu veux la taille naturelle */
+      object-fit: cover;
+      object-position: center center;
+    }
+  }

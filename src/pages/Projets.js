@@ -13,7 +13,7 @@ function VideoWithHover({ src, title, description, thumbnail, pageId }) {
     setIsHovered(true);
     if (videoRef.current) {
       videoRef.current.play().then(() => {
-        videoRef.current.playbackRate = 1.5;
+        videoRef.current.playbackRate = 1;
       }).catch((error) => {
         console.warn("La vidéo n’a pas pu être lue :", error);
       });
