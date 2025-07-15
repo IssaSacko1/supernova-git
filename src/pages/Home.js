@@ -26,10 +26,9 @@ function Home() {
         if (sessionStorage.getItem('projets-data')) return;
     
         try {
-          const res = await axios.get('https://idev-test.xyz/wp-json/wp/v2/pages/131');
+          const res = await axios.get('https://supernova-creatif-admin.online/wp-json/wp/v2/pages/26');
           const html = res.data.content.rendered;
           sessionStorage.setItem('projets-data', html);
-          console.log(html)
         } catch (err) {
           console.error('Erreur lors du préchargement des projets :', err);
         }
@@ -39,7 +38,7 @@ function Home() {
 
     async function fetchHomePageContent() {
       try {
-        const response = await axios.get('https://idev-test.xyz/wp-json/wp/v2/pages/73');
+        const response = await axios.get('https://supernova-creatif-admin.online/wp-json/wp/v2/pages/22');
         const data = parseWordpressContent(response.data.content.rendered);
 
         const IntroComponentContent = filterByFigcaption(data, 'IntroComponent');

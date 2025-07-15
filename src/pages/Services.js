@@ -13,7 +13,7 @@ const Services = () => {
 
   useEffect(() => {
     // Effectuer la requête GET à l'API WordPress  
-    axios.get('https://idev-test.xyz/wp-json/wp/v2/pages/134')
+    axios.get('https://supernova-creatif-admin.online/wp-json/wp/v2/pages/28')
       .then(response => {
         const htmlContent = response.data.content.rendered;
         const extractedData = extractData(htmlContent);

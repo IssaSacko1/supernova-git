@@ -20,11 +20,9 @@ const Apropos = () => {
     axios.get('https://supernova-creatif-admin.online/wp-json/wp/v2/pages/8')
       .then(response => {
         const htmlContent = response.data.content.rendered;
-        console.log(htmlContent)
         const extractedData = extractData(htmlContent);
         setData(extractedData);
         setTeams(extractedData.team); // Mettez à jour les équipes ici
-        console.log(extractedData.team)
       })
       .catch(error => {
         console.error('Erreur lors de la récupération des données', error);

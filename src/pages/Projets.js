@@ -57,7 +57,7 @@ function Projets() {
         const description = block.querySelectorAll('p')[0]?.text || "";
         const projectUrl = block.querySelector('figure.wp-block-video > video')?.getAttribute('src') || "";
         const projectDetailUrl = block.querySelectorAll('p')[1]?.text || "";
-        const pageId = parseInt(projectDetailUrl.match(/(\d{3})$/)?.[0] || "", 10);
+        const pageId = parseInt(projectDetailUrl.match(/(\d{2})$/)?.[0] || "", 10);
         const thumbnail = block.querySelector('figure.wp-block-image > img')?.getAttribute('src') || "";
 
         return {
@@ -78,7 +78,7 @@ function Projets() {
     if (cachedHTML) {
       processHTML(cachedHTML);
     } else {
-      axios.get('https://idev-test.xyz/wp-json/wp/v2/pages/131')
+      axios.get('https://supernova-creatif-admin.online/wp-json/wp/v2/pages/26')
         .then((res) => {
           const html = res.data.content.rendered;
           sessionStorage.setItem('projets-data', html);

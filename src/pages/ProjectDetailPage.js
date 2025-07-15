@@ -89,13 +89,13 @@ const VideoComponent = ({ selectedProjectUrl }) => {
         keyOngletBts,
         keyOngletSocialNetwork,
         keyOngletCredits
-      };      
+      };    
     };
 
     const loadData = async () => {
       try {
         const storedData = parseInt(localStorage.getItem('pageId'), 10);
-        const response = await axios.get(`https://idev-test.xyz/wp-json/wp/v2/pages/${storedData}`);
+        const response = await axios.get(`https://supernova-creatif-admin.online/wp-json/wp/v2/pages/${storedData}`);
         const htmlContent = response.data.content.rendered;
         const extractedData = extractData(htmlContent);
         setData(extractedData);

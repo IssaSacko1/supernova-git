@@ -18,7 +18,7 @@ function Contact() {
 
   useEffect(() => {
     axios
-      .get('https://idev-test.xyz/wp-json/wp/v2/pages/140')
+      .get('https://supernova-creatif-admin.online/wp-json/wp/v2/pages/22')
       .then((response) => {
         const htmlContent = response.data.content.rendered;
         extractData(htmlContent); // si tu veux utiliser `preFooter`, tu peux stocker ça dans un state
@@ -82,7 +82,6 @@ function Contact() {
       )
       .then(
         (result) => {
-          console.log('Message envoyé !', result.text);
           alert('Message envoyé avec succès !');
           setFormData({
             name: '',
