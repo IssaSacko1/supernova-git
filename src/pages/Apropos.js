@@ -17,7 +17,7 @@ const Apropos = () => {
   });
 
   useEffect(() => {
-    axios.get('https://idev-test.xyz/wp-json/wp/v2/pages/140')
+    axios.get('http://supernova-creatif-admin.online/wp-json/wp/v2/pages/8')
       .then(response => {
         const htmlContent = response.data.content.rendered;
         console.log(htmlContent)
