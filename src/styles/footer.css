@@ -23,6 +23,7 @@ footer .reseaux {
   width: 90%;
   padding-top: 1vh;
   margin: 0 auto; /* Centre le conteneur .footer-content */
+  padding-bottom: 1.5vh;
 }
 
 .footer-column {

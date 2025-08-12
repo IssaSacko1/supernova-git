@@ -64,9 +64,7 @@
 
 .projet .video-container h1 {
   position: absolute;
-  top: 12vh; /* Ajustez cette valeur selon vos besoins */
-  left: 50%;
-  transform: translateX(-50%);
+  top: 50%; /* Ajustez cette valeur selon vos besoins */
   text-transform: uppercase;
   color: #fff;
   font-size: 1rem; /* Taille de police pour le titre */
@@ -78,9 +76,8 @@
 
 .projet .video-container p {
   position: absolute;
-  left: 50%;
-  bottom: 12vh;
-  transform: translateX(-50%);
+  left: 5%;
+  bottom: 2vh;
   color: #fff;
   transition: opacity 0.5s ease-in-out;
   font-size: 1em;
