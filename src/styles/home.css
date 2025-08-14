@@ -374,18 +374,10 @@ button {
 
 /* Pour les écrans d'ordinateur de bureau (>= 1200px) */
 @media (min-width: 1442px) and (max-width: 1600px) {
-
-  /* .section-1 {
-    height: 100vh;
-  } */
-
 }
 
 
 @media (min-width: 1200px) and (max-width: 1441px) {
-  /* .section-1 {
-    height: 75vh;
-  } */
 
 }
 

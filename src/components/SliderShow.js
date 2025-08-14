@@ -44,7 +44,7 @@ function SliderShow({ images }) {
     prevArrow: <PrevArrow />,
     responsive: [
       {
-        breakpoint: 1441,
+        breakpoint: 1400,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
