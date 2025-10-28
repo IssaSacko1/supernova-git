@@ -84,7 +84,11 @@ form button {
     display: none;
   }
   .contact-form-part {
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
+  }
+
+  .form-group {
+    width: 70%;
   }
 }

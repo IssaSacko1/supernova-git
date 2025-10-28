@@ -84,7 +84,7 @@ function SliderShow({ images }) {
                 <h3>{img.figcaption.titre}</h3>
                 <p>{img.figcaption.description}</p>
                 <button className="slider-show-button" onClick={() => handleClick(img.figcaption.page_id)}>
-                  <FaArrowUp /> View project
+                  <FaArrowUp /> Voir projet
                 </button>
               </div>
             </div>

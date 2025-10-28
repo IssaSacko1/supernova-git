@@ -40,7 +40,6 @@ function Home() {
       try {
         const response = await axios.get('https://supernova-creatif-admin.online/wp-json/wp/v2/pages/22');
         const data = parseWordpressContent(response.data.content.rendered);
-
         const IntroComponentContent = filterByFigcaption(data, 'IntroComponent');
         const SliderComponentContent = filterByFigcaption(data, 'SliderComponent');
         const LogoComponentContent = filterByFigcaption(data, 'LogoComponent');
