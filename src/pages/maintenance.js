@@ -27,7 +27,7 @@ function Maintenance() {
         <div className="loader"></div>
 
         <p className="team-signature">
-          Signé l’équipe Supernova
+          l’équipe Supernova
         </p>
 
         <p className="footer">
