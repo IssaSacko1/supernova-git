@@ -1,0 +1,309 @@
+/* ===========================
+   Reset
+=========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", sans-serif;
+    background: #0f172a;
+}
+
+/* ===========================
+   Container
+=========================== */
+
+.maintenance-container {
+    position: relative;
+    overflow: hidden;
+
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    background: radial-gradient(circle at top,
+            #1e3a8a 0%,
+            #0f172a 70%);
+}
+
+/* ===========================
+   Fond animé
+=========================== */
+
+.background {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+.background span {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(56, 189, 248, 0.12);
+    filter: blur(6px);
+    animation: float 18s ease-in-out infinite;
+}
+
+.background span:nth-child(1) {
+    width: 260px;
+    height: 260px;
+    top: 8%;
+    left: 8%;
+}
+
+.background span:nth-child(2) {
+    width: 180px;
+    height: 180px;
+    bottom: 10%;
+    right: 10%;
+    animation-duration: 14s;
+}
+
+.background span:nth-child(3) {
+    width: 140px;
+    height: 140px;
+    top: 60%;
+    left: 60%;
+    animation-duration: 22s;
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    25% {
+        transform: translate(40px, -30px) scale(1.08);
+    }
+
+    50% {
+        transform: translate(-20px, 40px) scale(.95);
+    }
+
+    75% {
+        transform: translate(30px, 20px) scale(1.05);
+    }
+
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+/* ===========================
+   Carte
+=========================== */
+
+.maintenance-card {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 650px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 55px 45px;
+
+    background: rgba(255, 255, 255, .06);
+    backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255, 255, 255, .1);
+    border-radius: 22px;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .35);
+
+    animation: appear .9s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ===========================
+   Icône
+=========================== */
+
+.icon {
+    font-size: 70px;
+    margin-bottom: 25px;
+    animation: bounce 2.5s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* ===========================
+   Titres
+=========================== */
+
+h1 {
+    color: white;
+    font-size: 2.6rem;
+    margin-bottom: 22px;
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        letter-spacing: 8px;
+    }
+
+    to {
+        opacity: 1;
+        letter-spacing: normal;
+    }
+}
+
+/* ===========================
+   Paragraphes
+=========================== */
+
+p {
+    color: white;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.secondary {
+    color: #cbd5e1;
+    margin-top: 12px;
+    animation: pulseText 3s infinite;
+}
+
+@keyframes pulseText {
+
+    0%,
+    100% {
+        opacity: .75;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+/* ===========================
+   Loader
+=========================== */
+
+.loader {
+    width: 65px;
+    height: 65px;
+
+    margin: 40px auto;
+
+    border-radius: 50%;
+    border: 5px solid rgba(255, 255, 255, .15);
+    border-top: 5px solid #38bdf8;
+
+    animation:
+        spin 1s linear infinite,
+        glow 2s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 8px #38bdf8;
+    }
+
+    50% {
+        box-shadow: 0 0 28px #38bdf8;
+    }
+}
+
+/* ===========================
+   Signature
+=========================== */
+
+.team-signature {
+    align-self: flex-end;
+
+    margin-top: 25px;
+    margin-right: 25px;
+    margin-bottom: 10px;
+
+    color: #cbd5e1;
+
+    font-size: .95rem;
+    font-style: italic;
+    font-weight: 500;
+
+    opacity: .85;
+}
+
+/* ===========================
+   Footer
+=========================== */
+
+.footer {
+    color: #94a3b8;
+    font-size: .95rem;
+    text-align: center;
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media (max-width: 768px) {
+
+    .maintenance-card {
+        padding: 40px 25px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .icon {
+        font-size: 58px;
+    }
+
+    .team-signature {
+        margin-right: 10px;
+        font-size: .9rem;
+    }
+}

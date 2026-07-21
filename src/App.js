@@ -9,10 +9,14 @@ import Services from './pages/Services';
 import Apropos from './pages/Apropos';
 import NotFoundPage from './pages/NotFoundPage';
 import Contact from './pages/Contact';
+import Maintenance from './pages/maintenance';
 import './App.css';
-
+const maintenance = true
 function App() {
 
+  if (maintenance) {
+  return <Maintenance />;
+}
   return (
     <Router>
       <div className='App'>

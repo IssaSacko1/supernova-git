@@ -5,7 +5,7 @@ import LogoComponent from '../components/LogoComponent';
 import "../styles/home.css";
 import SliderShow from '../components/SliderShow';
 import { useHistory } from 'react-router-dom';
-
+import Projets from './Projets';
 
 function Home() {
   const [Section1Titre, setContent1Title] = useState(null);
@@ -142,7 +142,8 @@ function Home() {
         )}
         <div id="section-1" className="section-1">
           <h3>{Section1Titre}</h3>
-          <SliderShow images={videos} />
+          <Projets />
+          {/* <SliderShow images={videos} /> */}
           <div className='homeButton'>
             <button className="view-all-link" onClick={() => handleClick("/projets")}>{Section1Button}</button>
           </div>
